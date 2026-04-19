@@ -4,8 +4,9 @@ import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import { gsap, SplitText } from '@/lib/gsap'
 import Link from 'next/link'
+import { Dictionary } from '@/dictionaries/en'
 
-export default function WorkFooter() {
+export default function WorkFooter({ dict, lang }: { dict: Dictionary['work']; lang: string }) {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useGSAP(() => {
@@ -52,30 +53,30 @@ export default function WorkFooter() {
     >
       <div className="flex flex-col gap-8 max-w-lg">
         <span className="font-mono text-[0.5625rem] tracking-[0.22em] uppercase text-stabilo">
-          Start your project
+          {dict.footer_overline}
         </span>
         <h2 className="work-footer-heading font-aktiv-grotesk text-[clamp(2.25rem,3vw+1rem,3.25rem)] font-bold leading-[1.0] tracking-[-0.025em]">
-          Your brand deserves
+          {dict.footer_heading_1}
           <br />
-          <em className="italic font-light text-ink/30">its own stage.</em>
+          <em className="italic font-light text-ink/30">{dict.footer_heading_2}</em>
         </h2>
       </div>
 
       <div className="flex flex-col sm:flex-row md:flex-col gap-4 shrink-0">
         <Link
-          href="/#cta-section"
+          href={`/${lang}/#cta-section`}
           className="work-footer-action group flex items-center gap-4 bg-ink text-off font-mono text-[0.5625rem] tracking-widest uppercase py-4 px-8 transition-colors duration-200 hover:bg-stabilo active:scale-[0.97]"
         >
-          Start a project
+          {dict.footer_cta}
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </Link>
         <Link
-          href="/"
+          href={`/${lang}`}
           className="work-footer-action flex items-center justify-center gap-3 border border-border text-ink font-mono text-[0.5625rem] tracking-widest uppercase py-4 px-7 transition-colors duration-200 hover:border-ink/30 active:scale-[0.97]"
         >
-          ← Back home
+          {dict.footer_back}
         </Link>
       </div>
     </section>

@@ -3,8 +3,9 @@
 import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import { gsap, SplitText } from '@/lib/gsap'
+import { Dictionary } from '@/dictionaries/en'
 
-export default function WorkHero() {
+export default function WorkHero({ dict }: { dict: Dictionary['work'] }) {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useGSAP(() => {
@@ -63,18 +64,18 @@ export default function WorkHero() {
     >
       {/* Label row */}
       <div className="work-hero-label flex items-center gap-3 mb-10 overflow-hidden">
-        <span className="font-mono text-[0.5625rem] tracking-[0.22em] uppercase text-stabilo">Selected Work</span>
+        <span className="font-mono text-[0.5625rem] tracking-[0.22em] uppercase text-stabilo">{dict.hero_overline}</span>
         <span className="w-6 h-px bg-black/10 inline-block" />
-        <span className="font-mono text-[0.5625rem] tracking-[0.22em] uppercase text-muted-warm">2024 – 2026</span>
+        <span className="font-mono text-[0.5625rem] tracking-[0.22em] uppercase text-muted-warm">{dict.hero_year_range}</span>
       </div>
 
       {/* Headline */}
       <h1 className="work-hero-heading font-aktiv-grotesk text-[clamp(3.25rem,6vw+1rem,6.75rem)] font-bold leading-[0.95] tracking-[-0.03em] mb-16 max-w-5xl">
-        Work that
+        {dict.hero_headline_1}
         <br />
-        <em className="italic font-light text-ink/30">speaks for</em>
+        <em className="italic font-light text-ink/30">{dict.hero_headline_2}</em>
         <br />
-        itself.
+        {dict.hero_headline_3}
       </h1>
 
       {/* Bottom strip */}
@@ -82,27 +83,27 @@ export default function WorkHero() {
       <div className="flex items-end justify-between gap-6 flex-wrap">
         <div className="flex gap-10">
           <div className="work-hero-meta flex flex-col gap-1">
-            <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-ink/30">Projects live</span>
+            <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-ink/30">{dict.stat_projects_label}</span>
             <span className="font-aktiv-grotesk text-[1.75rem] font-semibold leading-none">12+</span>
           </div>
           <div className="work-hero-meta flex flex-col gap-1">
-            <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-ink/30">Industries</span>
+            <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-ink/30">{dict.stat_industries_label}</span>
             <span className="font-aktiv-grotesk text-[1.75rem] font-semibold leading-none">8</span>
           </div>
           <div className="work-hero-meta flex flex-col gap-1">
-            <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-ink/30">Avg. launch</span>
-            <span className="font-aktiv-grotesk text-[1.75rem] font-semibold leading-none">3 wks</span>
+            <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-ink/30">{dict.stat_launch_label}</span>
+            <span className="font-aktiv-grotesk text-[1.75rem] font-semibold leading-none">{dict.stat_launch_val}</span>
           </div>
         </div>
 
         <p className="work-hero-meta font-googlea text-[0.8125rem] leading-[1.8] text-muted-warm max-w-xs">
-          Every project below is live, owned by its brand, and built to convert.
+          {dict.hero_desc}
         </p>
       </div>
 
       {/* Scroll cue */}
       <div className="work-hero-count absolute bottom-8 right-16 hidden md:flex items-center gap-3 text-ink/20">
-        <span className="font-mono text-[0.5rem] tracking-[0.24em] uppercase">Scroll to explore</span>
+        <span className="font-mono text-[0.5rem] tracking-[0.24em] uppercase">{dict.scroll_cue}</span>
         <svg width="28" height="12" viewBox="0 0 28 12" fill="none">
           <path d="M1 6h26M20 1l6 5-6 5" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round" strokeLinejoin="round" />
         </svg>

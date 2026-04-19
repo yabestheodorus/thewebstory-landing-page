@@ -6,8 +6,9 @@ import { gsap, SplitText } from '@/lib/gsap'
 import { projects } from './projects'
 import { FeaturedProjectCard } from './grid/FeaturedProjectCard'
 import { ProjectIndexRow } from './grid/ProjectIndexRow'
+import { Dictionary } from '@/dictionaries/en'
 
-export default function WorkGrid() {
+export default function WorkGrid({ dict }: { dict: Dictionary['work'] }) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [hoveredId, setHoveredId] = useState<string | null>(null)
 
@@ -59,8 +60,8 @@ export default function WorkGrid() {
         <div className="work-row">
           <div className="work-row-line h-px w-full bg-border mb-6" />
           <div className="work-row-content flex items-center justify-between mb-10">
-            <span className="font-mono text-[0.5rem] tracking-[0.22em] uppercase text-muted-warm">Featured</span>
-            <span className="font-mono text-[0.5rem] tracking-[0.22em] uppercase text-muted-warm">{featured.length} projects</span>
+            <span className="font-mono text-[0.5rem] tracking-[0.22em] uppercase text-muted-warm">{dict.grid_featured_overline}</span>
+            <span className="font-mono text-[0.5rem] tracking-[0.22em] uppercase text-muted-warm">{featured.length} {dict.grid_projects_suffix}</span>
           </div>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
@@ -81,16 +82,16 @@ export default function WorkGrid() {
         <div className="work-row">
           <div className="work-row-line h-px w-full bg-border mb-6" />
           <div className="work-row-content flex items-center justify-between mb-2">
-            <span className="font-mono text-[0.5rem] tracking-[0.22em] uppercase text-muted-warm">All projects</span>
-            <span className="font-mono text-[0.5rem] tracking-[0.22em] uppercase text-muted-warm">{rest.length} projects</span>
+            <span className="font-mono text-[0.5rem] tracking-[0.22em] uppercase text-muted-warm">{dict.grid_all_overline}</span>
+            <span className="font-mono text-[0.5rem] tracking-[0.22em] uppercase text-muted-warm">{rest.length} {dict.grid_projects_suffix}</span>
           </div>
         </div>
 
         <div className="hidden md:grid grid-cols-[48px_1fr_140px_100px_40px] py-3 border-b border-border">
           <div />
-          <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-muted-warm">Project</span>
-          <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-muted-warm">Category</span>
-          <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-muted-warm">Year</span>
+          <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-muted-warm">{dict.grid_head_project}</span>
+          <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-muted-warm">{dict.grid_head_category}</span>
+          <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-muted-warm">{dict.grid_head_year}</span>
           <div />
         </div>
 

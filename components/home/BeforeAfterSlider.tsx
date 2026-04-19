@@ -3,7 +3,7 @@
 import { useRef, useState, useCallback, useEffect } from 'react'
 import Image from 'next/image'
 
-export default function BeforeAfterSlider() {
+export default function BeforeAfterSlider({ dragLabel = "Drag the slider" }: { dragLabel?: string }) {
   const [pos, setPos] = useState(65)
   const containerRef = useRef<HTMLDivElement>(null)
   const dragging = useRef(false)
@@ -46,7 +46,7 @@ export default function BeforeAfterSlider() {
         <svg width="12" height="6" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg" className="animate-hint-slide shrink-0">
           <path d="M1 4H13M1 4L3.5 1.5M1 4L3.5 6.5M13 4L10.5 1.5M13 4L10.5 6.5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
-        <span>Drag the slider</span>
+        <span>{dragLabel}</span>
       </div>
 
       {/* Before (Lofi) — Driving layer (relative) */}

@@ -1,31 +1,45 @@
 import Image from 'next/image'
-import type { Service } from './servicesData'
 
 interface ServiceRowProps {
-  service: Service
+  service: {
+    id: string
+    title: string
+    category: string
+    deliverable: string
+    timeline: string
+    description: string
+    keywords: string[]
+    logos?: { name: string; src: string }[]
+  }
+  labels: {
+    deliverable: string
+    timeline: string
+    category: string
+  }
   isActive: boolean
   onMouseEnter: () => void
   onMouseLeave: () => void
 }
 
-export function ServiceRow({ service, isActive, onMouseEnter, onMouseLeave }: ServiceRowProps) {
+export function ServiceRow({ service, labels, isActive, onMouseEnter, onMouseLeave }: ServiceRowProps) {
   return (
     <div
-      className="works-row border-b border-off/5"
+      className="works-row border-b border-ink/10"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
       {/* Main row */}
       <div
         className="relative overflow-hidden grid grid-cols-[48px_1fr_auto] md:grid-cols-[48px_1fr_140px_100px_44px] items-center px-8 md:px-16 py-7 transition-colors duration-300"
-        style={{ backgroundColor: isActive ? 'rgba(253,251,250,0.03)' : 'transparent' }}
+        style={{ backgroundColor: isActive ? 'var(--color-sand)' : 'transparent' }}
       >
         {/* Ghost number */}
         <span
           className="absolute right-12 font-aktiv-grotesk font-bold leading-none select-none pointer-events-none transition-all duration-500"
           style={{
             fontSize: 'clamp(80px,12vw,140px)',
-            color: isActive ? 'rgba(124,92,255,0.15)' : 'rgba(253,251,250,0.08)',
+            color: isActive ? 'var(--color-stabilo)' : 'var(--color-ink)',
+            opacity: isActive ? 0.15 : 0.05,
             transform: isActive ? 'translateY(-6px) scale(1.04)' : 'translateY(0) scale(1)',
           }}
         >
@@ -74,7 +88,7 @@ export function ServiceRow({ service, isActive, onMouseEnter, onMouseLeave }: Se
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path
               d="M2 12L12 2M12 2H5M12 2V9"
-              stroke={isActive ? 'var(--color-stabilo)' : 'var(--color-off)'}
+              stroke={isActive ? 'var(--color-stabilo)' : 'var(--color-ink)'}
               opacity={isActive ? 1 : 0.4}
               strokeWidth="1.2"
               strokeLinecap="round"
@@ -122,15 +136,15 @@ export function ServiceRow({ service, isActive, onMouseEnter, onMouseLeave }: Se
           {/* Meta column */}
           <div className="flex flex-row md:flex-col gap-6 md:gap-4 pt-1 flex-wrap">
             <div className="flex flex-col gap-1">
-              <span className="font-mono text-[0.4375rem] tracking-[0.22em] uppercase text-muted-warm/50">Deliverable</span>
+              <span className="font-mono text-[0.4375rem] tracking-[0.22em] uppercase text-muted-warm/50">{labels.deliverable}</span>
               <span className="font-mono text-[0.625rem] text-ink/70">{service.deliverable}</span>
             </div>
             <div className="flex flex-col gap-1">
-              <span className="font-mono text-[0.4375rem] tracking-[0.22em] uppercase text-muted-warm/50">Timeline</span>
+              <span className="font-mono text-[0.4375rem] tracking-[0.22em] uppercase text-muted-warm/50">{labels.timeline}</span>
               <span className="font-mono text-[0.625rem] text-ink/70">{service.timeline}</span>
             </div>
             <div className="flex flex-col gap-1">
-              <span className="font-mono text-[0.4375rem] tracking-[0.22em] uppercase text-muted-warm/50">Category</span>
+              <span className="font-mono text-[0.4375rem] tracking-[0.22em] uppercase text-muted-warm/50">{labels.category}</span>
               <span className="font-mono text-[0.625rem] text-stabilo">{service.category}</span>
             </div>
           </div>
