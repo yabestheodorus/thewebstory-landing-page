@@ -9,11 +9,14 @@ import { accentText, TECH_ICONS } from './colorMaps'
 
 gsap.registerPlugin(ScrollTrigger)
 
+import { Dictionary } from '@/dictionaries/en'
+
 interface ProjectTechStackProps {
   project: Project
+  dict: Dictionary
 }
 
-export function ProjectTechStack({ project }: ProjectTechStackProps) {
+export function ProjectTechStack({ project, dict }: ProjectTechStackProps) {
   const containerRef = useRef<HTMLElement>(null)
 
   useGSAP(() => {
@@ -40,7 +43,9 @@ export function ProjectTechStack({ project }: ProjectTechStackProps) {
       <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-12 md:gap-24">
         <div className="proj-sec-label flex flex-col gap-3 pt-1">
           <span className={`font-mono text-[0.5rem] tracking-[0.3em] uppercase ${accentText[project.color]}`}>05</span>
-          <h2 id="proj-tech-heading" className="font-mono text-[0.5625rem] tracking-[0.2em] uppercase text-ink/45">Technology</h2>
+          <h2 id="proj-tech-heading" className="font-mono text-[0.5625rem] tracking-[0.2em] uppercase text-ink/45">
+            {dict.project_detail.labels.tech_stack}
+          </h2>
         </div>
         <div className="proj-tags flex flex-wrap gap-2">
           {project.techStack.map(tech => {

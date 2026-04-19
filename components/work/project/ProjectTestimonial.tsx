@@ -9,11 +9,14 @@ import { accentText, ornamentGlow } from './colorMaps'
 
 gsap.registerPlugin(ScrollTrigger)
 
+import { Dictionary } from '@/dictionaries/en'
+
 interface ProjectTestimonialProps {
   project: Project
+  dict: Dictionary
 }
 
-export function ProjectTestimonial({ project }: ProjectTestimonialProps) {
+export function ProjectTestimonial({ project, dict }: ProjectTestimonialProps) {
   const containerRef = useRef<HTMLElement>(null)
 
   useGSAP(() => {
@@ -31,7 +34,7 @@ export function ProjectTestimonial({ project }: ProjectTestimonialProps) {
   if (!project.testimonial) return null
 
   return (
-    <section ref={containerRef} aria-label="Client testimonial" className="border-b border-border px-8 md:px-16 py-28 bg-sand/40 relative overflow-hidden">
+    <section ref={containerRef} aria-label={dict.project_detail.labels.testimonial} className="border-b border-border px-8 md:px-16 py-28 bg-sand/40 relative overflow-hidden">
       <div className="absolute pointer-events-none select-none rounded-full"
         style={{ width: 700, height: 400, top: '50%', left: '50%', transform: 'translate(-50%, -50%)', background: ornamentGlow[project.color], filter: 'blur(140px)' }}
       />

@@ -9,11 +9,14 @@ import { accentText } from './colorMaps'
 
 gsap.registerPlugin(ScrollTrigger)
 
+import { Dictionary } from '@/dictionaries/en'
+
 interface ProjectDeliverablesProps {
   project: Project
+  dict: Dictionary
 }
 
-export function ProjectDeliverables({ project }: ProjectDeliverablesProps) {
+export function ProjectDeliverables({ project, dict }: ProjectDeliverablesProps) {
   const containerRef = useRef<HTMLElement>(null)
 
   useGSAP(() => {
@@ -44,10 +47,12 @@ export function ProjectDeliverables({ project }: ProjectDeliverablesProps) {
       <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-12 md:gap-24 mb-14">
         <div className="proj-sec-label flex flex-col gap-3 pt-1">
           <span className={`font-mono text-[0.5rem] tracking-[0.3em] uppercase ${accentText[project.color]}`}>03</span>
-          <h2 id="proj-deliverables-heading" className="font-mono text-[0.5625rem] tracking-[0.2em] uppercase text-ink/45">What We Shipped</h2>
+          <h2 id="proj-deliverables-heading" className="font-mono text-[0.5625rem] tracking-[0.2em] uppercase text-ink/45">
+            {dict.project_detail.sections.deliverables}
+          </h2>
         </div>
         <p className="proj-sec-body font-googlea text-[0.8125rem] leading-[1.8] text-muted-warm max-w-md">
-          Every component we built, and the brief behind it.
+          {dict.project_detail.sections.deliverables_desc}
         </p>
       </div>
       <div className="proj-deliverables-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-border">

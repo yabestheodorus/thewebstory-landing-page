@@ -8,11 +8,14 @@ import type { Project } from '../projects'
 
 gsap.registerPlugin(ScrollTrigger)
 
+import { Dictionary } from '@/dictionaries/en'
+
 interface ProjectOverviewProps {
   project: Project
+  dict: Dictionary
 }
 
-export function ProjectOverview({ project }: ProjectOverviewProps) {
+export function ProjectOverview({ project, dict }: ProjectOverviewProps) {
   const containerRef = useRef<HTMLElement>(null)
 
   useGSAP(() => {
@@ -27,11 +30,11 @@ export function ProjectOverview({ project }: ProjectOverviewProps) {
     <section ref={containerRef} aria-label="Project overview" className="proj-overview border-b border-border px-8 md:px-16 py-10">
       <div className="flex flex-wrap gap-y-8 md:flex-nowrap md:divide-x md:divide-border">
         {[
-          { label: 'Client', value: project.client },
-          { label: 'Category', value: project.category },
-          { label: 'Services', value: (project.services ?? project.tags).join(', ') },
-          { label: 'Timeline', value: project.timeline ?? '—' },
-          { label: 'Year', value: project.year },
+          { label: dict.project_detail.labels.client, value: project.client },
+          { label: dict.works.labels.category, value: project.category },
+          { label: dict.works.labels.service, value: (project.services ?? project.tags).join(', ') },
+          { label: dict.project_detail.labels.timeline, value: project.timeline ?? '—' },
+          { label: dict.project_detail.labels.year, value: project.year },
         ].map((item, i) => (
           <div key={i} className="proj-meta-item flex flex-col gap-1.5 w-1/2 md:w-auto md:px-10 first:pl-0 last:pr-0">
             <span className="font-mono text-[0.4375rem] tracking-[0.22em] uppercase text-muted-warm/55">{item.label}</span>

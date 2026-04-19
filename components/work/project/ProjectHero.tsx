@@ -29,11 +29,15 @@ function renderHeadline(text: string, highlights: string[], accentClass: string)
   )
 }
 
+import { Dictionary } from '@/dictionaries/en'
+
 interface ProjectHeroProps {
   project: Project
+  dict: Dictionary
+  lang: string
 }
 
-export function ProjectHero({ project }: ProjectHeroProps) {
+export function ProjectHero({ project, dict, lang }: ProjectHeroProps) {
   const heroRef = useRef<HTMLElement>(null)
 
   useGSAP(() => {
@@ -117,15 +121,15 @@ export function ProjectHero({ project }: ProjectHeroProps) {
       <nav aria-label="Breadcrumb" className="proj-breadcrumb mb-10">
         <ol className="flex items-center gap-2" itemScope itemType="https://schema.org/BreadcrumbList">
           <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem" className="flex items-center">
-            <Link href="/" itemProp="item" className="font-mono text-[0.5625rem] tracking-[0.2em] uppercase text-muted-warm hover:text-ink transition-colors duration-200">
-              <span itemProp="name">Home</span>
+            <Link href={`/${lang}`} itemProp="item" className="font-mono text-[0.5625rem] tracking-[0.2em] uppercase text-muted-warm hover:text-ink transition-colors duration-200">
+              <span itemProp="name">{dict.project_detail.breadcrumb_home}</span>
             </Link>
             <meta itemProp="position" content="1" />
           </li>
           <li className="font-mono text-[0.5625rem] text-muted-warm/40" aria-hidden="true">/</li>
           <li itemProp="itemListElement" itemScope itemType="https://schema.org/ListItem" className="flex items-center">
-            <Link href="/work" itemProp="item" className="font-mono text-[0.5625rem] tracking-[0.2em] uppercase text-muted-warm hover:text-ink transition-colors duration-200">
-              <span itemProp="name">Work</span>
+            <Link href={`/${lang}/work`} itemProp="item" className="font-mono text-[0.5625rem] tracking-[0.2em] uppercase text-muted-warm hover:text-ink transition-colors duration-200">
+              <span itemProp="name">{dict.project_detail.breadcrumb_work}</span>
             </Link>
             <meta itemProp="position" content="2" />
           </li>
@@ -166,10 +170,10 @@ export function ProjectHero({ project }: ProjectHeroProps) {
         </div>
         <div className="proj-hero-right flex flex-col gap-5 md:pl-12 md:border-l md:border-border">
           {[
-            { label: 'Client', value: project.client },
-            { label: 'Scope', value: project.services?.join(' · ') ?? project.category },
-            { label: 'Timeline', value: project.timeline ?? '—' },
-            { label: 'Year', value: project.year },
+            { label: dict.project_detail.labels.client, value: project.client },
+            { label: dict.project_detail.labels.scope, value: project.services?.join(' · ') ?? project.category },
+            { label: dict.project_detail.labels.timeline, value: project.timeline ?? '—' },
+            { label: dict.project_detail.labels.year, value: project.year },
           ].map(item => (
             <div key={item.label} className="flex flex-col gap-0.5">
               <span className="font-mono text-[0.4375rem] tracking-[0.22em] uppercase text-muted-warm/60">{item.label}</span>
@@ -204,7 +208,7 @@ export function ProjectHero({ project }: ProjectHeroProps) {
           <div className="mt-16 flex justify-center relative z-30">
             <a href={project.url} target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-3 font-mono text-[0.625rem] tracking-[0.2em] uppercase py-4 px-8 bg-white text-black hover:bg-stabilo hover:text-black transition-all duration-300 active:scale-95 shadow-xl">
-              Launch Artifact
+              {dict.project_detail.cta.launch}
               <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
                 <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -219,7 +223,7 @@ export function ProjectHero({ project }: ProjectHeroProps) {
             <p className="font-mono text-[0.5rem] tracking-[0.32em] uppercase text-off/50">Live project · {project.year}</p>
             <a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${project.title} — live website`}
               className="inline-flex items-center gap-3 font-mono text-[0.5625rem] tracking-widest uppercase py-3 px-6 border border-off/25 text-off hover:bg-off/10 transition-all duration-200 active:scale-[0.97]">
-              Visit {project.title}
+              {dict.project_detail.cta.visit} {project.title}
               <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                 <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -233,7 +237,7 @@ export function ProjectHero({ project }: ProjectHeroProps) {
             <p className={`font-aktiv-grotesk text-[clamp(2.375rem,5vw+1rem,5rem)] font-bold leading-none ${colorText[project.color]}`}>{project.title}</p>
             <a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${project.title} — live website`}
               className={`inline-flex items-center gap-3 font-mono text-[0.5625rem] tracking-widest uppercase py-3 px-6 border transition-all duration-200 active:scale-[0.97] ${liveLinkClass[project.color]}`}>
-              Visit {project.title}
+              {dict.project_detail.cta.visit} {project.title}
               <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                 <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>

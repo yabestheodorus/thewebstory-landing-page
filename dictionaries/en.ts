@@ -188,6 +188,35 @@ export const en = {
     footer_heading_2: 'its own stage.',
     footer_cta: 'Start a project',
     footer_back: '← Back home',
+  },
+  project_detail: {
+    breadcrumb_home: 'Home',
+    breadcrumb_work: 'Work',
+    labels: {
+      client: 'Client',
+      scope: 'Scope',
+      timeline: 'Timeline',
+      year: 'Year',
+      deliverables: 'Deliverables',
+      results: 'Impact & Results',
+      tech_stack: 'Tech Stack',
+      testimonial: 'The Verdict',
+      next_project: 'Next Project'
+    },
+    sections: {
+      brief: 'The Brief',
+      build: 'The Build',
+      overview: 'Overview',
+      deliverables: 'What We Shipped',
+      deliverables_desc: 'Every component we built, and the brief behind it.',
+      results: 'Impact & Results',
+      results_desc: 'The real-world outcomes and performance indicators.'
+    },
+    cta: {
+      launch: 'Launch Artifact',
+      visit: 'Visit',
+      next_cta: 'View case study'
+    }
   }
 }
 

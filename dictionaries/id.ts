@@ -177,7 +177,7 @@ export const id: Dictionary = {
     stat_industries_label: 'Industri',
     stat_launch_label: 'Rata-rata rilis',
     stat_launch_val: '3 minggu',
-    hero_desc: 'Setiap proyek di bawah ini sudah live, sepenuhnya milik thewebsitestory.id, dan dibangun untuk konversi.',
+    hero_desc: 'Setiap proyek di bawah ini sudah live, sepenuhnya milik brand-nya, dan dibangun untuk konversi.',
     scroll_cue: 'Scroll untuk eksplorasi',
     grid_featured_overline: 'Unggulan',
     grid_all_overline: 'Semua proyek',
@@ -189,6 +189,35 @@ export const id: Dictionary = {
     footer_heading_1: 'Brand Anda layak',
     footer_heading_2: 'punya panggung sendiri.',
     footer_cta: 'Mulai proyek',
-    footer_back: '← Kembali ke Beranda',
+    footer_back: '← Beranda',
+  },
+  project_detail: {
+    breadcrumb_home: 'Beranda',
+    breadcrumb_work: 'Karya',
+    labels: {
+      client: 'Klien',
+      scope: 'Cakupan',
+      timeline: 'Waktu Pengerjaan',
+      year: 'Tahun',
+      deliverables: 'Hasil Akhir',
+      results: 'Dampak & Hasil',
+      tech_stack: 'Teknologi',
+      testimonial: 'Ulasan',
+      next_project: 'Proyek Berikutnya'
+    },
+    sections: {
+      brief: 'Ringkasan Proyek',
+      build: 'Proses Pengerjaan',
+      overview: 'Tinjauan Utama',
+      deliverables: 'Hasil Pengerjaan',
+      deliverables_desc: 'Setiap komponen yang kami bangun, dan ringkasan di baliknya.',
+      results: 'Dampak & Hasil',
+      results_desc: 'Hasil nyata dan indikator performa di lapangan.'
+    },
+    cta: {
+      launch: 'Luncurkan Situs',
+      visit: 'Kunjungi',
+      next_cta: 'Lihat studi kasus'
+    }
   }
 }

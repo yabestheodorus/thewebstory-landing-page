@@ -9,11 +9,14 @@ import { accentText } from './colorMaps'
 
 gsap.registerPlugin(ScrollTrigger)
 
+import { Dictionary } from '@/dictionaries/en'
+
 interface ProjectResultsProps {
   project: Project
+  dict: Dictionary
 }
 
-export function ProjectResults({ project }: ProjectResultsProps) {
+export function ProjectResults({ project, dict }: ProjectResultsProps) {
   const containerRef = useRef<HTMLElement>(null)
   const resultRefs = useRef<(HTMLSpanElement | null)[]>([])
 
@@ -65,10 +68,12 @@ export function ProjectResults({ project }: ProjectResultsProps) {
       <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] gap-12 md:gap-24 mb-16">
         <div className="proj-sec-label flex flex-col gap-3 pt-1">
           <span className={`font-mono text-[0.5rem] tracking-[0.3em] uppercase ${accentText[project.color]}`}>04</span>
-          <h2 id="proj-results-heading" className="font-mono text-[0.5625rem] tracking-[0.2em] uppercase text-ink/45">Results</h2>
+          <h2 id="proj-results-heading" className="font-mono text-[0.5625rem] tracking-[0.2em] uppercase text-ink/45">
+            {dict.project_detail.sections.results}
+          </h2>
         </div>
         <p className="proj-sec-body font-googlea text-[0.8125rem] leading-[1.8] text-muted-warm max-w-md">
-          Measured outcomes from the first 90 days post-launch.
+          {dict.project_detail.sections.results_desc}
         </p>
       </div>
       <div className="proj-results-grid flex flex-wrap gap-16 md:gap-24 lg:gap-32">

@@ -12,20 +12,30 @@ import { ProjectTechStack } from './project/ProjectTechStack'
 import { ProjectTestimonial } from './project/ProjectTestimonial'
 import { ProjectNavigation } from './project/ProjectNavigation'
 
-export default function ProjectPage({ project }: { project: Project }) {
-  const currentIndex = projects.findIndex(p => p.id === project.id)
+import { Dictionary } from '@/dictionaries/en'
+
+export default function ProjectPage({
+  project,
+  dict,
+  lang,
+}: {
+  project: Project
+  dict: Dictionary
+  lang: string
+}) {
+  const currentIndex = projects.findIndex((p) => p.id === project.id)
   const nextProject = projects[(currentIndex + 1) % projects.length]
   const accent = accentText[project.color]
 
   return (
     <main className="bg-off text-ink min-h-screen relative overflow-x-hidden">
-      <ProjectHero project={project} />
-      <ProjectOverview project={project} />
+      <ProjectHero project={project} dict={dict} lang={lang} />
+      <ProjectOverview project={project} dict={dict} />
 
       {project.challenge && (
         <ProjectSection
           number="01"
-          title="The Brief"
+          title={dict.project_detail.sections.brief}
           headingId="proj-brief-heading"
           content={project.challenge}
           accentClass={accent}
@@ -35,7 +45,7 @@ export default function ProjectPage({ project }: { project: Project }) {
       {project.solution && (
         <ProjectSection
           number="02"
-          title="The Build"
+          title={dict.project_detail.sections.build}
           headingId="proj-build-heading"
           content={project.solution}
           accentClass={accent}
@@ -43,11 +53,11 @@ export default function ProjectPage({ project }: { project: Project }) {
         />
       )}
 
-      <ProjectDeliverables project={project} />
-      <ProjectResults project={project} />
-      <ProjectTechStack project={project} />
-      <ProjectTestimonial project={project} />
-      <ProjectNavigation nextProject={nextProject} />
+      <ProjectDeliverables project={project} dict={dict} />
+      <ProjectResults project={project} dict={dict} />
+      <ProjectTechStack project={project} dict={dict} />
+      <ProjectTestimonial project={project} dict={dict} />
+      <ProjectNavigation nextProject={nextProject} dict={dict} lang={lang} />
     </main>
   )
 }
