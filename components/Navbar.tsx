@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
+import { ThemeToggle } from './ThemeToggle'
 
 const navLinks = [
   { label: 'Work', href: '/work' },
@@ -19,7 +20,7 @@ const Navbar = () => {
             <img 
               src="/images/icon.png" 
               alt="icon" 
-              className="w-10 h-auto object-contain brightness-110" 
+              className="w-10 h-auto object-contain brightness-110 dark:invert-0 invert" 
             />
           </Link>
         </div>
@@ -32,13 +33,13 @@ const Navbar = () => {
               alt='logo' 
               width={200} 
               height={35} 
-              className='w-32 md:w-44 h-auto object-contain' 
+              className='w-32 md:w-44 h-auto object-contain dark:invert-0 invert' 
             />
           </Link>
         </div>
 
-        {/* Right: Nav links */}
-        <div className="flex-1 flex justify-end items-center">
+        {/* Right: Nav links + Theme Toggle */}
+        <div className="flex-1 flex justify-end items-center gap-6">
           <ul className="hidden md:flex gap-8 items-center list-none m-0 p-0">
             {navLinks.map((item) => (
               <li key={item.label}>
@@ -51,6 +52,7 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
+          <ThemeToggle />
         </div>
 
       </div>

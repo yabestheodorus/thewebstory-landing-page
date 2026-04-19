@@ -4,40 +4,17 @@ import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { BRANDS, fees, steps } from './statement/statementData'
+import { FeeBreakdown } from './statement/FeeBreakdown'
+import { StrategySteps } from './statement/StrategySteps'
+import { BrandMarquee } from './statement/BrandMarquee'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const BRANDS = [
-  { name: 'GoPay', logo: '/images/logos/gopay.png' },
-  { name: 'Dana', logo: '/images/logos/dana.png' },
-  { name: 'OVO', logo: '/images/logos/ovo.png' },
-  { name: 'Shopee', logo: '/images/logos/shopee.png' },
-  { name: 'BCA', logo: '/images/logos/bca.png' },
-  { name: 'Mandiri', logo: '/images/logos/mandiri.png' },
-  { name: 'BNI', logo: '/images/logos/bni.png' },
-  { name: 'QRIS', logo: '/images/logos/qris.png' },
-  { name: 'Visa', logo: '/images/logos/visa.png' },
-  { name: 'Mastercard', logo: '/images/logos/mastercard.png' },
-]
-
-const fees = [
-  { label: 'Platform Commission', value: '15%', note: 'per transaction' },
-  { label: 'Ad Performance', value: '8%', note: 'avg. spend per GMV' },
-  { label: 'Campaign Vouchers', value: '3%', note: 'avg. discount cost' },
-]
-
-const steps = [
-  { n: '01', badge: 'Acquisition', label: 'Marketplace', desc: 'Let them bring you the traffic.', accent: false },
-  { n: '02', badge: 'Retention', label: 'Your Website', desc: 'Convert them on your own terms.', accent: true },
-  { n: '03', badge: '100% Yours', label: 'Repeat Purchase', desc: '100% of revenue stays yours.', accent: false },
-]
-
 export default function StatementSection() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const marqueeRef = useRef<HTMLDivElement>(null)
 
   useGSAP(() => {
-    // Scroll-triggered text reveals
     gsap.utils.toArray<HTMLElement>('.s-reveal').forEach((el) => {
       gsap.from(el, {
         opacity: 0,
@@ -52,7 +29,6 @@ export default function StatementSection() {
       })
     })
 
-    // Counter
     const obj = { val: 0 }
     gsap.to(obj, {
       val: 20,
@@ -69,7 +45,6 @@ export default function StatementSection() {
       },
     })
 
-    // Fee cells stagger
     gsap.from('.s-fee', {
       opacity: 0,
       y: 24,
@@ -83,7 +58,6 @@ export default function StatementSection() {
       },
     })
 
-    // Step cards stagger
     gsap.from('.s-step', {
       opacity: 0,
       y: 20,
@@ -96,32 +70,15 @@ export default function StatementSection() {
         toggleActions: 'play none none reverse',
       },
     })
-
-    // Marquee
-    if (marqueeRef.current) {
-      gsap.to(marqueeRef.current, {
-        xPercent: -50,
-        repeat: -1,
-        duration: 28,
-        ease: 'none',
-      })
-    }
   }, { scope: containerRef })
 
   return (
-    <div
-      id="statement-section"
-      ref={containerRef}
-      className="relative bg-off text-ink overflow-hidden"
-    >
-      {/* Ambient glow — top center */}
+    <div id="statement-section" ref={containerRef} className="relative bg-off text-ink overflow-hidden">
+      {/* Ambient glow */}
       <div
         className="absolute pointer-events-none select-none rounded-full"
         style={{
-          width: 900,
-          height: 400,
-          top: 0,
-          left: '50%',
+          width: 900, height: 400, top: 0, left: '50%',
           transform: 'translate(-50%, -40%)',
           background: 'var(--color-stabilo)',
           filter: 'blur(160px)',
@@ -137,7 +94,6 @@ export default function StatementSection() {
           <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-ink/50">01 / 03</span>
         </div>
 
-        {/* Giant counter */}
         <div className="s-counter flex flex-col items-center gap-3 mb-10">
           <span
             className="s-counter-val font-aktiv-grotesk font-bold leading-none tracking-[-0.04em] text-stabilo"
@@ -161,27 +117,7 @@ export default function StatementSection() {
       </div>
 
       {/* ── 2. Fee breakdown ──────────────────────────────────────── */}
-      <div className="s-fees border-t border-ink/8">
-        <div className="grid grid-cols-1 md:grid-cols-3">
-          {fees.map((fee, i) => (
-            <div
-              key={fee.label}
-              className="s-fee px-8 md:px-12 py-12 flex flex-col items-center gap-3 border-b md:border-b-0 md:border-r border-ink/8 last:border-0"
-            >
-              <span className="font-mono text-[0.625rem] tracking-[0.2rem] uppercase text-ink/50">
-                {String(i + 1).padStart(2, '0')} — {fee.label}
-              </span>
-              <span
-                className="font-aktiv-grotesk font-bold leading-none tracking-[-0.03em] text-ink"
-                style={{ fontSize: 'clamp(2.75rem, 4vw + 1rem, 4rem)' }}
-              >
-                {fee.value}
-              </span>
-              <span className="font-mono text-[0.625rem] tracking-[0.14em] text-ink/40">{fee.note}</span>
-            </div>
-          ))}
-        </div>
-      </div>
+      <FeeBreakdown fees={fees} />
 
       {/* ── 3. The Strategy ───────────────────────────────────────── */}
       <div className="px-8 md:px-16 pt-24 pb-20 border-t border-ink/8">
@@ -196,38 +132,7 @@ export default function StatementSection() {
           <em className="italic font-light text-ink/45">use both.</em>
         </h2>
 
-        <div className="s-steps grid grid-cols-1 md:grid-cols-3 border border-ink/8">
-          {steps.map((step) => (
-            <div
-              key={step.n}
-              className="s-step relative px-8 py-10 flex flex-col items-center lg:items-start gap-4 border-b md:border-b-0 md:border-r border-ink/8 last:border-0 overflow-hidden"
-            >
-              {step.accent && (
-                <div
-                  className="absolute inset-0 pointer-events-none"
-                  style={{
-                    background: 'radial-gradient(ellipse 100% 100% at 50% 50%, rgba(124,92,255,0.07) 0%, transparent 75%)',
-                  }}
-                />
-              )}
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-[0.625rem] tracking-widest text-ink/50">{step.n}</span>
-                {step.accent && (
-                  <span className="font-mono text-[0.4375rem] tracking-[0.2em] uppercase px-2 py-0.5 border border-stabilo/30 text-stabilo">
-                    Key
-                  </span>
-                )}
-              </div>
-              <span className="font-mono text-[0.625rem] tracking-[0.18em] uppercase text-ink/50">{step.badge}</span>
-              <span
-                className={`font-aktiv-grotesk text-[clamp(1.25rem,1.5vw+0.5rem,1.5rem)] font-semibold leading-tight ${step.accent ? 'text-stabilo' : 'text-ink'}`}
-              >
-                {step.label}
-              </span>
-              <p className="font-googlea text-[0.8125rem] leading-[1.8] text-ink/60 mt-auto">{step.desc}</p>
-            </div>
-          ))}
-        </div>
+        <StrategySteps steps={steps} />
       </div>
 
       {/* ── 4. Trust ──────────────────────────────────────────────── */}
@@ -247,22 +152,7 @@ export default function StatementSection() {
           </p>
         </div>
 
-        {/* Logo marquee */}
-        <div className="relative overflow-hidden py-2">
-          <div className="absolute inset-y-0 left-0 w-28 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, #0D0D0D, transparent)' }} />
-          <div className="absolute inset-y-0 right-0 w-28 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, #0D0D0D, transparent)' }} />
-          <div ref={marqueeRef} className="flex w-fit items-center gap-4">
-            {[...BRANDS, ...BRANDS].map((brand, i) => (
-              <div
-                key={i}
-                className="flex items-center px-8 py-5 border border-ink/8 shrink-0 hover:border-stabilo/25 hover:bg-ink/5 transition-all duration-300"
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={brand.logo} alt={brand.name} className="h-7 w-auto opacity-40 hover:opacity-70 transition-opacity duration-300 object-contain" />
-              </div>
-            ))}
-          </div>
-        </div>
+        <BrandMarquee brands={BRANDS} />
       </div>
 
       {/* ── 5. Close ──────────────────────────────────────────────── */}
@@ -278,11 +168,7 @@ export default function StatementSection() {
         <div className="s-reveal font-aktiv-grotesk italic font-light leading-[1.05] tracking-[-0.04em]"
           style={{ fontSize: 'clamp(2.75rem, 8vw + 0.5rem, 6rem)' }}>
           Stop
-          <span
-            className=" text-ink/40 inline mx-2"
-          >
-            renting
-          </span>
+          <span className=" text-ink/40 inline mx-2">renting</span>
           them.
         </div>
         <div className="s-reveal mt-14 flex items-center gap-5">

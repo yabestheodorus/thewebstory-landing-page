@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import FloatingMenu from "@/components/reactbits/FloatingMenu";
 import SmoothScroll from "@/components/SmoothScroll";
 import { DeviceProvider } from "@/lib/context/DeviceContext";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 
 const inter = Inter({
@@ -55,16 +56,19 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      suppressHydrationWarning
       className={` ${plusJakartaSans.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="relative w-full overflow-x-hidden h-full overflow-y-auto ">
-        <DeviceProvider>
-          <SmoothScroll>
-            <Navbar />
-            <FloatingMenu />
-            {children}
-          </SmoothScroll>
-        </DeviceProvider>
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <DeviceProvider>
+            <SmoothScroll>
+              <Navbar />
+              <FloatingMenu />
+              {children}
+            </SmoothScroll>
+          </DeviceProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

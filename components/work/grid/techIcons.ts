@@ -1,0 +1,30 @@
+import {
+  SiNextdotjs,
+  SiTypescript,
+  SiTailwindcss,
+  SiVercel,
+  SiSanity,
+  SiJson,
+  SiWhatsapp,
+  SiGoogle,
+  SiGsap,
+  SiVite,
+  SiReact,
+  SiFramer,
+} from 'react-icons/si'
+
+export const TECH_ICONS: Record<string, React.ElementType> = {
+  'Next.js': SiNextdotjs,
+  'Typescript': SiTypescript,
+  'GSAP': SiGsap,
+  'ScrollTrigger': SiGsap,
+  'Tailwind CSS': SiTailwindcss,
+  'Vercel': SiVercel,
+  'Sanity CMS': SiSanity,
+  'JSON-LD': SiJson,
+  'WhatsApp API': SiWhatsapp,
+  'SEO': SiGoogle,
+  'Vite': SiVite,
+  'React': SiReact,
+  'Framer Motion': SiFramer,
+}
