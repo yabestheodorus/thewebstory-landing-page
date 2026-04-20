@@ -20,8 +20,8 @@ const Navbar = ({ lang = 'en', dict }: NavbarProps) => {
     <nav className="fixed top-0 w-full bg-off/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-ink/5 z-50">
       <div className="relative w-full py-5 px-6 md:px-10 flex justify-between items-center h-20 max-w-360 mx-auto">
 
-        {/* Left: Icon */}
-        <div className="flex-1 flex items-center">
+        {/* Left: Icon + Language Toggle */}
+        <div className="flex-1 flex items-center gap-4">
           <Link href={`/${lang}`}>
             <img
               src="/images/icon.png"
@@ -29,6 +29,7 @@ const Navbar = ({ lang = 'en', dict }: NavbarProps) => {
               className="w-8 md:w-10 h-auto object-contain brightness-110 dark:invert-0 invert"
             />
           </Link>
+          <LanguageToggle currentLang={lang} />
         </div>
 
         {/* Center: Logo — pointer-events-none on wrapper so it never blocks sibling clicks */}
@@ -59,7 +60,6 @@ const Navbar = ({ lang = 'en', dict }: NavbarProps) => {
             ))}
           </ul>
 
-          <LanguageToggle currentLang={lang} />
           <ThemeToggle />
           <MobileMenu navLinks={navLinks} />
         </div>

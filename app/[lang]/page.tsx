@@ -14,7 +14,7 @@ export default async function Home({
   const dict = await getDictionary(lang as any);
 
   return (
-    <main className="relative bg-off dark:bg-zinc-950 min-h-screen">
+    <main className="relative bg-off dark:bg-zinc-950 min-h-screen overflow-x-hidden">
       <BackgroundGlow />
       <HeroSection lang={lang} dict={dict.hero} />
       <StatementSection dict={dict.statement} />

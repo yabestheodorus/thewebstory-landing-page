@@ -26,8 +26,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
       default: lang === 'id' ? "thewebstory.id — Desain Web Premium untuk Brand Modern" : "thewebstory.id — Premium Web Design for Modern Brands",
       template: "%s | thewebstory.id"
     },
-    description: lang === 'id' 
-      ? "Membangun website premium dengan konversi tinggi untuk brand Indonesia. Spesialisasi motion UI, desain modern, dan Next.js berkinerja tinggi." 
+    description: lang === 'id'
+      ? "Membangun website premium dengan konversi tinggi untuk brand Indonesia. Spesialisasi motion UI, desain modern, dan Next.js berkinerja tinggi."
       : "Crafting premium, high-conversion websites for Indonesian brands. Specializing in motion UI, modern design, and high-performance Next.js development since 2026.",
     openGraph: {
       type: 'website',
@@ -54,7 +54,7 @@ export default async function RootLayout({
     <html
       lang={lang}
       suppressHydrationWarning
-      className={` ${plusJakartaSans.variable} ${inter.variable} h-full antialiased`}
+      className={` ${plusJakartaSans.variable} ${inter.variable} h-full antialiased `}
     >
       <body className="relative w-full overflow-x-hidden h-full overflow-y-auto ">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>

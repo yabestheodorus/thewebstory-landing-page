@@ -26,7 +26,7 @@ export default function LanguageToggle({ currentLang }: { currentLang: string })
           onClick={() => toggleLanguage(lang)}
           className={`
             relative px-3 py-1 rounded-full text-[10px] font-mono tracking-widest uppercase transition-colors duration-300
-            ${currentLang === lang ? 'text-off' : 'text-ink/60 dark:text-off/60 hover:text-ink dark:hover:text-off'}
+            ${currentLang === lang ? 'text-off dark:text-white' : 'text-ink/60 dark:text-white/50 hover:text-ink dark:hover:text-white'}
           `}
         >
           {currentLang === lang && (
