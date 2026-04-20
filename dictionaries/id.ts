@@ -8,79 +8,103 @@ export const id: Dictionary = {
     contact: 'Kontak',
   },
   hero: {
-    overline: 'Agensi Desain Web — Tangerang, Indonesia',
-    headline_p1: 'Merancang',
-    headline_p2: 'panggung digital.',
-    subheadline: 'Studio desain & engineering kami terobsesi pada motion sinematik, UX yang mendorong konversi, dan seni bercerita lewat digital.',
-    cta_primary: 'Karya Kami',
-    cta_secondary: 'Hubungi Kami',
-    meta_location: 'Berbasis di Tangerang, Indonesia. Membangun untuk dunia.',
-    ticker: 'KONVERSI TINGGI · ORIENTASI TERHADAP PERFORMA · MOTION PREMIUM · ',
-    pills: ['E-commerce', 'Corporate', 'Portfolio', 'SaaS'],
+    overline: 'Platform Design & Development — Tangerang, Indonesia',
+
+    headline_p1: 'Website kamu ',
+    headline_p2: 'harus bisa lebih.',
+
+    subheadline: 'Kita desain website high-converting yang maksimalkan tiap visitor—biar traffic kamu nggak cuma numpang lewat, tapi beneran jadi customer & cuan nyata.',
+
+    cta_primary: 'Lihat Contohnya',
+    cta_secondary: 'Bangun Website Kamu',
+
+    meta_location: 'Stay di Tangerang, Indonesia. Bangun sistem buat growth global.',
+
+    ticker: 'FOKUS KONVERSI · OPTIMASI SEO · SPEED NOMOR SATU · ',
+
+    pills: ['E-commerce', 'Bisnis', 'Portofolio', 'Booking'],
+
     stats: [
-      { val: '2026', label: 'Tren Terkini' },
       { val: '100%', label: 'Kepemilikan' },
-      { val: '0%', label: 'Biaya Marketplace' },
+      { val: '∞', label: 'Scalability' },
+      { val: '0%', label: 'Bebas Ketergantungan' },
     ],
-    rotating_texts: ['panggung.', 'rumah.', 'suara.', 'masa depan.'],
-    headline_prefix: 'Kami beri Anda',
-    what_we_build: 'Apa yang kami bangun',
-    label_drag: 'Geser slider',
-    meta_suffix_1: 'Desain — Motion — Konversi',
-    meta_suffix_2: 'Tren 2026',
-    quote: '"Brand Anda layak punya panggung sendiri."',
+
+    rotating_texts: ['mesin jualan.', 'alat konversi.', 'magnet lead.', 'pusat booking.'],
+
+    headline_prefix: 'Bikin jadi',
+
+    what_we_build: 'Dibangun buat nemenin kamu growth',
+
+    label_drag: 'Geser buat liat-liat',
+
+    meta_suffix_1: 'Tarik — Konversi — Tumbuh',
+    meta_suffix_2: 'Sistem Bukan Cuma Statis',
+
+    quote: '"Website kamu harusnya kerja buat bisnis kamu."',
   },
   statement: {
-    overline: 'Kenapa Harus Punya Website Sendiri',
-    metric_label: 'GMV Marketplace yang terpotong biaya',
-    fee_platform: 'Komisi Platform',
-    fee_ads: 'Biaya Iklan',
-    fee_vouchers: 'Voucher Kampanye',
-    heading: 'Berhenti menyewa, mulai memiliki.',
-    description: 'Setiap kunjungan langsung ke website Anda berarti 100% pendapatan masuk ke kantong Anda. Tidak ada potongan tersembunyi, tidak ada pajak marketplace, tidak ada pihak ketiga. Kami bangun fondasinya agar bisnis Anda berdiri di atas tanah sendiri.',
+    overline: 'Dampak Konversi',
+
+    metric_label: 'Rata-rata kenaikan conversion rate',
+
+    fee_platform: 'Visitor',
+    fee_ads: 'Klik',
+    fee_vouchers: 'Peluang Terbuang',
+
+    heading: 'Kebanyakan visitor cuma mampir.',
+
+    description: 'Traffic kamu udah ada. Masalahnya, mereka ngapain pas udah sampe? Kita bikin website high-converting yang nuntun mereka, ngurangin drama, dan bikin visitor beneran jadi customer.',
+
     badges: {
-      acquisition: 'Akuisisi',
-      retention: 'Retensi',
-      yours: '100% Milik Anda',
+      acquisition: 'Traffic',
+      retention: 'Lebih Banyak Customer',
+      yours: 'Lebih Banyak Visitor',
     },
+
+    trust_heading: 'Integrasi Terpercaya.',
+    trust_description: 'Kita terintegrasi dengan payment gateway dan logistik yang udah dipercaya sama customer di Indonesia.',
+
     steps: {
-      s1: 'Marketplace',
-      s1_desc: 'Pakai mereka untuk mendatangkan traffic.',
-      s2: 'Website Anda',
-      s2_desc: 'Konversi pengunjung dengan cara Anda.',
-      s3: 'Pembelian Berulang',
-      s3_desc: '100% pendapatannya, sepenuhnya milik Anda.',
+      s1: 'Traffic',
+      s1_desc: 'Orang nemu dan mampir ke situs kamu.',
+
+      s2: 'Website Kamu',
+      s2_desc: 'Arahin perhatian biar nggak langsung kabur.',
+
+      s3: 'Lebih Banyak Customer',
+      s3_desc: 'Ubah visitor jadi customer beneran.',
     }
   },
   works: {
-    overline: 'Keahlian Kami',
-    heading: 'Kami bikin website yang terasa seperti produk.',
+    overline: 'Keahlian Kita',
+    heading: 'Kita bikin website yang rasanya kayak produk.',
     services_count: 'Layanan',
     cta: 'Mulai proyek',
     labels: {
       deliverable: 'Hasil Akhir',
-      timeline: 'Waktu Pengerjaan',
+      timeline: 'Timeline',
       category: 'Kategori',
       service: 'Layanan',
     },
     services: [
       {
         id: '01',
-        title: 'Website Profil Perusahaan',
-        category: 'Kehadiran',
+        title: 'Company Profile Website',
+        category: 'Presence',
         deliverable: 'Website lengkap',
         timeline: '2–4 minggu',
-        description: 'Etalase digital premium yang menceritakan kisah brand Anda. Animasi, cepat, dan dirancang untuk membuat kesan pertama yang mengonversi pengunjung menjadi pertanyaan.',
-        keywords: ['Tentang Kami', 'Layanan', 'Kontak', 'SEO-ready'],
+        description: 'Etalase digital premium yang nyeritain brand kamu. Animasi cakep, kenceng, dan emang didesain biar visitor langsung pengen nanya-nanya.',
+        keywords: ['About', 'Services', 'Contact', 'SEO-ready'],
       },
       {
         id: '02',
-        title: 'Halaman Pendaratan Produk',
-        category: 'Peluncuran',
+        title: 'Product Landing Page',
+        category: 'Launch',
         deliverable: 'Landing page',
         timeline: '1–2 minggu',
-        description: 'Satu produk. Satu halaman. Satu tujuan — konversi. Layout berbasis motion yang dibangun untuk memamerkan apa yang Anda jual dan mendorong aksi dengan cepat.',
-        keywords: ['Hero section', 'Fokus CTA', 'Mobile-first', 'Analitik'],
+        description: 'Satu produk. Satu halaman. Satu tujuan — konversi. Layout penuh motion yang fokus buat pamerin jualanmu dan dorong orang buat gercep.',
+        keywords: ['Hero section', 'Fokus CTA', 'Mobile-first', 'Analytics'],
       },
       {
         id: '03',
@@ -88,34 +112,34 @@ export const id: Dictionary = {
         category: 'Showcase',
         deliverable: 'Situs katalog',
         timeline: '2–4 minggu',
-        description: 'Tampilkan seluruh lini produk Anda di satu tempat. Pelanggan dapat menjelajah, memfilter, dan bertanya — sangat cocok untuk brand yang belum siap untuk checkout online.',
+        description: 'Pamerin semua produk kamu di satu tempat. Customer bisa liat-liat, filter, dan langsung chat — cocok buat brand yang belum butuh checkout online.',
         keywords: ['Grid produk', 'Filter', 'Link WhatsApp', 'Formulir tanya'],
       },
       {
         id: '04',
         title: 'Toko Online',
-        category: 'Dagang',
+        category: 'Commerce',
         deliverable: 'Situs E-commerce',
         timeline: '4–8 minggu',
-        description: 'Toko Anda sendiri — bukan sekadar listing di marketplace. Keranjang belanja, checkout, dan integrasi pembayaran yang sepenuhnya Anda miliki dan kendalikan.',
-        keywords: ['Tambah ke keranjang', 'Alur checkout', 'Konfirmasi pesanan', 'Gerbang pembayaran'],
+        description: 'Toko kamu sendiri — bukan cuma numpang di marketplace. Keranjang, checkout, dan integrasi bayar yang kamu kontrol penuh.',
+        keywords: ['Add to cart', 'Alur checkout', 'Konfirmasi order', 'Payment gateway'],
       },
       {
         id: '05',
         title: 'Portofolio & Personal Brand',
-        category: 'Identitas',
+        category: 'Identity',
         deliverable: 'Situs portofolio',
         timeline: '2–3 minggu',
-        description: 'Untuk kreator, freelancer, dan founder yang butuh rumah digital. Pamerkan karya Anda, ceritakan kisah Anda, dan miliki audiens Anda sendiri.',
-        keywords: ['Studi kasus', 'Galeri', 'Siap Blog', 'Link sosial'],
+        description: 'Buat kreator, freelancer, atau founder yang butuh rumah digital. Pamerin karya, ceritain kisahmu, dan miliki audiens sendiri.',
+        keywords: ['Studi kasus', 'Galeri', 'Blog-ready', 'Social links'],
       },
       {
         id: '06',
         title: 'Integrasi Pembayaran',
         category: 'Checkout',
-        deliverable: 'Sistem pembayaran',
+        deliverable: 'Sistem bayar',
         timeline: '1–2 minggu',
-        description: 'Kami menghubungkan situs Anda ke gerbang pembayaran yang sudah dipercaya pelanggan Indonesia. Checkout terverifikasi yang terasa seaman marketplace mana pun.',
+        description: 'Kita sambungin situs kamu ke payment gateway yang udah dipercaya di Indonesia. Checkout aman yang rasanya kayak di marketplace.',
         keywords: ['GoPay', 'OVO', 'BCA', 'QRIS', 'Visa'],
         logos: [
           { name: 'GoPay', src: '/images/logos/gopay.png' },
@@ -129,67 +153,67 @@ export const id: Dictionary = {
   },
   faq: {
     hero_overline: 'FAQ',
-    hero_title: 'Ada yang ingin ditanyakan?',
-    hero_desc: 'Pertanyaan yang sering muncul soal proses kerja kami, teknologi yang dipakai, dan kenapa brand Anda perlu panggungnya sendiri.',
+    hero_title: 'Ada yang bikin bingung?',
+    hero_desc: 'Tanya-tanya soal proses, tech, atau kenapa brand kamu butuh panggung sendiri.',
     items: [
       {
-        q: 'Buat apa punya website kalau sudah jualan di marketplace?',
-        a: 'Marketplace memang bagus buat dicari orang, tapi pelanggan dan data Anda sepenuhnya milik mereka. Dengan website sendiri, Anda pegang 100% pendapatan, bangun loyalitas pelanggan secara langsung, dan tampil jauh lebih premium dibanding ribuan toko generik lainnya.'
+        q: 'Kenapa butuh website kalo udah ada marketplace?',
+        a: 'Marketplace oke buat dicari orang, tapi data sama customer-nya punya mereka. Dengan website sendiri, 100% cuan masuk ke kamu, bisa bikin loyalitas langsung, dan tampil jauh lebih premium dibanding ribuan toko biasa.'
       },
       {
-        q: 'Berapa lama proses pengerjaannya?',
-        a: 'Landing page berperforma tinggi biasanya selesai dalam 2–3 minggu. Untuk e-commerce lengkap dengan integrasi kustom, biasanya butuh 4–6 minggu tergantung kompleksitasnya.'
+        q: 'Berapa lama jadinya?',
+        a: 'Landing page kenceng biasanya 2-3 minggu. Kalo e-commerce lengkap yang banyak integrasi kustom, biasanya 4-6 minggu tergantung seberapa kompleks maunya.'
       },
       {
-        q: 'Pakai teknologi apa?',
-        a: 'Kami pakai Next.js untuk performa kencang dan SEO yang solid, GSAP untuk animasi yang sinematik, dan Tailwind CSS untuk tampilan yang bersih dan scalable. Hasilnya: website yang cepat, ringan, dan tahan lama.'
+        q: 'Pake tech apa aja?',
+        a: 'Kita pake Next.js biar ngebut dan SEO-nya mantap. Pake GSAP buat animasi sinematik dan Tailwind CSS biar stylenya kece tapi tetep ringan. Website kamu bakal awet deh!'
       },
       {
-        q: 'Kodenya jadi milik saya setelah selesai?',
-        a: 'Tentu. Beda dengan website builder berbasis langganan, Anda punya domain, aset, dan seluruh kode sumbernya. Kami percaya klien kami harus berdiri di atas platform mereka sendiri — bukan bergantung pada orang lain.'
+        q: 'Kodenya jadi milik saya?',
+        a: 'Pastinya. Beda sama builder langganan, kamu punya domain, aset, sampe kodenya. Kamu yang pegang kendali penuh platformnya.'
       },
       {
-        q: 'SEO sudah termasuk?',
-        a: 'Ya, dari awal. Performa tinggi dan SEO teknis sudah jadi bagian dari fondasi kami. Mulai dari load time yang cepat, struktur semantik yang benar, sampai metadata yang dioptimalkan — semua dirancang agar brand Anda punya peluang terbaik tampil di Google.'
+        q: 'SEO udah termasuk?',
+        a: 'Yup, dari awal. Performa kenceng sama SEO teknis udah jadi standar kita. Dari load time sampe metadata, kita setting biar brand kamu gampang nemu di Google.'
       }
     ]
   },
   cta: {
-    heading: 'Siap punya cerita sendiri?',
-    subheading: 'Ceritakan proyek Anda, atau sekadar sapa dulu juga boleh.',
+    heading: 'Siap ubah visitor jadi pelanggan?',
+    subheading: 'Ceritain proyek kamu, atau mau sapa doang juga boleh.',
     form: {
-      name: 'Nama Anda',
-      contact: 'Kontak Anda (WA/Email)',
-      type: 'Jenis Proyek',
-      message: 'Ceritakan kisah Anda...',
+      name: 'Nama Kamu',
+      contact: 'Kontak (WA/Email)',
+      type: 'Tipe Proyek',
+      message: 'Ceritain dikit ceritanya...',
       send_wa: 'Kirim via WhatsApp',
-      send_email: 'Kirim via Email',
+      send_email: 'Email aja',
     },
-    location: 'Berbasis di Tangerang, Indonesia',
+    location: 'Stay di Tangerang, Indonesia',
   },
   work: {
     hero_overline: 'Karya Terpilih',
     hero_year_range: '2024 – 2026',
     hero_headline_1: 'Karya yang',
-    hero_headline_2: 'bercerita',
-    hero_headline_3: 'sendiri.',
+    hero_headline_2: 'ceritain',
+    hero_headline_3: 'dirinya sendiri.',
     stat_projects_label: 'Proyek live',
     stat_industries_label: 'Industri',
     stat_launch_label: 'Rata-rata rilis',
     stat_launch_val: '3 minggu',
-    hero_desc: 'Setiap proyek di bawah ini sudah live, sepenuhnya milik brand-nya, dan dibangun untuk konversi.',
-    scroll_cue: 'Scroll untuk eksplorasi',
+    hero_desc: 'Semua proyek di bawah udah live, punya brand-nya masing-masing, dan emang dibangun buat konversi.',
+    scroll_cue: 'Scroll ke bawah',
     grid_featured_overline: 'Unggulan',
-    grid_all_overline: 'Semua proyek',
+    grid_all_overline: 'Semua Proyek',
     grid_projects_suffix: 'proyek',
     grid_head_project: 'Proyek',
     grid_head_category: 'Kategori',
     grid_head_year: 'Tahun',
-    footer_overline: 'Mulai proyek Anda',
-    footer_heading_1: 'Brand Anda layak',
+    footer_overline: 'Mulai proyekmu',
+    footer_heading_1: 'Brand kamu layak',
     footer_heading_2: 'punya panggung sendiri.',
     footer_cta: 'Mulai proyek',
-    footer_back: '← Beranda',
+    footer_back: '← Balik ke Beranda',
   },
   project_detail: {
     breadcrumb_home: 'Beranda',
@@ -197,22 +221,22 @@ export const id: Dictionary = {
     labels: {
       client: 'Klien',
       scope: 'Cakupan',
-      timeline: 'Waktu Pengerjaan',
+      timeline: 'Timeline',
       year: 'Tahun',
       deliverables: 'Hasil Akhir',
       results: 'Dampak & Hasil',
       tech_stack: 'Teknologi',
-      testimonial: 'Ulasan',
-      next_project: 'Proyek Berikutnya'
+      testimonial: 'Kata Mereka',
+      next_project: 'Proyek Selanjutnya'
     },
     sections: {
-      brief: 'Ringkasan Proyek',
-      build: 'Proses Pengerjaan',
-      overview: 'Tinjauan Utama',
-      deliverables: 'Hasil Pengerjaan',
-      deliverables_desc: 'Setiap komponen yang kami bangun, dan ringkasan di baliknya.',
+      brief: 'The Brief',
+      build: 'The Build',
+      overview: 'Overview',
+      deliverables: 'Apa yang Kita Kirim',
+      deliverables_desc: 'Tiap komponen yang kita bangun dan alasan di baliknya.',
       results: 'Dampak & Hasil',
-      results_desc: 'Hasil nyata dan indikator performa di lapangan.'
+      results_desc: 'Hasil nyata dan performa di lapangan.'
     },
     cta: {
       launch: 'Luncurkan Situs',

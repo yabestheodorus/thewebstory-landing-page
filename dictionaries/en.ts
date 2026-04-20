@@ -6,48 +6,72 @@ export const en = {
     contact: 'Contact',
   },
   hero: {
-    overline: 'Web Design Agency — Tangerang, Indonesia',
-    headline_p1: 'Engineering the',
-    headline_p2: 'digital stage.',
-    subheadline: 'We are a boutique design and engineering studio obsessed with high-fidelity motion, conversion-centric UX, and the art of digital storytelling.',
-    cta_primary: 'Our Works',
-    cta_secondary: 'Get in touch',
-    meta_location: 'Based in Tangerang, Indonesia. Building for the world.',
-    ticker: 'HIGH CONVERSION · PERFORMANCE DRIVEN · PREMIUM MOTION · ',
-    pills: ['E-commerce', 'Corporate', 'Portfolio', 'SaaS'],
+    overline: 'Platform Design & Development — Tangerang, Indonesia',
+
+    headline_p1: 'Your website should ',
+    headline_p2: 'do more.',
+
+    subheadline: 'We design high-converting websites that maximize every visitor—so more of your traffic turns into customers, clients, and real business outcomes.',
+
+    cta_primary: 'Build Your Websites',
+    cta_secondary: 'See How It Works',
+
+    meta_location: 'Based in Tangerang, Indonesia. Building systems for global growth.',
+
+    ticker: 'CONVERSION FOCUSED · SEO OPTIMIZED · PERFORMANCE FIRST · ',
+
+    pills: ['E-commerce', 'Business', 'Portfolio', 'Booking'],
+
     stats: [
-      { val: '2026', label: 'Trend Ready' },
       { val: '100%', label: 'Ownership' },
-      { val: '0%', label: 'Marketplace Fees' },
+      { val: '∞', label: 'Scalability' },
+      { val: '0%', label: 'Platform Dependency' },
     ],
-    rotating_texts: ['stage.', 'home.', 'voice.', 'future.'],
-    headline_prefix: 'We give yours a',
-    what_we_build: 'What we build',
-    label_drag: 'Drag the slider',
-    meta_suffix_1: 'Design — Motion — Conversion',
-    meta_suffix_2: '2026 Trend Forward',
-    quote: '"Your brand deserves its own stage."',
+
+    rotating_texts: ['sell.', 'convert.', 'capture.', 'book.'],
+
+    headline_prefix: 'It should',
+
+    what_we_build: 'Built for how you grow',
+
+    label_drag: 'Drag to explore',
+
+    meta_suffix_1: 'Capture — Convert — Grow',
+    meta_suffix_2: 'System Over Static',
+
+    quote: '"Your website should work for your business."',
   },
   statement: {
-    overline: 'Strategic Thesis',
-    metric_label: 'Marketplace GMV lost to fees',
-    fee_platform: 'Platform Commission',
-    fee_ads: 'Ad Performance',
-    fee_vouchers: 'Campaign Vouchers',
-    heading: 'Stop renting, start owning.',
-    description: 'Every direct visit to your website is 100% of your revenue. No hidden fees, no marketplace tax, no middleman. We build the architecture for your platform sovereignty.',
+    overline: 'Conversion Impact',
+
+    metric_label: 'Average increase in conversion rate',
+
+    fee_platform: 'Visitors',
+    fee_ads: 'Clicks',
+    fee_vouchers: 'Lost Opportunities',
+
+    heading: 'Most visitors don’t convert.',
+
+    description: 'You are already getting traffic. The opportunity is in what happens when they land. We design high-converting websites that guide, reduce friction, and turn more of your visitors into actual customers.',
+
     badges: {
-      acquisition: 'Acquisition',
-      retention: 'Retention',
-      yours: '100% Yours',
+      acquisition: 'Traffic',
+      retention: 'More Customers',
+      yours: 'More Visitors',
     },
+
+    trust_heading: 'Reliable Integrations.',
+    trust_description: 'We integrate with payment gateways and logistics providers that Indonesian customers already know and trust.',
+
     steps: {
-      s1: 'Marketplace',
-      s1_desc: 'Let them bring you the traffic.',
+      s1: 'Traffic',
+      s1_desc: 'People discover and visit your site.',
+
       s2: 'Your Website',
-      s2_desc: 'Convert them on your own terms.',
-      s3: 'Repeat Purchase',
-      s3_desc: '100% of revenue stays yours.',
+      s2_desc: 'Guide attention and reduce drop-off.',
+
+      s3: 'More Customers',
+      s3_desc: 'Turn more visitors into customers.',
     }
   },
   works: {
@@ -153,7 +177,7 @@ export const en = {
     ]
   },
   cta: {
-    heading: 'Ready to build your stage?',
+    heading: 'Ready to turn more visitors into customers?',
     subheading: 'Tell us about your project or just say hi.',
     form: {
       name: 'Your Name',
@@ -161,7 +185,7 @@ export const en = {
       type: 'Project Type',
       message: 'Tell us about your story...',
       send_wa: 'Send via WhatsApp',
-    send_email: 'Email instead',
+      send_email: 'Email instead',
     },
     location: 'Based in Tangerang, Indonesia',
   },

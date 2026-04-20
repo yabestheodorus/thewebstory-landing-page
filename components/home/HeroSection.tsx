@@ -20,13 +20,19 @@ export default function HeroSection({ lang, dict }: { lang: string, dict: Dictio
   useGSAP(() => {
     const ease = 'cubic-bezier(0.23, 1, 0.32, 1)'
 
-    // Split the headline into words for a premium reveal
+    const isDesktop = window.innerWidth >= 1024
     const split = new SplitText('.h-headline', { type: 'lines,words' })
+    const masks: HTMLDivElement[] = []
+
     split.lines.forEach(line => {
       const mask = document.createElement('div')
       mask.style.overflow = 'hidden'
+      mask.style.width = '100%'
+      mask.style.textAlign = isDesktop ? 'left' : 'center'
+      ;(line as HTMLElement).style.width = '100%'
       line.parentNode?.insertBefore(mask, line)
       mask.appendChild(line)
+      masks.push(mask)
     })
 
     const tl = gsap.timeline({ defaults: { ease } })
@@ -47,6 +53,16 @@ export default function HeroSection({ lang, dict }: { lang: string, dict: Dictio
       .from('.h-stats', { y: 40, opacity: 0, duration: 0.9, stagger: 0.1 }, '-=0.7')
       .from('.h-meta', { opacity: 0, duration: 0.6 }, '-=0.3')
 
+    return () => {
+      // Move lines back to their original parent before SplitText.revert()
+      masks.forEach(mask => {
+        const parent = mask.parentNode
+        if (!parent) return
+        while (mask.firstChild) parent.insertBefore(mask.firstChild, mask)
+        parent.removeChild(mask)
+      })
+      split.revert()
+    }
   }, { scope: containerRef })
 
   return (
@@ -74,7 +90,7 @@ export default function HeroSection({ lang, dict }: { lang: string, dict: Dictio
 
         {/* Left content */}
         <div className="pt-10 px-6 pb-12 md:p-10 lg:p-12 xl:pt-12 xl:pr-12 xl:pb-10 xl:pl-10 flex flex-col justify-between min-w-0">
-          <div className="flex flex-col justify-center items-center lg:items-start h-full relative">
+          <div className="flex flex-col justify-center items-center lg:items-start w-full h-full relative">
             {/* Overline */}
             <div className="h-overline flex items-center gap-2.5 mb-8">
               <div className="w-7 h-px bg-muted-warm" />
@@ -84,8 +100,10 @@ export default function HeroSection({ lang, dict }: { lang: string, dict: Dictio
             </div>
 
             {/* Headline */}
-            <h1 className="h-headline font-aktiv-grotesk text-[clamp(2.25rem,6vw+0.5rem,3.875rem)] font-bold leading-[1.1] md:leading-none tracking-[-0.02em] text-ink mb-7 text-center lg:text-left mt-36 lg:mt-0">
-              {dict.headline_p1} <span className="text-muted-warm">{dict.headline_p2}</span>
+            <h1 className="h-headline w-full font-aktiv-grotesk text-[clamp(2.25rem,6vw+0.5rem,3.875rem)] font-bold leading-[1.1] md:leading-none tracking-[-0.02em] text-ink mb-7  text-center lg:text-left mt-16 lg:mt-0">
+              {dict.headline_p1}
+              <br />
+              <span className="text-muted-warm ">{dict.headline_p2}</span>
               <br />
               {dict.headline_prefix}{' '}
               <RotatingText
@@ -106,7 +124,7 @@ export default function HeroSection({ lang, dict }: { lang: string, dict: Dictio
             </h1>
 
             {/* Body copy */}
-            <p className="h-body font-google text-sm leading-[1.75] text-muted-warm max-w-[480px] lg:max-w-[420px] mb-10 mt-6 lg:mt-0 text-center lg:text-left ">
+            <p className="h-body font-google text-sm leading-[1.75] text-muted-warm max-w-[480px] lg:max-w-[420px] mb-26 lg:mb-10 mt-6 lg:mt-0 text-center lg:text-left ">
               {dict.subheadline}
             </p>
 

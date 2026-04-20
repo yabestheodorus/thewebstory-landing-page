@@ -82,7 +82,7 @@ export default function CTASection({ dict, lang }: { dict: Dictionary['cta'], la
             <h2 className="font-aktiv-grotesk text-[clamp(2.625rem,4vw+1rem,3.875rem)] font-bold leading-[1.0] tracking-[-0.025em] mb-8">
               {dict.heading.split(' ').map((word, i, arr) => {
                 const lower = word.toLowerCase();
-                const isKey = lower.includes('stage') || lower.includes('panggung') || lower.includes('story') || lower.includes('cerita');
+                const isKey = lower.includes('visitors') || lower.includes('pengunjung') || lower.includes('pelanggan?');
                 return (
                   <span key={i} className={isKey ? 'text-stabilo font-inter' : ''}>
                     {word}{i < arr.length - 1 ? ' ' : ''}

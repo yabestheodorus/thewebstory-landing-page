@@ -144,10 +144,11 @@ export default function StatementSection({ dict }: { dict: Dictionary['statement
             <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-ink/50">03 / 03</span>
           </div>
           <h2 className="s-reveal font-aktiv-grotesk text-[clamp(2rem,4vw+0.5rem,3.5rem)] font-bold leading-none tracking-[-0.03em] text-ink mb-5">
-            Reliable <em className="italic font-light text-ink/45">Integrations.</em>
+            {dict.trust_heading.split(' ').slice(0, -1).join(' ')}{' '}
+            <em className="italic font-light text-ink/45">{dict.trust_heading.split(' ').slice(-1).join(' ')}</em>
           </h2>
           <p className="s-reveal font-googlea text-[clamp(0.875rem,1vw+0.4rem,1rem)] leading-[1.85] text-ink/65 max-w-lg">
-            We integrate with payment gateways and logistics providers that Indonesian customers already know and trust.
+            {dict.trust_description}
           </p>
         </div>
 
@@ -155,21 +156,15 @@ export default function StatementSection({ dict }: { dict: Dictionary['statement
       </div>
 
       {/* ── 5. Close ──────────────────────────────────────────────── */}
-      <div className="px-8 md:px-16 py-28 border-t border-ink/8 flex flex-col items-center text-center">
-        <div className="s-reveal">
-          <span
-            className="font-aktiv-grotesk font-bold leading-[1.05] tracking-[-0.04em] text-ink"
-            style={{ fontSize: 'clamp(2.75rem, 8vw + 0.5rem, 6rem)' }}
-          >
-            <span className="text-stabilo font-inter">{dict.badges.yours.split(' ')[0]}</span>{' '}
-            {dict.badges.yours.split(' ').slice(1).join(' ')}
-          </span>
-          <span className="font-aktiv-grotesk font-bold leading-[1.05] tracking-[-0.04em] text-ink" style={{ fontSize: 'clamp(2.75rem, 8vw + 0.5rem, 6rem)' }}>.</span>
-        </div>
-        <div className="s-reveal font-aktiv-grotesk italic font-light leading-[1.05] tracking-[-0.04em] text-ink/30"
-          style={{ fontSize: 'clamp(2.75rem, 8vw + 0.5rem, 6rem)' }}>
-          {dict.steps.s3}
-        </div>
+      <div className="px-8 md:px-16 py-28 border-t border-ink/8 flex flex-col items-start lg:items-center">
+        <p className="s-reveal font-aktiv-grotesk font-bold leading-[1.05] tracking-[-0.04em] text-ink text-[clamp(2rem,8vw+0.5rem,5rem)] w-full text-left lg:text-center lg:-translate-x-12">
+          {dict.badges.yours.split(' ').slice(0, -1).join(' ')}{' '}
+          <span className="text-stabilo">{dict.badges.yours.split(' ').slice(-1).join(' ')}</span>.
+        </p>
+        <p className="s-reveal font-aktiv-grotesk italic font-light leading-[1.05] tracking-[-0.04em] text-ink/30 text-[clamp(1.5rem,4vw+0.5rem,3.25rem)] w-full text-left lg:text-center lg:translate-x-12">
+          {dict.steps.s3.split(' ').slice(0, -1).join(' ')}{' '}
+          <span className="text-stabilo">{dict.steps.s3.split(' ').slice(-1).join(' ')}</span>
+        </p>
         <div className="s-reveal mt-14 flex items-center gap-5">
           <div className="w-10 h-px bg-stabilo/60" />
           <span className="font-mono text-[0.625rem] tracking-[0.3em] uppercase text-stabilo/70">
