@@ -19,49 +19,60 @@ export default function HeroSection({ lang, dict }: { lang: string, dict: Dictio
 
   useGSAP(() => {
     const ease = 'cubic-bezier(0.23, 1, 0.32, 1)'
-
     const isDesktop = window.innerWidth >= 1024
-    const split = new SplitText('.h-headline', { type: 'lines,words' })
-    const masks: HTMLDivElement[] = []
+    const tl = gsap.timeline({ defaults: { ease, force3D: true } })
 
-    split.lines.forEach(line => {
-      const mask = document.createElement('div')
-      mask.style.overflow = 'hidden'
-      mask.style.width = '100%'
-      mask.style.textAlign = isDesktop ? 'left' : 'center'
-      ;(line as HTMLElement).style.width = '100%'
-      line.parentNode?.insertBefore(mask, line)
-      mask.appendChild(line)
-      masks.push(mask)
-    })
+    if (isDesktop) {
+      // Full split-text word reveal — desktop only
+      const split = new SplitText('.h-headline', { type: 'lines,words' })
+      const masks: HTMLDivElement[] = []
 
-    const tl = gsap.timeline({ defaults: { ease } })
-
-    tl.from('.h-ticker', { y: -40, opacity: 0, duration: 0.8 })
-      .from('.h-side', { x: -20, opacity: 0, duration: 0.8 }, '-=0.6')
-      .from('.h-overline', { y: 14, opacity: 0, duration: 0.65 }, '-=0.5')
-      .from(split.words, {
-        y: '100%',
-        opacity: 0,
-        duration: 0.9,
-        stagger: 0.035,
-        ease: 'power3.out'
-      }, '-=0.4')
-      .from('.h-body', { y: 20, opacity: 0, duration: 0.8 }, '-=0.6')
-      .from('.h-cta', { y: 15, opacity: 0, duration: 0.75, stagger: 0.12 }, '-=0.5')
-      .from('.h-right', { x: 40, opacity: 0, duration: 1.2, ease: 'expo.out' }, '-=1.2')
-      .from('.h-stats', { y: 40, opacity: 0, duration: 0.9, stagger: 0.1 }, '-=0.7')
-      .from('.h-meta', { opacity: 0, duration: 0.6 }, '-=0.3')
-
-    return () => {
-      // Move lines back to their original parent before SplitText.revert()
-      masks.forEach(mask => {
-        const parent = mask.parentNode
-        if (!parent) return
-        while (mask.firstChild) parent.insertBefore(mask.firstChild, mask)
-        parent.removeChild(mask)
+      split.lines.forEach(line => {
+        const mask = document.createElement('div')
+        mask.style.overflow = 'hidden'
+        mask.style.width = '100%'
+        mask.style.textAlign = 'left'
+        ;(line as HTMLElement).style.width = '100%'
+        line.parentNode?.insertBefore(mask, line)
+        mask.appendChild(line)
+        masks.push(mask)
       })
-      split.revert()
+
+      tl.from('.h-ticker', { y: -40, opacity: 0, duration: 0.8 })
+        .from('.h-side', { x: -20, opacity: 0, duration: 0.8 }, '-=0.6')
+        .from('.h-overline', { y: 14, opacity: 0, duration: 0.65 }, '-=0.5')
+        .from(split.words, {
+          y: '100%',
+          opacity: 0,
+          duration: 0.9,
+          stagger: 0.035,
+          ease: 'power3.out',
+        }, '-=0.4')
+        .from('.h-body', { y: 20, opacity: 0, duration: 0.8 }, '-=0.6')
+        .from('.h-cta', { y: 15, opacity: 0, duration: 0.75, stagger: 0.12 }, '-=0.5')
+        .from('.h-right', { x: 40, opacity: 0, duration: 1.2, ease: 'expo.out' }, '-=1.2')
+        .from('.h-stats', { y: 40, opacity: 0, duration: 0.9, stagger: 0.1 }, '-=0.7')
+        .from('.h-meta', { opacity: 0, duration: 0.6 }, '-=0.3')
+
+      return () => {
+        masks.forEach(mask => {
+          const parent = mask.parentNode
+          if (!parent) return
+          while (mask.firstChild) parent.insertBefore(mask.firstChild, mask)
+          parent.removeChild(mask)
+        })
+        split.revert()
+      }
+    } else {
+      // Lightweight mobile animation — no SplitText, fewer tweens
+      tl.from('.h-ticker', { y: -20, opacity: 0, duration: 0.5 })
+        .from('.h-overline', { y: 10, opacity: 0, duration: 0.45 }, '-=0.25')
+        .from('.h-headline', { y: 24, opacity: 0, duration: 0.55 }, '-=0.25')
+        .from('.h-body', { y: 16, opacity: 0, duration: 0.45 }, '-=0.25')
+        .from('.h-cta', { y: 12, opacity: 0, duration: 0.4, stagger: 0.1 }, '-=0.2')
+        .from('.h-right', { opacity: 0, duration: 0.5 }, '-=0.3')
+        .from('.h-stats', { y: 20, opacity: 0, duration: 0.45 }, '-=0.2')
+        .from('.h-meta', { opacity: 0, duration: 0.35 }, '-=0.15')
     }
   }, { scope: containerRef })
 
@@ -158,7 +169,7 @@ export default function HeroSection({ lang, dict }: { lang: string, dict: Dictio
         <div className="h-right relative flex flex-col justify-between bg-off pb-10 xl:pb-0 overflow-hidden">
 
           <div className="absolute top-0 left-0 w-full h-full">
-            <DotField
+            {!isMobile && <DotField
               dotRadius={2.5}
               dotSpacing={20}
               cursorRadius={350}
@@ -171,7 +182,7 @@ export default function HeroSection({ lang, dict }: { lang: string, dict: Dictio
               gradientFrom="rgba(8, 7, 10, 0.12)"
               gradientTo="rgba(8, 7, 10, 0.05)"
               glowColor="rgba(0,0,0,0)"
-            />
+            />}
           </div>
 
           {/* Label */}
