@@ -4,38 +4,34 @@ import { ReactLenis, useLenis } from 'lenis/react'
 import gsap from 'gsap'
 import { useEffect } from 'react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useDevice } from '@/lib/context/DeviceContext'
 
 function LenisSync() {
-  useLenis((lenis) => {
-    ScrollTrigger.update();
-  });
+  useLenis(() => {
+    ScrollTrigger.update()
+  })
 
   useEffect(() => {
-    // Add Lenis to GSAP ticker
-    function update(time: number) {
-      // Lenis handles its own RAF by default in ReactLenis
-      // but we can sync with GSAP's ticker if we want precise alignment.
-      // However, for most use cases, useLenis call with ScrollTrigger.update is enough.
-    }
-    
-    // We can also do the manual RAF sync here if desired
-    // but the useLenis hook above handles the core ScrollTrigger sync.
-    gsap.ticker.lagSmoothing(0);
-  }, []);
+    gsap.ticker.lagSmoothing(500, 33)
+  }, [])
 
-  return null;
+  return null
 }
 
 export default function SmoothScroll({ children }: { children: React.ReactNode }) {
+  const { isMobile } = useDevice()
+
+  // On mobile, native scroll is hardware-accelerated — Lenis only adds JS overhead
+  if (isMobile) return <>{children}</>
+
   return (
-    <ReactLenis 
-      root 
-      options={{ 
-        lerp: 0.05, 
-        duration: 1.5, 
+    <ReactLenis
+      root
+      options={{
+        lerp: 0.05,
+        duration: 1.5,
         smoothWheel: true,
         wheelMultiplier: 1,
-        touchMultiplier: 2,
         infinite: false,
       }}
     >
