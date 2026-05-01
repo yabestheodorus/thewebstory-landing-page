@@ -5,6 +5,7 @@ import { useGSAP } from '@gsap/react'
 import { gsap, SplitText } from '@/lib/gsap'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useDevice } from '@/lib/context/DeviceContext'
 import type { Project } from '../projects'
 import {
   accentText,

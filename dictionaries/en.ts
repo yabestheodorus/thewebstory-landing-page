@@ -1,6 +1,7 @@
 export const en = {
   nav: {
     work: 'Work',
+    approach: 'Approach',
     services: 'Services',
     faq: 'FAQ',
     contact: 'Contact',
@@ -241,6 +242,58 @@ export const en = {
       visit: 'Visit',
       next_cta: 'View case study'
     }
+  },
+  approach: {
+    hero_overline: 'Our Process',
+    hero_title: 'How we turn ideas into impact.',
+    hero_desc: 'We follow a structured yet fluid path to transform your vision into a high-performance digital reality. From the first spark to the final launch, clarity and craft are our guides.',
+    
+    steps: [
+      {
+        id: '01',
+        title: 'Discover & Strategize',
+        desc: 'Every project starts with a deep dive. We ask the hard questions to understand your business, your audience, and the goals that matter most. We don\'t just build websites; we build solutions.',
+        items: ['Business Analysis', 'Audience Research', 'Strategic Mapping', 'Goal Definition']
+      },
+      {
+        id: '02',
+        title: 'Design & Prototype',
+        desc: 'We map out the user journey and craft a visual language that resonates. Interactive prototypes allow you to feel the experience before a single line of code is written.',
+        items: ['User Flow Design', 'Visual Identity', 'High-Fidelity Prototyping', 'User Experience (UX)']
+      },
+      {
+        id: '03',
+        title: 'Engineer & Refine',
+        desc: 'Our development process is rooted in modern standards. We build with speed, scalability, and precision, ensuring a rock-solid foundation for your brand.',
+        items: ['Next.js Development', 'Motion Engineering', 'Performance Tuning', 'Technical SEO']
+      },
+      {
+        id: '04',
+        title: 'Launch & Evolve',
+        desc: 'Launch is just the beginning. We ensure a smooth transition to live and provide the insights needed to keep your platform growing and converting.',
+        items: ['Launch Management', 'Analytics Integration', 'Post-Launch Support', 'Iterative Growth']
+      }
+    ],
+
+    principles_title: 'Principles we live by',
+    principles: [
+      {
+        title: 'Strategy First',
+        desc: "We don't touch a pixel until we know the 'why'. Every design decision must serve a strategic purpose."
+      },
+      {
+        title: 'Uncompromising Craft',
+        desc: 'We obsess over the details—typography, white space, and performance. The quality is in the margins.'
+      },
+      {
+        title: 'Radical Transparency',
+        desc: 'We work as partners, not vendors. Honest feedback and clear communication are our defaults.'
+      },
+      {
+        title: 'Future Proof',
+        desc: 'We build systems that last. Our architecture is designed to scale as your business grows.'
+      }
+    ]
   }
 }
 

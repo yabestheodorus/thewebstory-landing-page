@@ -12,6 +12,7 @@ interface NavbarProps {
 const Navbar = ({ lang = 'en', dict }: NavbarProps) => {
   const navLinks = [
     { label: dict?.nav.work || 'Work', href: `/${lang}/work` },
+    { label: dict?.nav.approach || 'Approach', href: `/${lang}/approach` },
     { label: dict?.nav.services || 'Services', href: `/${lang}/#works-section` },
     { label: dict?.nav.faq || 'FAQ', href: `/${lang}/faq` },
   ]

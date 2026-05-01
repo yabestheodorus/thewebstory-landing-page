@@ -3,6 +3,7 @@ import { Dictionary } from './en'
 export const id: Dictionary = {
   nav: {
     work: 'Karya',
+    approach: 'Pendekatan',
     services: 'Layanan',
     faq: 'FAQ',
     contact: 'Kontak',
@@ -243,5 +244,57 @@ export const id: Dictionary = {
       visit: 'Kunjungi',
       next_cta: 'Lihat studi kasus'
     }
+  },
+  approach: {
+    hero_overline: 'Proses Kami',
+    hero_title: 'Cara kami mengubah ide jadi nyata.',
+    hero_desc: 'Kami punya alur yang terstruktur tapi tetap fleksibel buat bikin visi kamu jadi platform digital yang kenceng. Dari obrolan pertama sampe rilis, fokus kami cuma satu: hasil nyata.',
+    
+    steps: [
+      {
+        id: '01',
+        title: 'Discovery & Strategi',
+        desc: 'Tiap proyek mulai dengan riset mendalam. Kami tanya hal-hal kritis buat ngerti bisnis kamu, audiens kamu, dan goals yang mau dicapai. Kami nggak cuma bikin web, kami bangun solusi.',
+        items: ['Analisis Bisnis', 'Riset Audiens', 'Mapping Strategis', 'Definisi Goal']
+      },
+      {
+        id: '02',
+        title: 'Desain & Prototipe',
+        desc: 'Kami susun alur user dan bikin identitas visual yang pas. Dengan prototipe interaktif, kamu bisa ngerasain pengalamannya bahkan sebelum kodenya ditulis.',
+        items: ['Desain User Flow', 'Identitas Visual', 'High-Fidelity Prototyping', 'User Experience (UX)']
+      },
+      {
+        id: '03',
+        title: 'Engineering & Refinement',
+        desc: 'Proses development kami pake standar modern. Kami bangun dengan fokus di kecepatan, skalabilitas, dan presisi buat pondasi brand kamu.',
+        items: ['Next.js Development', 'Motion Engineering', 'Optimasi Performa', 'SEO Teknis']
+      },
+      {
+        id: '04',
+        title: 'Luncurkan & Tumbuh',
+        desc: 'Rilis itu baru awal. Kami pastikan transisinya mulus dan kasih insight yang dibutuhin biar platform kamu terus berkembang dan ngasilin.',
+        items: ['Manajemen Rilis', 'Integrasi Analytics', 'Support Pasca-Rilis', 'Growth Iteratif']
+      }
+    ],
+
+    principles_title: 'Prinsip yang kami pegang',
+    principles: [
+      {
+        title: 'Strategi Duluan',
+        desc: 'Kami nggak bakal sentuh pixel sebelum tau alasannya. Tiap keputusan desain harus punya tujuan strategis.'
+      },
+      {
+        title: 'Detail Tanpa Kompromi',
+        desc: 'Kami obsesif soal tipografi, ruang kosong, dan kecepatan. Kualitas itu ada di detail-detail kecil.'
+      },
+      {
+        title: 'Transparansi Penuh',
+        desc: 'Kami kerja bareng sebagai partner. Feedback jujur dan komunikasi jelas adalah standar kami.'
+      },
+      {
+        title: 'Siap Buat Masa Depan',
+        desc: 'Kami bangun sistem yang awet. Arsitektur kami didesain buat bisa scale seiring bisnis kamu tumbuh.'
+      }
+    ]
   }
 }
