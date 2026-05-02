@@ -58,7 +58,7 @@ export default function WorkFooter({ dict, lang }: { dict: Dictionary['work']; l
         <h2 className="work-footer-heading font-aktiv-grotesk text-[clamp(2.25rem,3vw+1rem,3.25rem)] font-bold leading-[1.0] tracking-[-0.025em]">
           {dict.footer_heading_1}
           <br />
-          <em className="italic font-light text-ink/30">{dict.footer_heading_2}</em>
+          <em className="italic font-light text-ink/60">{dict.footer_heading_2}</em>
         </h2>
       </div>
 

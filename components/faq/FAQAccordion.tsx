@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState, useRef } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'motion/react'
 import { Plus } from 'lucide-react'
 import { useGSAP } from '@gsap/react'
 import { gsap } from '@/lib/gsap'
@@ -104,7 +104,7 @@ export default function FAQAccordion({ items }: { items: FAQItem[] }) {
               className="w-full px-8 py-6 flex items-start justify-between gap-6 text-left"
             >
               <div className="flex gap-5 items-start">
-                <span className="font-mono text-[0.575rem] tracking-widest text-stabilo/55 pt-0.75 tabular-nums leading-none select-none shrink-0">
+                <span className="font-mono text-[0.575rem] tracking-widest text-stabilo-soft/55 pt-0.75 tabular-nums leading-none select-none shrink-0">
                   {String(index + 1).padStart(2, '0')}
                 </span>
                 <span className="font-aktiv-grotesk text-[1.0625rem] font-semibold text-ink tracking-tight leading-snug">
@@ -139,8 +139,8 @@ export default function FAQAccordion({ items }: { items: FAQItem[] }) {
                   className="overflow-hidden"
                 >
                   <div className="px-8 pb-7 pt-0 pl-20">
-                    <div className="h-px bg-stabilo/10 mb-5" />
-                    <p className="font-googlea text-[0.9375rem] text-ink/65 leading-relaxed max-w-2xl">
+                    <div className="h-px bg-stabilo-soft/10 mb-5" />
+                    <p className="font-google text-[0.9375rem] text-ink/65 leading-relaxed max-w-2xl">
                       <HighlightedText text={item.a} />
                     </p>
                   </div>

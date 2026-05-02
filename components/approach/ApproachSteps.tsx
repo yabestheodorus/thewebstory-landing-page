@@ -75,17 +75,17 @@ export default function ApproachSteps({ steps }: ApproachStepsProps) {
         </div>
 
         <div>
-          {steps.map((step, index) => (
+          {steps?.map((step, index) => (
             <article
               key={step.id}
               className="as-row group relative grid grid-cols-[auto_1fr] md:grid-cols-[auto_1fr_auto] gap-x-6 md:gap-x-16 gap-y-8 py-14 md:py-20 border-t border-border first:border-t-0"
             >
               {/* Top accent line */}
-              <span className="as-line absolute top-0 left-0 right-0 h-px bg-stabilo/40 origin-left" />
+              <span className="as-line absolute top-0 left-0 right-0 h-px bg-stabilo-soft/40 origin-left" />
 
               {/* Big numeric */}
               <div className="as-num row-span-2 md:row-span-2">
-                <span className="font-aktiv-grotesk font-semibold tracking-[-0.04em] text-[clamp(3rem,7vw,5.5rem)] leading-none text-ink/90 tabular-nums">
+                <span className="font-plus-jakarta font-semibold tracking-[-0.04em] text-display leading-none text-ink/90 tabular-nums">
                   {step.id}
                 </span>
                 <span className="block font-mono text-[0.5rem] tracking-[0.22em] uppercase text-stabilo mt-3">
@@ -94,7 +94,7 @@ export default function ApproachSteps({ steps }: ApproachStepsProps) {
               </div>
 
               {/* Title row */}
-              <h3 className="as-title self-center font-aktiv-grotesk text-[clamp(1.625rem,2.6vw+0.5rem,2.75rem)] font-bold leading-[1.05] tracking-[-0.025em] text-ink">
+              <h3 className="as-title self-center font-plus-jakarta text-h2 font-bold leading-[1.05] tracking-[-0.025em] text-ink">
                 {step.title}
               </h3>
 
@@ -119,7 +119,7 @@ export default function ApproachSteps({ steps }: ApproachStepsProps) {
                 </p>
 
                 <ul className="grid grid-cols-1 gap-y-2.5 self-start">
-                  {step.items.map(item => (
+                  {step.items?.map(item => (
                     <li
                       key={item}
                       className="as-item flex items-start gap-3 font-mono text-[0.625rem] tracking-[0.14em] uppercase text-ink/65"

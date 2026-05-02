@@ -1,8 +1,9 @@
+
 import Link from 'next/link'
-import { ThemeToggle } from './ThemeToggle'
+import Image from 'next/image'
+import { Dictionary } from '@/dictionaries/en'
 import LanguageToggle from './LanguageToggle'
 import MobileMenu from './MobileMenu'
-import { Dictionary } from '@/dictionaries/en'
 
 interface NavbarProps {
   lang?: string
@@ -13,58 +14,52 @@ const Navbar = ({ lang = 'en', dict }: NavbarProps) => {
   const navLinks = [
     { label: dict?.nav.work || 'Work', href: `/${lang}/work` },
     { label: dict?.nav.approach || 'Approach', href: `/${lang}/approach` },
-    { label: dict?.nav.services || 'Services', href: `/${lang}/#works-section` },
-    { label: dict?.nav.faq || 'FAQ', href: `/${lang}/faq` },
+    { label: lang === 'id' ? 'Tentang' : 'About', href: `/${lang}/about` },
+    { label: dict?.nav.contact || 'Contact', href: `/${lang}/contact` },
   ]
 
   return (
-    <nav className="fixed top-0 w-full bg-off/80 dark:bg-zinc-950/80 backdrop-blur-md border-b border-ink/5 z-50">
-      <div className="relative w-full py-5 px-6 md:px-10 flex justify-between items-center h-20 max-w-360 mx-auto">
-
-        {/* Left: Icon + Language Toggle */}
-        <div className="flex-1 flex items-center gap-4">
-          <Link href={`/${lang}`}>
-            <img
+    <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center px-6 py-6 pointer-events-none">
+      <div className="w-full max-w-7xl flex items-center justify-between pointer-events-auto">
+        {/* Left: Branding */}
+        <Link href={`/${lang}`} className="flex items-center gap-3 group">
+          <div className="relative w-8 h-8">
+            <Image
               src="/images/icon.png"
-              alt="icon"
-              className="w-8 md:w-10 h-auto object-contain brightness-110 dark:invert-0 invert"
+              alt="Icon"
+              fill
+              className="object-contain invert"
             />
-          </Link>
-          <LanguageToggle currentLang={lang} />
-        </div>
-
-        {/* Center: Logo — pointer-events-none on wrapper so it never blocks sibling clicks */}
-        <div className="absolute left-1/2 -translate-x-1/2 flex items-center pointer-events-none">
-          <Link href={`/${lang}`} className="pointer-events-auto">
-            <img
+          </div>
+          <div className="w-px h-4 bg-ink/20 mx-1" />
+          <div className="relative w-24 h-6">
+            <Image
               src="/logo.png"
-              alt="logo"
-              width={200}
-              height={35}
-              className="w-32 md:w-44 h-auto object-contain dark:invert-0 invert"
+              alt="TheWebStory"
+              fill
+              className="object-contain"
             />
-          </Link>
+          </div>
+        </Link>
+
+        {/* Center: Nav Links */}
+        <div className="absolute left-1/2 -translate-x-1/2 hidden md:flex items-center gap-10 bg-white/80 backdrop-blur-md px-10 py-4 rounded-full border border-ink/5 shadow-sm">
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="label-fn text-[16px] font-bold text-ink/60 hover:text-stabilo transition-colors duration-200"
+            >
+              {link.label}
+            </Link>
+          ))}
         </div>
 
-        {/* Right: Nav links + controls — z-10 ensures it renders above the absolute logo layer */}
-        <div className="flex-1 flex justify-end items-center gap-3 md:gap-5 relative z-10">
-          <ul className="hidden md:flex gap-8 items-center list-none m-0 p-0">
-            {navLinks.map((item) => (
-              <li key={item.label}>
-                <Link
-                  href={item.href}
-                  className="font-google text-[0.625rem] font-medium tracking-[0.2em] text-muted-warm hover:text-ink transition-colors duration-200 no-underline uppercase"
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-
-          <ThemeToggle />
+        {/* Right: Actions */}
+        <div className="flex items-center gap-4">
+          <LanguageToggle lang={lang} />
           <MobileMenu navLinks={navLinks} />
         </div>
-
       </div>
     </nav>
   )

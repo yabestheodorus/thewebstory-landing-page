@@ -89,14 +89,14 @@ export function ProjectHero({ project, dict, lang }: ProjectHeroProps) {
       <svg className="absolute pointer-events-none select-none"
         style={{ top: -100, right: '2%', opacity: ornamentOpacity[project.color] }}
         width="700" height="700" viewBox="0 0 700 700" fill="none">
-        <circle cx="350" cy="350" r="349" stroke="var(--color-stabilo)" strokeWidth="2" strokeDasharray="6 14" />
+        <circle cx="350" cy="350" r="349" stroke="var(--color-stabilo-soft)" strokeWidth="2" strokeDasharray="6 14" />
         <circle cx="350" cy="350" r="232" stroke="var(--color-ink)" strokeWidth="1.2" strokeDasharray="4 18" />
       </svg>
       <svg className="absolute pointer-events-none select-none"
         style={{ top: '14%', left: '2%', opacity: ornamentOpacity[project.color] * 1.6 }}
         width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <line x1="10" y1="0" x2="10" y2="20" stroke="var(--color-stabilo)" strokeWidth="1.2" />
-        <line x1="0" y1="10" x2="20" y2="10" stroke="var(--color-stabilo)" strokeWidth="1.2" />
+        <line x1="10" y1="0" x2="10" y2="20" stroke="var(--color-stabilo-soft)" strokeWidth="1.2" />
+        <line x1="0" y1="10" x2="20" y2="10" stroke="var(--color-stabilo-soft)" strokeWidth="1.2" />
       </svg>
       <svg className="absolute pointer-events-none select-none"
         style={{ top: '48%', right: '4%', opacity: ornamentOpacity[project.color] * 1.2 }}
@@ -112,7 +112,7 @@ export function ProjectHero({ project, dict, lang }: ProjectHeroProps) {
       </svg>
       <span
         className="absolute pointer-events-none select-none font-aktiv-grotesk font-bold leading-none tracking-[-0.05em] whitespace-nowrap"
-        style={{ bottom: '6%', right: '-1%', fontSize: 'clamp(80px, 14vw, 180px)', color: 'var(--color-stabilo)', opacity: ornamentOpacity[project.color] * 0.55 }}
+        style={{ bottom: '6%', right: '-1%', fontSize: 'clamp(80px, 14vw, 180px)', color: 'var(--color-stabilo-soft)', opacity: ornamentOpacity[project.color] * 0.55 }}
         aria-hidden="true"
       >
         {project.title}
@@ -162,7 +162,7 @@ export function ProjectHero({ project, dict, lang }: ProjectHeroProps) {
       {/* Two-column meta */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pb-16 border-b border-border">
         <div className="proj-hero-left flex flex-col gap-6">
-          <p className="font-googlea text-sm leading-[1.9] text-muted-warm max-w-md">{project.description}</p>
+          <p className="font-google text-sm leading-[1.9] text-muted-warm max-w-md">{project.description}</p>
           <div className="flex flex-wrap gap-2" aria-label="Project tags">
             {project.tags.map(tag => (
               <span key={tag} className="font-mono text-[0.5rem] tracking-widest uppercase px-3 py-1.5 border border-border text-ink/50">{tag}</span>
@@ -178,7 +178,7 @@ export function ProjectHero({ project, dict, lang }: ProjectHeroProps) {
           ].map(item => (
             <div key={item.label} className="flex flex-col gap-0.5">
               <span className="font-mono text-[0.4375rem] tracking-[0.22em] uppercase text-muted-warm/60">{item.label}</span>
-              <span className="font-googlea text-[0.8125rem] text-ink leading-snug">{item.value}</span>
+              <span className="font-google text-[0.8125rem] text-ink leading-snug">{item.value}</span>
             </div>
           ))}
         </div>

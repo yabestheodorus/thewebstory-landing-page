@@ -19,7 +19,7 @@ export function ProjectIndexRow({ project, isHovered, onMouseEnter, onMouseLeave
     >
       <div className="work-row-line hidden" />
       <div className="work-row-content contents">
-        <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-stabilo origin-bottom transition-transform duration-300 scale-y-0 group-hover:scale-y-100" />
+        <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-stabilo-soft origin-bottom transition-transform duration-300 scale-y-0 group-hover:scale-y-100" />
 
         <span className="font-mono text-[0.5625rem] tracking-widest text-muted-warm relative z-10">
           {project.id}
@@ -46,7 +46,7 @@ export function ProjectIndexRow({ project, isHovered, onMouseEnter, onMouseLeave
           <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
             <path
               d="M2 12L12 2M12 2H5M12 2V9"
-              stroke={isHovered ? 'var(--color-stabilo)' : 'rgba(107,107,107,0.6)'}
+              stroke={isHovered ? 'var(--color-stabilo-soft)' : 'rgba(107,107,107,0.6)'}
               strokeWidth="1.2"
               strokeLinecap="round"
               strokeLinejoin="round"

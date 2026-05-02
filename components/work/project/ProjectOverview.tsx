@@ -38,7 +38,7 @@ export function ProjectOverview({ project, dict }: ProjectOverviewProps) {
         ].map((item, i) => (
           <div key={i} className="proj-meta-item flex flex-col gap-1.5 w-1/2 md:w-auto md:px-10 first:pl-0 last:pr-0">
             <span className="font-mono text-[0.4375rem] tracking-[0.22em] uppercase text-muted-warm/55">{item.label}</span>
-            <span className="font-googlea text-[0.8125rem] text-ink leading-snug">{item.value}</span>
+            <span className="font-google text-[0.8125rem] text-ink leading-snug">{item.value}</span>
           </div>
         ))}
       </div>

@@ -73,7 +73,7 @@ export default function WorkHero({ dict }: { dict: Dictionary['work'] }) {
       <h1 className="work-hero-heading font-aktiv-grotesk text-[clamp(3.25rem,6vw+1rem,6.75rem)] font-bold leading-[0.95] tracking-[-0.03em] mb-16 max-w-5xl">
         {dict.hero_headline_1}
         <br />
-        <em className="italic font-light text-ink/30">{dict.hero_headline_2}</em>
+        <em className="italic font-light text-ink/60">{dict.hero_headline_2}</em>
         <br />
         {dict.hero_headline_3}
       </h1>
@@ -83,26 +83,26 @@ export default function WorkHero({ dict }: { dict: Dictionary['work'] }) {
       <div className="flex items-end justify-between gap-6 flex-wrap">
         <div className="flex gap-10">
           <div className="work-hero-meta flex flex-col gap-1">
-            <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-ink/30">{dict.stat_projects_label}</span>
+            <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-ink/60">{dict.stat_projects_label}</span>
             <span className="font-aktiv-grotesk text-[1.75rem] font-semibold leading-none">12+</span>
           </div>
           <div className="work-hero-meta flex flex-col gap-1">
-            <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-ink/30">{dict.stat_industries_label}</span>
+            <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-ink/60">{dict.stat_industries_label}</span>
             <span className="font-aktiv-grotesk text-[1.75rem] font-semibold leading-none">8</span>
           </div>
           <div className="work-hero-meta flex flex-col gap-1">
-            <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-ink/30">{dict.stat_launch_label}</span>
+            <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-ink/60">{dict.stat_launch_label}</span>
             <span className="font-aktiv-grotesk text-[1.75rem] font-semibold leading-none">{dict.stat_launch_val}</span>
           </div>
         </div>
 
-        <p className="work-hero-meta font-googlea text-[0.8125rem] leading-[1.8] text-muted-warm max-w-xs">
+        <p className="work-hero-meta font-google text-[0.8125rem] leading-[1.8] text-muted-warm max-w-xs">
           {dict.hero_desc}
         </p>
       </div>
 
       {/* Scroll cue */}
-      <div className="work-hero-count absolute bottom-8 right-16 hidden md:flex items-center gap-3 text-ink/20">
+      <div className="work-hero-count absolute bottom-8 right-16 hidden md:flex items-center gap-3 text-ink/50">
         <span className="font-mono text-[0.5rem] tracking-[0.24em] uppercase">{dict.scroll_cue}</span>
         <svg width="28" height="12" viewBox="0 0 28 12" fill="none">
           <path d="M1 6h26M20 1l6 5-6 5" stroke="currentColor" strokeWidth="0.8" strokeLinecap="round" strokeLinejoin="round" />

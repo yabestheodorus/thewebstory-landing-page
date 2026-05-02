@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Image from 'next/image'
 
 interface ServiceRowProps {
@@ -10,6 +11,7 @@ interface ServiceRowProps {
     description: string
     keywords: string[]
     logos?: { name: string; src: string }[]
+    slug: string
   }
   labels: {
     deliverable: string
@@ -19,12 +21,14 @@ interface ServiceRowProps {
   isActive: boolean
   onMouseEnter: () => void
   onMouseLeave: () => void
+  lang: string
 }
 
-export function ServiceRow({ service, labels, isActive, onMouseEnter, onMouseLeave }: ServiceRowProps) {
+export function ServiceRow({ service, labels, isActive, onMouseEnter, onMouseLeave, lang }: ServiceRowProps) {
   return (
-    <div
-      className="works-row border-b border-ink/10"
+    <Link
+      href={`/${lang}/services/${service.slug}`}
+      className="works-row border-b border-ink/10 block no-underline"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -33,18 +37,6 @@ export function ServiceRow({ service, labels, isActive, onMouseEnter, onMouseLea
         className="relative overflow-hidden grid grid-cols-[48px_1fr_auto] md:grid-cols-[48px_1fr_140px_100px_44px] items-center px-8 md:px-16 py-7 transition-colors duration-300"
         style={{ backgroundColor: isActive ? 'var(--color-sand)' : 'transparent' }}
       >
-        {/* Ghost number */}
-        <span
-          className="absolute right-12 font-aktiv-grotesk font-bold leading-none select-none pointer-events-none transition-all duration-500"
-          style={{
-            fontSize: 'clamp(80px,12vw,140px)',
-            color: isActive ? 'var(--color-stabilo)' : 'var(--color-ink)',
-            opacity: isActive ? 0.15 : 0.05,
-            transform: isActive ? 'translateY(-6px) scale(1.04)' : 'translateY(0) scale(1)',
-          }}
-        >
-          {service.id}
-        </span>
 
         {/* Left accent bar */}
         <div
@@ -112,7 +104,7 @@ export function ServiceRow({ service, labels, isActive, onMouseEnter, onMouseLea
         >
           {/* Description + pills */}
           <div className="flex flex-col gap-4 mt-2">
-            <p className="font-googlea text-[clamp(0.8125rem,1vw+0.4rem,0.875rem)] leading-[1.85] text-ink/65 max-w-lg">
+            <p className="font-google text-[clamp(0.8125rem,1vw+0.4rem,0.875rem)] leading-[1.85] text-ink/65 max-w-lg">
               {service.description}
             </p>
             <div className="flex flex-wrap gap-2">
@@ -150,6 +142,6 @@ export function ServiceRow({ service, labels, isActive, onMouseEnter, onMouseLea
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   )
 }

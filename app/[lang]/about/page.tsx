@@ -1,6 +1,6 @@
-import ApproachHero from "@/components/approach/ApproachHero";
-import ApproachPrinciples from "@/components/approach/ApproachPrinciples";
-import ApproachSteps from "@/components/approach/ApproachSteps";
+import { AboutHero } from "@/components/about/AboutHero";
+import { AboutManifesto } from "@/components/about/AboutManifesto";
+import { AboutTeam } from "@/components/about/AboutTeam";
 import CTASection from "@/components/home/CTASection";
 import { getDictionary } from "@/lib/get-dictionary";
 import { Metadata } from "next";
@@ -9,12 +9,12 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const dict = await getDictionary(lang as any);
   return {
-    title: dict.nav.approach || "Approach",
-    description: dict.approach.hero_desc,
+    title: dict.nav.about || "About",
+    description: dict.about.hero.description,
   };
 }
 
-export default async function ApproachPage({
+export default async function AboutPage({
   params,
 }: {
   params: Promise<{ lang: string }>;
@@ -24,12 +24,9 @@ export default async function ApproachPage({
 
   return (
     <main className="relative bg-off dark:bg-zinc-950 min-h-screen pt-20">
-      <ApproachHero dict={dict.approach} />
-      <ApproachSteps steps={dict.approach.steps} />
-      <ApproachPrinciples 
-        title={dict.approach.principles_title} 
-        principles={dict.approach.principles} 
-      />
+      <AboutHero dict={dict.about.hero} />
+      <AboutManifesto dict={dict.about.manifesto} />
+      <AboutTeam dict={dict.about.team} />
       <div className="mt-20">
         <CTASection lang={lang} dict={dict.cta} />
       </div>

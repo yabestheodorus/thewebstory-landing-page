@@ -51,7 +51,7 @@ export function ProjectDeliverables({ project, dict }: ProjectDeliverablesProps)
             {dict.project_detail.sections.deliverables}
           </h2>
         </div>
-        <p className="proj-sec-body font-googlea text-[0.8125rem] leading-[1.8] text-muted-warm max-w-md">
+        <p className="proj-sec-body font-google text-[0.8125rem] leading-[1.8] text-muted-warm max-w-md">
           {dict.project_detail.sections.deliverables_desc}
         </p>
       </div>
@@ -63,7 +63,7 @@ export function ProjectDeliverables({ project, dict }: ProjectDeliverablesProps)
             </span>
             <div className="flex flex-col gap-2">
               <h3 className="font-aktiv-grotesk text-lg font-semibold leading-tight group-hover:text-ink transition-colors duration-200">{item.title}</h3>
-              <p className="font-googlea text-xs leading-[1.85] text-muted-warm">{item.description}</p>
+              <p className="font-google text-xs leading-[1.85] text-muted-warm">{item.description}</p>
             </div>
           </article>
         ))}

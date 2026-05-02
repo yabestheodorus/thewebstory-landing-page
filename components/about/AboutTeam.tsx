@@ -2,7 +2,7 @@
 
 import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
-import { gsap } from '@/lib/gsap'
+import { gsap, ScrollTrigger } from '@/lib/gsap'
 import Image from 'next/image'
 
 const team = [
@@ -20,7 +20,9 @@ const team = [
   }
 ]
 
-export function AboutTeam() {
+import { Dictionary } from '@/dictionaries/en'
+
+export function AboutTeam({ dict }: { dict: Dictionary['about']['team'] }) {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useGSAP(() => {
@@ -44,18 +46,19 @@ export function AboutTeam() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-8">
           <div>
             <div className="flex items-center gap-3 mb-8">
-              <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-stabilo">The Founders</span>
+              <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-stabilo">{dict.overline}</span>
               <span className="w-8 h-px bg-ink/15" />
               <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-ink/50">Human Factor</span>
             </div>
-            <h2 className="font-aktiv-grotesk text-[clamp(2.5rem,4vw+1rem,3.75rem)] font-bold leading-tight tracking-[-0.03em] text-ink">
-              The minds behind <br /> the <span className="text-ink/35 italic font-light">story.</span>
+            <h2 className="font-plus-jakarta text-h1 font-bold leading-tight tracking-[-0.03em] text-ink">
+              {dict.title}
             </h2>
           </div>
-          <p className="font-googlea text-sm leading-[1.85] text-muted-warm max-w-xs text-right hidden md:block">
-            Our boutique approach ensures that every project is touched by the founders personally.
+          <p className="font-google text-sm leading-[1.85] text-muted-warm max-w-xs text-right hidden md:block">
+            {dict.description}
           </p>
         </div>
+
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
           {team.map((member) => (
@@ -73,7 +76,7 @@ export function AboutTeam() {
                   <h3 className="font-aktiv-grotesk text-2xl font-bold text-ink">{member.name}</h3>
                   <span className="font-mono text-[0.625rem] tracking-[0.2em] uppercase text-stabilo">{member.role}</span>
                 </div>
-                <p className="font-googlea text-base leading-relaxed text-muted-warm">
+                <p className="font-google text-base leading-relaxed text-muted-warm">
                   {member.bio}
                 </p>
               </div>

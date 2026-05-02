@@ -36,7 +36,7 @@ export function FeaturedProjectCard({ project, isHovered, onMouseEnter, onMouseL
       />
 
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 100%, rgba(124,92,255,0.12) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 100%, color-mix(in srgb, var(--color-stabilo-soft), transparent 88%) 0%, transparent 70%)' }}
       />
 
       <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-stabilo origin-left transition-transform duration-500 scale-x-0 group-hover:scale-x-100" />
@@ -50,16 +50,6 @@ export function FeaturedProjectCard({ project, isHovered, onMouseEnter, onMouseL
         </span>
       </div>
 
-      <span
-        className="absolute right-5 bottom-5 font-aktiv-grotesk font-bold leading-none select-none pointer-events-none transition-all duration-500"
-        style={{
-          fontSize: 'clamp(72px, 10vw, 120px)',
-          color: isHovered ? 'rgba(124,92,255,0.12)' : 'rgba(246,243,238,0.05)',
-          transform: isHovered ? 'scale(1.06)' : 'scale(1)',
-        }}
-      >
-        {project.id}
-      </span>
 
       <div className="absolute bottom-0 left-0 right-0 p-6 z-10 flex flex-col gap-3">
         <div className="flex gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
@@ -95,7 +85,7 @@ export function FeaturedProjectCard({ project, isHovered, onMouseEnter, onMouseL
           </div>
         </div>
 
-        <p className="font-googlea text-[0.8125rem] leading-[1.75] text-ink/55 max-w-sm line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-400 delay-75">
+        <p className="font-google text-[0.8125rem] leading-[1.75] text-ink/55 max-w-sm line-clamp-2 opacity-0 group-hover:opacity-100 transition-opacity duration-400 delay-75">
           {project.description}
         </p>
       </div>

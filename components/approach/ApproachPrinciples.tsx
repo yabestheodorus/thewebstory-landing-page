@@ -101,7 +101,7 @@ export default function ApproachPrinciples({ title, principles }: ApproachPrinci
         </div>
 
         {/* Heading */}
-        <h2 className="ap-heading font-aktiv-grotesk text-[clamp(2.75rem,6vw+1rem,6.25rem)] font-bold leading-[0.98] tracking-[-0.03em] mb-16 md:mb-24 max-w-4xl">
+        <h2 className="ap-heading font-plus-jakarta text-display font-bold leading-[0.98] tracking-[-0.03em] mb-16 md:mb-24 max-w-4xl">
           {title.split(' ').map((word, i, arr) => {
             const accent = i === arr.length - 1
             return (
@@ -118,7 +118,7 @@ export default function ApproachPrinciples({ title, principles }: ApproachPrinci
 
         {/* Grid of principles */}
         <div className="ap-grid grid grid-cols-1 md:grid-cols-2">
-          {principles.map((item, i) => {
+          {principles?.map((item, i) => {
             const isRightCol = i % 2 === 1
             const isBottomRow = i >= principles.length - 2
             return (
@@ -138,7 +138,7 @@ export default function ApproachPrinciples({ title, principles }: ApproachPrinci
                   <span className="w-8 h-px bg-white/15 group-hover:bg-stabilo/60 transition-colors duration-500" />
                 </div>
 
-                <h3 className="font-aktiv-grotesk text-[clamp(1.5rem,2.2vw+0.5rem,2.25rem)] font-semibold tracking-[-0.02em] leading-[1.05] mb-5 text-off">
+                <h3 className="font-plus-jakarta text-h2 font-semibold tracking-[-0.02em] leading-[1.05] mb-5 text-off">
                   {item.title}
                 </h3>
 

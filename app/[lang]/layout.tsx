@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans, Playfair_Display } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/components/Navbar";
-import FloatingMenu from "@/components/reactbits/FloatingMenu";
 import SmoothScroll from "@/components/SmoothScroll";
 import { DeviceProvider } from "@/lib/context/DeviceContext";
 import { ThemeProvider } from "@/components/ThemeProvider";
@@ -16,6 +15,12 @@ const inter = Inter({
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
   subsets: ["latin"],
+});
+
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair",
+  subsets: ["latin"],
+  style: ["italic", "normal"],
 });
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
@@ -54,14 +59,32 @@ export default async function RootLayout({
     <html
       lang={lang}
       suppressHydrationWarning
-      className={` ${plusJakartaSans.variable} ${inter.variable} h-full antialiased `}
+      className={` ${plusJakartaSans.variable} ${inter.variable} ${playfairDisplay.variable} h-full antialiased `}
     >
       <body className="relative w-full overflow-x-hidden h-full overflow-y-auto ">
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ProfessionalService",
+              "name": "thewebstory.id",
+              "url": "https://thewebstory.id",
+              "logo": "https://thewebstory.id/logo.png",
+              "description": "Premium design and engineering studio building high-conversion websites.",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Tangerang",
+                "addressCountry": "ID"
+              },
+              "foundingDate": "2024"
+            })
+          }}
+        />
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <DeviceProvider>
             <SmoothScroll>
               <Navbar lang={lang} dict={dict} />
-              <FloatingMenu lang={lang} dict={dict} />
               {children}
             </SmoothScroll>
           </DeviceProvider>

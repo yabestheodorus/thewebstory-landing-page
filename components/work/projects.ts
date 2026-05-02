@@ -24,6 +24,7 @@ export type Project = {
   videoDesktop?: string
   videoMobile?: string
   backgroundImage?: string
+  isConcept?: boolean
 }
 
 export const projects: Project[] = [
@@ -48,8 +49,8 @@ export const projects: Project[] = [
       'We built a fully-owned e-commerce experience with an editorial design language that matches the brand\'s botanical identity. GSAP-powered scroll animations, countdown-driven product launches, and a streamlined checkout through Midtrans — GoPay, OVO, and bank transfer — all on a mobile-first layout designed for the way Indonesian customers actually shop.',
     results: [
       { value: '3', label: 'Weeks to launch' },
-      { value: '5', suffix: '+', label: 'Product pages' },
-      { value: '1', label: 'Seamless checkout' },
+      { value: '45', suffix: '%', label: 'Reduction in manual DMs' },
+      { value: '1', label: 'Fully-owned sales engine' },
     ],
     deliverables: [
       { title: 'Product Catalogue', description: 'Editorial product pages with skin-condition filters, ratings, and dynamic pricing display.' },
@@ -123,9 +124,9 @@ export const projects: Project[] = [
     challenge: 'Aman Nusa had a decade of heritage in physical luxury travel but lacked a digital identity that matched the soul of their curation. They needed a way to convey the "unseen" stories and ancient landscapes to a global discerning audience through a lens of high-fidelity editorial design.',
     solution: 'A full digital brand identity translated to the web: editorial grid layouts, curated typeface pairing, a Sanity-powered journal, and an inquiry flow that reflects the privacy and personal care of a private concierge.',
     results: [
-      { value: '12', suffix: '+', label: 'Years of Heritage' },
-      { value: '450', suffix: '+', label: 'Hidden Locations' },
-      { value: '100', suffix: '%', label: 'Private Charters' },
+      { value: '4', label: 'Weeks to launch' },
+      { value: '0', suffix: '%', label: 'Platform commission' },
+      { value: '100', suffix: '%', label: 'Data ownership' },
     ],
     deliverables: [
       { title: 'Brand Identity System', description: 'Typography scale, colour palette, spacing tokens, and editorial usage guidelines.' },
@@ -177,6 +178,7 @@ export const projects: Project[] = [
     backgroundImage: '/images/screenshots/zentry_img.png',
     videoDesktop: '/videos/zentry_desktop.mp4',
     videoMobile: '/videos/zentry_phone.mp4',
+    isConcept: true,
   },
   {
     id: '07',
@@ -210,5 +212,6 @@ export const projects: Project[] = [
     videoDesktop: '/videos/kinetic_desktop.mp4',
     videoMobile: '/videos/kinetic_phone.mp4',
     backgroundImage: '/images/screenshots/kinetic_img.png',
+    isConcept: true,
   },
 ]

@@ -1,32 +1,78 @@
+/*
+ * thewebstory.id — global styles
+ *
+ * Structure (Tailwind v4):
+ *   1. Imports
+ *   2. Custom variants
+ *   3. @theme        — static tokens (fonts, type scale, brand colors, animations + keyframes)
+ *   4. @theme inline — theme-aware aliases (resolve to CSS vars in :root / .dark)
+ *   5. :root / .dark — themed CSS variables
+ *   6. @layer base   — element defaults
+ *   7. @utility      — custom utilities (label tiers, glass)
+ *   8. prefers-reduced-motion
+ *   9. Lenis smooth-scroll integration
+ */
+
+/* ─── 1. Imports ─────────────────────────────────────────── */
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
+/* ─── 2. Custom variants ─────────────────────────────────── */
 
-/* ─── Design tokens ──────────────────────────────────────────── */
+/* ─── 3. Static design tokens ────────────────────────────── */
 @theme {
-  /* Fonts */
+  /* Fonts — next/font sets the base CSS variables; expose via @theme so
+     Tailwind generates the matching font-* utilities. Studio aliases
+     map to the same families for readability across the codebase. */
   --font-plus-jakarta: var(--font-plus-jakarta);
   --font-inter: var(--font-inter);
-  --font-google: var(--font-inter);
+  --font-playfair: var(--font-playfair);
   --font-aktiv-grotesk: var(--font-plus-jakarta);
+  --font-google: var(--font-inter);
+  --font-googlea: var(--font-inter);
+  /* legacy alias — TODO retire callsites */
 
-  /* Brand palette — mapped to variables for theme switching */
+  /* Type scale — static rem multipliers off the html clamp base. */
+  --text-display: 4.5rem;
+  --text-h1: 3rem;
+  --text-h2: 2.125rem;
+  --text-body: 1rem;
+  --text-small: 0.8125rem;
+
+  /* Brand palette — theme-independent constants. */
+  --color-stabilo: #E85D04;
+  --color-stabilo-rgb: 232, 93, 4;
+  /* Blaze Orange — high-octane, vibrant & punchy accent */
+  --color-stabilo-soft: #F4A261;
+  /* Soft Sunset — atmospheric/decorative only */
+
+  /* Animations — token + keyframes co-located. */
+  --animate-marquee: marquee 20s linear infinite;
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-33.33%);
+    }
+  }
+}
+
+/* ─── 4. Theme-aware tokens (alias CSS vars in :root / .dark) ─ */
+@theme inline {
+  /* Studio aliases */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
   --color-ink: var(--foreground);
   --color-off: var(--background);
   --color-sand: var(--secondary);
   --color-warm: var(--muted);
   --color-muted-warm: var(--muted-foreground);
-  --color-stabilo: #7C5CFF;
 
-  --animate-marquee: marquee 20s linear infinite;
-}
-
-/* ─── Semantic tokens (used by shadcn components) ────────────── */
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  /* shadcn semantic tokens */
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
@@ -43,6 +89,7 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -50,11 +97,11 @@
   --radius-2xl: calc(var(--radius) * 1.8);
 }
 
-/* ─── Light mode ─────────────────────────────────────────────── */
+/* ─── 5. Theme variables ─────────────────────────────────── */
 :root {
-  --background: #F6F3EE;
+  --background: #F7F3F0;
   --foreground: #0D0D0D;
-  --card: #FFFFFF;
+  --card: #F1EDE9;
   --card-foreground: #0D0D0D;
   --popover: #FFFFFF;
   --popover-foreground: #0D0D0D;
@@ -64,41 +111,22 @@
   --secondary-foreground: #0D0D0D;
   --muted: #E8E4DB;
   --muted-foreground: #6B6B6B;
-  --accent: #7C5CFF;
-  --accent-foreground: #ffffff;
+  --accent: #E85D04;
+  --accent-foreground: #FFFFFF;
   --destructive: oklch(0.577 0.245 27.325);
   --border: rgba(13, 13, 13, 0.08);
   --input: rgba(13, 13, 13, 0.08);
-  --ring: #7C5CFF;
+  --ring: #E85D04;
   --radius: 0.625rem;
 }
 
-/* ─── Dark mode ──────────────────────────────────────────────── */
-.dark {
-  --background: #0D0D0D;
-  --foreground: #F6F3EE;
-  --card: #111010;
-  --card-foreground: #F6F3EE;
-  --popover: #111010;
-  --popover-foreground: #F6F3EE;
-  --primary: #F6F3EE;
-  --primary-foreground: #0D0D0D;
-  --secondary: #1A1A1A;
-  --secondary-foreground: #F6F3EE;
-  --muted: #1A1A1A;
-  --muted-foreground: #6B6B6B;
-  --accent: #7C5CFF;
-  --accent-foreground: #ffffff;
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: rgba(246, 243, 238, 0.09);
-  --input: rgba(246, 243, 238, 0.12);
-  --ring: #7C5CFF;
-}
-
-/* ─── Base ───────────────────────────────────────────────────── */
+/* ─── 6. Base layer ──────────────────────────────────────── */
 @layer base {
-  * {
-    @apply border-border outline-ring/50;
+
+  *,
+  *::before,
+  *::after {
+    @apply border-border;
   }
 
   html {
@@ -116,30 +144,78 @@
   h4,
   h5,
   h6 {
-    @apply font-plus-jakarta tracking-tight;
+    @apply font-aktiv-grotesk tracking-tight;
   }
 
-}
-
-/* ─── Keyframes ──────────────────────────────────────────────── */
-@keyframes ticker {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
+  /* Keyboard-only focus ring — overrides any default browser outline. */
+  :where(a, button, input, textarea, select, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-stabilo);
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 }
 
-/* ─── Animation utilities ────────────────────────────────────── */
-@layer utilities {
-  .animate-ticker {
-    animation: ticker 22s linear infinite;
+@utility perspective-1000 {
+  perspective: 1000px;
+}
+
+/* ─── 7. Custom utilities ────────────────────────────────── */
+/* Three-tier label discipline. Replace ad-hoc font-mono+tracking+
+   uppercase recipes with one of these:
+     .label-fn       — functional (form fields, nav, button labels)
+     .label-eyebrow  — section overline (one per section, paired heading)
+     .label-meta     — decorative meta (numerals, page indices, stats)
+   Add color/state utilities on top as needed (e.g. text-muted-warm,
+   hover:text-ink). */
+
+@utility label-fn {
+  font-family: var(--font-inter, ui-sans-serif, system-ui, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.25;
+}
+
+@utility label-eyebrow {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--color-stabilo);
+}
+
+@utility label-meta {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: rgb(13 13 13 / 0.6);
+}
+
+@utility glass-ticker {
+  @apply bg-white/60 backdrop-blur-xl border border-white/40;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* ─── 8. Reduced motion ──────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
-/* ─── Lenis Smooth Scroll ────────────────────────────────────── */
+/* ─── 9. Lenis smooth-scroll integration ─────────────────── */
 html.lenis,
 html.lenis body {
   height: auto;
@@ -159,14 +235,4 @@ html.lenis body {
 
 .lenis.lenis-scrolling iframe {
   pointer-events: none;
-}
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-
-  100% {
-    transform: translateX(-33.33%);
-  }
 }

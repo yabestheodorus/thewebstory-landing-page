@@ -30,7 +30,7 @@ export function StrategySteps({ steps, dict }: StrategyStepsProps) {
               <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
-                  background: 'radial-gradient(ellipse 100% 100% at 50% 50%, rgba(124,92,255,0.07) 0%, transparent 75%)',
+                  background: 'radial-gradient(ellipse 100% 100% at 50% 50%, rgba(var(--color-stabilo-rgb),0.07) 0%, transparent 75%)',
                 }}
               />
             )}
@@ -48,7 +48,7 @@ export function StrategySteps({ steps, dict }: StrategyStepsProps) {
             >
               {content.label}
             </span>
-            <p className="font-googlea text-[0.8125rem] leading-[1.8] text-ink/60 mt-auto">{content.desc}</p>
+            <p className="font-google text-[0.8125rem] leading-[1.8] text-ink/60 mt-auto">{content.desc}</p>
           </div>
         )
       })}

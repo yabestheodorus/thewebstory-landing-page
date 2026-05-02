@@ -75,14 +75,14 @@ export default function StatementSection({ dict }: { dict: Dictionary['statement
   }, { scope: containerRef })
 
   return (
-    <div id="statement-section" ref={containerRef} className="relative bg-off text-ink overflow-hidden">
+    <div id="statement-section" ref={containerRef} className="relative text-ink overflow-hidden">
       {/* Ambient glow */}
       <div
         className="absolute pointer-events-none select-none rounded-full"
         style={{
           width: 900, height: 400, top: 0, left: '50%',
           transform: 'translate(-50%, -40%)',
-          background: 'var(--color-stabilo)',
+          background: 'var(--color-stabilo-soft)',
           filter: 'blur(160px)',
           opacity: 0.055,
         }}
@@ -112,7 +112,7 @@ export default function StatementSection({ dict }: { dict: Dictionary['statement
           {dict.heading}
         </h2>
 
-        <p className="s-reveal font-googlea text-[clamp(0.875rem,1vw+0.4rem,1rem)] leading-[1.9] text-ink/65 max-w-lg">
+        <p className="s-reveal font-google text-[clamp(0.875rem,1vw+0.4rem,1rem)] leading-[1.9] text-ink/65 max-w-lg">
           {dict.description}
         </p>
       </div>
@@ -147,7 +147,7 @@ export default function StatementSection({ dict }: { dict: Dictionary['statement
             {dict.trust_heading.split(' ').slice(0, -1).join(' ')}{' '}
             <em className="italic font-light text-ink/45">{dict.trust_heading.split(' ').slice(-1).join(' ')}</em>
           </h2>
-          <p className="s-reveal font-googlea text-[clamp(0.875rem,1vw+0.4rem,1rem)] leading-[1.85] text-ink/65 max-w-lg">
+          <p className="s-reveal font-google text-[clamp(0.875rem,1vw+0.4rem,1rem)] leading-[1.85] text-ink/65 max-w-lg">
             {dict.trust_description}
           </p>
         </div>
@@ -161,16 +161,16 @@ export default function StatementSection({ dict }: { dict: Dictionary['statement
           {dict.badges.yours.split(' ').slice(0, -1).join(' ')}{' '}
           <span className="text-stabilo">{dict.badges.yours.split(' ').slice(-1).join(' ')}</span>.
         </p>
-        <p className="s-reveal font-aktiv-grotesk italic font-light leading-[1.05] tracking-[-0.04em] text-ink/30 text-[clamp(1.5rem,4vw+0.5rem,3.25rem)] w-full text-left lg:text-center lg:translate-x-12">
+        <p className="s-reveal font-aktiv-grotesk italic font-light leading-[1.05] tracking-[-0.04em] text-ink/60 text-[clamp(1.5rem,4vw+0.5rem,3.25rem)] w-full text-left lg:text-center lg:translate-x-12">
           {dict.steps.s3.split(' ').slice(0, -1).join(' ')}{' '}
           <span className="text-stabilo">{dict.steps.s3.split(' ').slice(-1).join(' ')}</span>
         </p>
         <div className="s-reveal mt-14 flex items-center gap-5">
-          <div className="w-10 h-px bg-stabilo/60" />
+          <div className="w-10 h-px bg-stabilo-soft/60" />
           <span className="font-mono text-[0.625rem] tracking-[0.3em] uppercase text-stabilo/70">
             thewebstory.id — Tangerang, Indonesia
           </span>
-          <div className="w-10 h-px bg-stabilo/60" />
+          <div className="w-10 h-px bg-stabilo-soft/60" />
         </div>
       </div>
     </div>

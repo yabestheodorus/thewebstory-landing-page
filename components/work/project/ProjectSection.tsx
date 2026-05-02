@@ -47,7 +47,7 @@ export function ProjectSection({ number, title, headingId, content, accentClass,
           <span className={`font-mono text-[0.5rem] tracking-[0.3em] uppercase ${accentClass}`}>{number}</span>
           <h2 id={headingId} className="font-mono text-[0.5625rem] tracking-[0.2em] uppercase text-ink/45">{title}</h2>
         </div>
-        <p className="proj-sec-body font-googlea text-[clamp(1rem,1.2vw+0.5rem,1.1875rem)] leading-[1.85] text-ink max-w-2xl">
+        <p className="proj-sec-body font-google text-[clamp(1rem,1.2vw+0.5rem,1.1875rem)] leading-[1.85] text-ink max-w-2xl">
           {content}
         </p>
       </div>

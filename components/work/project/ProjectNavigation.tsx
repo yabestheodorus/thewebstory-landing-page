@@ -38,7 +38,7 @@ export function ProjectNavigation({ nextProject, dict, lang }: ProjectNavigation
         </span>
         <p className={`font-mono text-[0.5rem] tracking-widest uppercase ${accentText[nextProject.color]}`}>{nextProject.category}</p>
         <h2 className="font-aktiv-grotesk text-[clamp(2rem,4vw+1rem,3rem)] font-bold leading-none tracking-tight">{nextProject.title}</h2>
-        <p className="font-googlea text-[0.8125rem] leading-[1.75] text-muted-warm max-w-sm">{nextProject.description}</p>
+        <p className="font-google text-[0.8125rem] leading-[1.75] text-muted-warm max-w-sm">{nextProject.description}</p>
       </div>
       <div className="flex flex-col sm:flex-row md:flex-col gap-4 shrink-0">
         <Link

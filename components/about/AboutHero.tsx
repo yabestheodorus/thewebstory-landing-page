@@ -3,8 +3,9 @@
 import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import { gsap, SplitText } from '@/lib/gsap'
+import { Dictionary } from '@/dictionaries/en'
 
-export function AboutHero() {
+export function AboutHero({ dict }: { dict: Dictionary['about']['hero'] }) {
   const containerRef = useRef<HTMLDivElement>(null)
 
   useGSAP(() => {
@@ -45,25 +46,25 @@ export function AboutHero() {
 
       <div className="max-w-6xl">
         <div className="a-overline flex items-center gap-3 mb-8">
-          <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-stabilo">The Studio</span>
+          <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-stabilo">{dict.overline}</span>
           <span className="w-8 h-px bg-ink/15" />
-          <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-muted-warm">Est. 2024</span>
+          <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-muted-warm">{dict.est}</span>
         </div>
 
-        <h1 className="a-headline font-aktiv-grotesk text-[clamp(3rem,8vw+1rem,7.5rem)] font-bold leading-[0.95] tracking-[-0.04em] text-ink mb-12">
-          Engineering the <br />
-          <span className="text-ink/35">digital stage.</span>
+        <h1 className="a-headline font-plus-jakarta text-display font-bold leading-[0.95] tracking-[-0.04em] text-ink mb-12">
+          {dict.title_part1} <br />
+          <span className="text-ink/60">{dict.title_part2}</span>
         </h1>
 
         <div className="a-sub grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-10 md:gap-24 items-end">
           <div className="hidden md:block">
             <div className="w-16 h-px bg-stabilo mb-6" />
-            <p className="font-mono text-[0.625rem] tracking-[0.16em] uppercase text-muted-warm leading-relaxed">
-              Based in Tangerang, Indonesia.<br />Building for the world.
+            <p className="font-mono text-[0.625rem] tracking-[0.16em] uppercase text-muted-warm leading-relaxed whitespace-pre-line">
+              {dict.location}
             </p>
           </div>
-          <p className="font-googlea text-[clamp(1.125rem,1.5vw,1.375rem)] leading-[1.65] text-ink/80 max-w-2xl">
-            We are a boutique design and engineering studio obsessed with high-fidelity motion, conversion-centric UX, and the art of digital storytelling.
+          <p className="font-google text-[clamp(1.125rem,1.5vw,1.375rem)] leading-[1.65] text-ink/80 max-w-2xl">
+            {dict.description}
           </p>
         </div>
       </div>

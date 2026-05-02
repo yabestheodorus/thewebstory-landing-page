@@ -77,7 +77,7 @@ export default function FAQHero({ dict }: { dict: any }) {
 
       {/* Radial glow */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center" aria-hidden="true">
-        <div className="w-175 h-105 bg-stabilo/5.5 dark:bg-stabilo/9 rounded-full blur-[130px]" />
+        <div className="w-175 h-105 bg-stabilo-soft/5.5 dark:bg-stabilo-soft/9 rounded-full blur-[130px]" />
       </div>
 
       {/* Top-left dot grid */}
@@ -105,18 +105,18 @@ export default function FAQHero({ dict }: { dict: any }) {
       <div className="relative z-10">
         {/* Overline flanked by decorative lines */}
         <div className="faq-overline inline-flex items-center gap-3 mb-7">
-          <div className="h-px w-8 bg-stabilo/50" />
+          <div className="h-px w-8 bg-stabilo-soft/50" />
           <span className="font-mono text-[0.625rem] tracking-[0.3em] uppercase text-stabilo">
             {dict.hero_overline}
           </span>
-          <div className="h-px w-8 bg-stabilo/50" />
+          <div className="h-px w-8 bg-stabilo-soft/50" />
         </div>
 
         <h1 className="faq-title font-aktiv-grotesk text-[clamp(2.5rem,6vw,5rem)] font-bold tracking-tight text-ink mb-6">
           {dict.hero_title}
         </h1>
 
-        <p className="faq-desc font-googlea text-[clamp(1rem,1.5vw,1.125rem)] text-ink/60 max-w-xl mx-auto leading-relaxed mb-10">
+        <p className="faq-desc font-google text-[clamp(1rem,1.5vw,1.125rem)] text-ink/60 max-w-xl mx-auto leading-relaxed mb-10">
           {dict.hero_desc}
         </p>
 
@@ -131,7 +131,7 @@ export default function FAQHero({ dict }: { dict: any }) {
 
       {/* Scroll indicator */}
       <div className="faq-scroll-hint absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center" aria-hidden="true">
-        <div className="faq-scroll-line w-px h-8 bg-linear-to-b from-stabilo/40 to-transparent" />
+        <div className="faq-scroll-line w-px h-8 bg-linear-to-b from-stabilo-soft/40 to-transparent" />
       </div>
 
     </div>

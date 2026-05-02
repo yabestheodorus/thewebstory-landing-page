@@ -1,6 +1,7 @@
 import HeroSection from "@/components/home/HeroSection";
 import StatementSection from "@/components/home/StatementSection";
-import WorksSection from "@/components/home/WorksSection";
+import HomeServices from "@/components/home/HomeServices";
+import HomeApproach from "@/components/home/HomeApproach";
 import CTASection from "@/components/home/CTASection";
 import BackgroundGlow from "@/components/home/BackgroundGlow";
 import { getDictionary } from "@/lib/get-dictionary";
@@ -11,15 +12,18 @@ export default async function Home({
   params: Promise<{ lang: string }>;
 }) {
   const { lang } = await params;
-  const dict = await getDictionary(lang as any);
+  const dict = await getDictionary(lang as 'en' | 'id');
 
   return (
-    <main className="relative bg-off dark:bg-zinc-950 min-h-screen overflow-x-hidden">
+    <main className="relative bg-secondary overflow-x-hidden">
       <BackgroundGlow />
       <HeroSection lang={lang} dict={dict.hero} />
-      <StatementSection dict={dict.statement} />
-      <WorksSection dict={dict.works} />
-      <CTASection lang={lang} dict={dict.cta} />
+      <div className="bg-secondary">
+        <StatementSection dict={dict.statement} />
+        <HomeServices lang={lang} dict={dict.works} />
+        <HomeApproach lang={lang} dict={dict.approach} homeDict={dict.home_approach} />
+        <CTASection lang={lang} dict={dict.cta} />
+      </div>
     </main>
   );
 }

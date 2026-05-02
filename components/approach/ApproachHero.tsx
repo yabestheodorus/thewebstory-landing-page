@@ -78,7 +78,7 @@ export default function ApproachHero({ dict }: ApproachHeroProps) {
       </div>
 
       {/* Headline */}
-      <h1 className="ah-headline font-aktiv-grotesk text-[clamp(2.75rem,6vw+1rem,6.25rem)] font-bold leading-[0.98] tracking-[-0.03em] mb-12 md:mb-16 max-w-5xl text-ink">
+      <h1 className="ah-headline font-plus-jakarta text-display font-bold leading-[0.98] tracking-[-0.03em] mb-12 md:mb-16 max-w-5xl text-ink">
         {restWords}{' '}
         <em className="italic font-light text-muted-warm">{lastWord}</em>
       </h1>
@@ -90,26 +90,26 @@ export default function ApproachHero({ dict }: ApproachHeroProps) {
         </p>
         <div className="ah-body flex gap-10">
           <div className="flex flex-col gap-1">
-            <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-ink/30">
+            <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-ink/60">
               Phases
             </span>
-            <span className="font-aktiv-grotesk text-[1.75rem] font-semibold leading-none">
+            <span className="font-plus-jakarta text-[1.75rem] font-semibold leading-none">
               {dict.steps.length.toString().padStart(2, '0')}
             </span>
           </div>
           <div className="flex flex-col gap-1">
-            <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-ink/30">
+            <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-ink/60">
               Avg. timeline
             </span>
-            <span className="font-aktiv-grotesk text-[1.75rem] font-semibold leading-none">
+            <span className="font-plus-jakarta text-[1.75rem] font-semibold leading-none">
               4–8 wks
             </span>
           </div>
           <div className="hidden md:flex flex-col gap-1">
-            <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-ink/30">
+            <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-ink/60">
               Mode
             </span>
-            <span className="font-aktiv-grotesk text-[1.75rem] font-semibold leading-none">
+            <span className="font-plus-jakarta text-[1.75rem] font-semibold leading-none">
               Async-first
             </span>
           </div>
@@ -121,7 +121,7 @@ export default function ApproachHero({ dict }: ApproachHeroProps) {
 
       {/* Step preview rail */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
-        {dict.steps.map((step, i) => (
+        {dict.steps?.map((step, i) => (
           <div
             key={step.id}
             className="ah-step group flex flex-col gap-2 cursor-default"
@@ -132,7 +132,7 @@ export default function ApproachHero({ dict }: ApproachHeroProps) {
               </span>
               <span className="h-px flex-1 bg-ink/10 group-hover:bg-stabilo/60 transition-colors duration-500" />
             </div>
-            <span className="font-aktiv-grotesk text-[0.9375rem] md:text-base font-semibold tracking-[-0.01em] text-ink leading-snug">
+            <span className="font-plus-jakarta text-[0.9375rem] md:text-base font-semibold tracking-[-0.01em] text-ink leading-snug">
               {step.title}
             </span>
           </div>

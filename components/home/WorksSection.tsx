@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger)
 
 import { Dictionary } from '@/dictionaries/en'
 
-export default function WorksSection({ dict }: { dict: Dictionary['works'] }) {
+export default function WorksSection({ dict, lang }: { dict: Dictionary['works'], lang: string }) {
   const [activeIdx, setActiveIdx] = useState<number | null>(null)
   const containerRef = useRef<HTMLDivElement>(null)
 
@@ -38,20 +38,20 @@ export default function WorksSection({ dict }: { dict: Dictionary['works'] }) {
       className="relative text-ink overflow-hidden transition-colors duration-500"
       style={{
         background: [
-          'radial-gradient(ellipse 900px 700px at 88% 0%, rgba(124,92,255,0.09) 0%, transparent 58%)',
-          'radial-gradient(ellipse 500px 400px at 8% 100%, rgba(124,92,255,0.05) 0%, transparent 65%)',
+          'radial-gradient(ellipse 900px 700px at 88% 0%, rgba(184,166,255,0.09) 0%, transparent 58%)',
+          'radial-gradient(ellipse 500px 400px at 8% 100%, rgba(184,166,255,0.05) 0%, transparent 65%)',
           'var(--color-off)',
         ].join(', '),
       }}
     >
       {/* Background ornaments */}
       <div className="absolute pointer-events-none select-none rounded-full top-0 right-0"
-        style={{ width: 800, height: 800, background: 'var(--color-stabilo)', filter: 'blur(140px)', opacity: 0.13, transform: 'translate(35%,-35%)' }} />
+        style={{ width: 800, height: 800, background: 'var(--color-stabilo-soft)', filter: 'blur(140px)', opacity: 0.13, transform: 'translate(35%,-35%)' }} />
       <div className="absolute pointer-events-none select-none rounded-full bottom-0 left-0"
-        style={{ width: 500, height: 500, background: 'var(--color-stabilo)', filter: 'blur(120px)', opacity: 0.07, transform: 'translate(-30%,30%)' }} />
+        style={{ width: 500, height: 500, background: 'var(--color-stabilo-soft)', filter: 'blur(120px)', opacity: 0.07, transform: 'translate(-30%,30%)' }} />
 
       <svg className="absolute pointer-events-none select-none" style={{ top: '-100px', right: '4%', opacity: 0.18 }} width="560" height="560" viewBox="0 0 560 560" fill="none">
-        <circle cx="280" cy="280" r="279" stroke="var(--color-stabilo)" strokeWidth="1" strokeDasharray="4 12" />
+        <circle cx="280" cy="280" r="279" stroke="var(--color-stabilo-soft)" strokeWidth="1" strokeDasharray="4 12" />
         <circle cx="280" cy="280" r="185" stroke="var(--color-ink)" strokeWidth="0.6" strokeDasharray="2 16" />
       </svg>
 
@@ -68,9 +68,9 @@ export default function WorksSection({ dict }: { dict: Dictionary['works'] }) {
           <div className="flex items-center gap-3 mb-7">
             <span className="font-mono text-[0.5625rem] tracking-[0.22em] uppercase text-stabilo">02 / 06</span>
             <span className="w-6 h-px bg-ink/10" />
-            <span className="font-mono text-[0.5625rem] tracking-[0.22em] uppercase text-muted-warm">{dict.overline}</span>
+            <span className="label-eyebrow text-muted-warm">{dict.overline}</span>
           </div>
-          <h2 className="font-aktiv-grotesk text-[clamp(2.625rem,4vw+1rem,4rem)] font-bold leading-none tracking-[-0.025em] text-ink">
+          <h2 className="font-plus-jakarta text-h1 font-bold leading-[1.0] tracking-[-0.025em] text-ink">
             {dict.heading.split(' ').slice(0, -1).join(' ')}{' '}
             <span className="text-stabilo font-inter">{dict.heading.split(' ').slice(-1)}</span>
           </h2>
@@ -102,6 +102,7 @@ export default function WorksSection({ dict }: { dict: Dictionary['works'] }) {
             isActive={activeIdx === idx}
             onMouseEnter={() => setActiveIdx(idx)}
             onMouseLeave={() => setActiveIdx(null)}
+            lang={lang}
           />
         ))}
       </div>

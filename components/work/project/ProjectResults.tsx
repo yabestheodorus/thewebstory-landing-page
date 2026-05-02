@@ -72,7 +72,7 @@ export function ProjectResults({ project, dict }: ProjectResultsProps) {
             {dict.project_detail.sections.results}
           </h2>
         </div>
-        <p className="proj-sec-body font-googlea text-[0.8125rem] leading-[1.8] text-muted-warm max-w-md">
+        <p className="proj-sec-body font-google text-[0.8125rem] leading-[1.8] text-muted-warm max-w-md">
           {dict.project_detail.sections.results_desc}
         </p>
       </div>

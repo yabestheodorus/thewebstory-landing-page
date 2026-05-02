@@ -1,5 +1,5 @@
 # thewebstory.id — Website Content Documentation
-**Last Updated**: April 19, 2026
+**Last Updated**: May 1, 2026
 
 This document contains all textual content for the thewebstory.id website, including both English and Indonesian translations, as well as detailed project case studies.
 
@@ -9,6 +9,7 @@ This document contains all textual content for the thewebstory.id website, inclu
 | Key | English | Indonesian |
 | :--- | :--- | :--- |
 | Work | Work | Karya |
+| Approach | Approach | Pendekatan |
 | Services | Services | Layanan |
 | FAQ | FAQ | FAQ |
 | Contact | Contact | Kontak |
@@ -18,93 +19,88 @@ This document contains all textual content for the thewebstory.id website, inclu
 ## 2. Homepage: Hero Section
 | English Content | Indonesian Content |
 | :--- | :--- |
-| **Overline**: Web Design Agency — Tangerang, Indonesia | **Overline**: Agensi Desain Web — Tangerang, Indonesia |
-| **Headline**: Engineering the digital stage. | **Headline**: Merancang panggung digital. |
-| **Subheadline**: We are a boutique design and engineering studio obsessed with high-fidelity motion, conversion-centric UX, and the art of digital storytelling. | **Subheadline**: Studio desain & engineering kami terobsesi pada motion sinematik, UX yang mendorong konversi, dan seni bercerita lewat digital. |
-| **Primary CTA**: Our Works | **Primary CTA**: Karya Kami |
-| **Secondary CTA**: Get in touch | **Secondary CTA**: Hubungi Kami |
-| **Ticker**: HIGH CONVERSION · PERFORMANCE DRIVEN · PREMIUM MOTION · | **Ticker**: KONVERSI TINGGI · ORIENTASI TERHADAP PERFORMA · MOTION PREMIUM · |
-| **Quote**: "Your brand deserves its own stage." | **Quote**: "Brand Anda layak punya panggung sendiri." |
+| **Overline**: Platform Design & Development — Tangerang, Indonesia | **Overline**: Platform Design & Development — Tangerang, Indonesia |
+| **Headline**: From premature **to premium.** | **Headline**: Dari alakadarnya **jadi istimewa.** |
+| **Subheadline**: Stop renting your audience. We engineer premium, high-converting platforms that turn generic traffic into customers you actually own. | **Subheadline**: Berhenti "sewa" audiens di marketplace. Kami bangun platform premium yang dioptimasi untuk konversi, agar kamu bisa miliki data pelanggan dan maksimalkan keuntungan secara mandiri. |
+| **Primary CTA**: Start a project | **Primary CTA**: Mulai proyek |
+| **Secondary CTA**: See our work | **Secondary CTA**: Lihat karya |
+| **Ticker**: CONVERSION FOCUSED · SEO OPTIMIZED · PERFORMANCE FIRST · | **Ticker**: FOKUS KONVERSI · OPTIMASI SEO · SPEED NOMOR SATU · |
+| **Label Premature**: Premature | **Label Premature**: Alakadarnya |
+| **Label Premium**: Premium | **Label Premium**: Istimewa |
+| **Quote**: "Your website should work for your business." | **Quote**: "Website kamu harusnya kerja buat bisnis kamu." |
 
 ---
 
 ## 3. Strategic Thesis (Statement Section)
 | English Content | Indonesian Content |
 | :--- | :--- |
-| **Heading**: Stop renting, start owning. | **Heading**: Berhenti menyewa, mulai memiliki. |
-| **Description**: Every direct visit to your website is 100% of your revenue. No hidden fees, no marketplace tax, no middleman. We build the architecture for your platform sovereignty. | **Description**: Setiap kunjungan langsung ke website Anda berarti 100% pendapatan masuk ke kantong Anda. Tidak ada potongan tersembunyi, tidak ada pajak marketplace, tidak ada pihak ketiga. Kami bangun fondasinya agar bisnis Anda berdiri di atas tanah sendiri. |
-| **Step 1**: Marketplace — Let them bring you the traffic. | **Step 1**: Marketplace — Pakai mereka untuk mendatangkan traffic. |
-| **Step 2**: Your Website — Convert them on your own terms. | **Step 2**: Website Anda — Konversi pengunjung dengan cara Anda. |
-| **Step 3**: Repeat Purchase — 100% of revenue stays yours. | **Step 3**: Pembelian Berulang — 100% pendapatannya, sepenuhnya milik Anda. |
+| **Overline**: Conversion Impact | **Overline**: Dampak Konversi |
+| **Heading**: Most visitors don’t convert. | **Heading**: Kebanyakan visitor cuma mampir. |
+| **Description**: You are already getting traffic. The opportunity is in what happens when they land. We design high-converting websites that guide, reduce friction, and turn more of your visitors into actual customers. | **Description**: Traffic kamu udah ada. Masalahnya, mereka ngapain pas udah sampe? Kita bikin website high-converting yang nuntun mereka, ngurangin drama, dan bikin visitor beneran jadi customer. |
+| **Step 1**: Traffic — People discover and visit your site. | **Step 1**: Traffic — Orang nemu dan mampir ke situs kamu. |
+| **Step 2**: Your Website — Guide attention and reduce drop-off. | **Step 2**: Website Kamu — Arahin perhatian biar nggak langsung kabur. |
+| **Step 3**: More Customers — Turn more visitors into customers. | **Step 3**: Lebih Banyak Customer — Ubah visitor jadi customer beneran. |
 
 ---
 
 ## 4. Expertise & Services
-### Services Overview
-| Service Title (EN) | Description (EN) | Service Title (ID) | Description (ID) |
+| Key | English | Indonesian |
+| :--- | :--- | :--- |
+| **Heading** | We build websites that feel like products. | Kita bikin website yang rasanya kayak produk. |
+| **01. Company Profile** | Premium storefront that tells your brand story. | Etalase digital premium yang nyeritain brand kamu. |
+| **02. Landing Page** | One product. One page. One goal — conversion. | Satu produk. Satu halaman. Satu tujuan — konversi. |
+| **03. Product Catalogue** | Display your full product line in one place. | Pamerin semua produk kamu di satu tempat. |
+| **04. Online Store** | Your own storefront — not a marketplace listing. | Toko kamu sendiri — bukan cuma numpang di marketplace. |
+| **05. Portfolio** | Digital home for creators, freelancers, and founders. | Rumah digital buat kreator, freelancer, atau founder. |
+| **06. Payment Integration** | Verified checkout that feels as safe as a marketplace. | Checkout aman yang rasanya kayak di marketplace. |
+
+---
+
+## 5. Process & Approach
+| Phase | Title (EN) | Title (ID) | Description (EN) |
 | :--- | :--- | :--- | :--- |
-| **Company Profile** | A premium digital storefront that tells your brand story. | **Profil Perusahaan** | Etalase digital premium yang menceritakan kisah brand Anda. |
-| **Landing Page** | One product. One page. One goal — conversion. | **Landing Page** | Satu produk. Satu halaman. Satu tujuan — konversi. |
-| **Product Catalogue** | Customers browse, filter, and enquire. | **Katalog Produk** | Tampilkan seluruh lini produk Anda di satu tempat. |
-| **Online Store** | Cart, checkout, and payment you fully own. | **Toko Online** | Toko Anda sendiri — bukan sekadar listing marketplace. |
-| **Portfolio** | Showcase your work, own your audience. | **Portofolio** | Pamerkan karya Anda, miliki audiens sendiri. |
-| **Payment Integration** | Verified checkout with trusted gateways. | **Integrasi Pembayaran** | Hubungkan situs Anda ke gerbang pembayaran terpercaya. |
+| **01** | Discover & Strategize | Discovery & Strategi | We listen, ask hard questions, and map the goal before touching a pixel. |
+| **02** | Design & Prototype | Desain & Prototipe | Visual identity, user flows, and clickable proof — felt before it is built. |
+| **03** | Engineer & Refine | Engineering & Refinement | Built right: modern stack, fast, accessible, ready for real traffic. |
+| **04** | Launch & Evolve | Luncurkan & Tumbuh | Ship, measure, iterate — launch is just the start. |
 
 ---
 
-## 5. FAQ
-| Question (EN) | Answer (EN) | Question (ID) | Answer (ID) |
-| :--- | :--- | :--- | :--- |
-| Why a website instead of just a marketplace? | Marketplaces own your customers; custom sites allow you to own 100% revenue and data. | Buat apa punya website kalau sudah jualan di marketplace? | Marketplace bagus buat traffic, tapi website sendiri bikin Anda pegang 100% pendapatan dan data. |
-| How long does a build take? | Landing pages (2-3 wks), E-commerce (4-6 wks). | Berapa lama pengerjaannya? | Landing page (2–3 minggu), E-commerce (4–6 minggu). |
-| What technology stack? | Next.js, GSAP, Tailwind CSS. | Pakai teknologi apa? | Next.js, GSAP, Tailwind CSS. |
-| Do I own the code? | Absolutely. You own domain, assets, and codebase. | Kodenya jadi milik saya? | Tentu. Anda punya domain, aset, dan seluruh kode sumbernya. |
-| Is SEO included? | Yes. Fast loads and semantic structure are foundational. | SEO sudah termasuk? | Ya. Load time cepat dan struktur semantik sudah jadi fondasi kami. |
+## 6. About the Studio
+| Key | English Content | Indonesian Content |
+| :--- | :--- | :--- |
+| **Hero Title** | Engineering the digital stage. | Membangun panggung digital. |
+| **Manifesto Title** | Own the stage. Stop renting the audience. | Miliki panggungmu. Berhenti "sewa" audiens. |
+| **Our "Why"** | Marketplaces provide traffic, but they keep the customer data and margin. We believe every brand deserves its own sovereign digital territory. | Marketplace kasih traffic, tapi mereka yang pegang data customer dan margin. Kami percaya tiap brand layak punya wilayah digital sendiri. |
+| **Team Philosophy** | Small by design. Fast by nature. | Kecil tapi lincah. |
 
 ---
 
-## 6. Selected Projects (Case Studies)
+## 7. Selected Project Case Studies
 
-### Project: Célune
-- **Client**: Célune Skincare
-- **Headline**: From social selling to a store that converts while you sleep.
-- **Challenge**: Managing orders through Instagram DMs/WA was a bottleneck and led to drop-offs.
-- **Solution**: Built a fully-owned e-commerce experience with editorial design, GSAP animations, and Midtrans checkout.
-- **Results**: 3 Weeks to launch, 5+ Product pages, Seamless checkout.
-- **Tech Stack**: Next.js, Typescript, GSAP, Tailwind CSS, Vercel.
+### A. Célune (Skincare E-commerce)
+- **Challenge**: Botanical brand stuck in Instagram DM & WhatsApp selling loops. Bottlenecked by manual processing.
+- **Solution**: High-fidelity editorial store with Midtrans integration (GoPay/OVO). Mobile-first layout optimized for conversion.
+- **Result**: 45% reduction in manual DMs; fully automated sales engine launched in 3 weeks.
 
-### Project: Formique
-- **Client**: Formique Architecture
-- **Headline**: An architecture studio website built to feel as considered as the buildings.
-- **Challenge**: Architectural firms often rely on generic templates that flatten their work.
-- **Solution**: Scroll-driven profile with GSAP transitions mirroring architectural movement and parallax imagery.
-- **Results**: 6+ Scroll sequences, 2 Weeks to build.
-- **Tech Stack**: Next.js, GSAP, ScrollTrigger, Tailwind CSS, Vercel.
+### B. Formique (Architecture Studio)
+- **Challenge**: Professional services flattened by generic grids. Needed a site that matched the material sensibility of their buildings.
+- **Solution**: Scroll-driven company profile using GSAP-pinned sequences. Slow-reveal storytelling mirroring architectural pacing.
+- **Result**: Immersive digital portfolio that elevates the brand above local generic standards.
 
-### Project: Aman Nusa
-- **Client**: Aman Nusa Travel
-- **Headline**: Indonesia's Hidden Treasures.
-- **Challenge**: Lacked a digital identity that matched their high-end physical travel curation.
-- **Solution**: Editorial grid layouts, Sanity-powered journal, and a high-touch inquiry flow.
-- **Results**: 12+ Years of Heritage, 450+ Hidden Locations.
-- **Tech Stack**: Next.js, Sanity CMS, GSAP, Tailwind CSS, Vercel.
+### C. Aman Nusa (Curated Travel)
+- **Challenge**: Physical luxury heritage without a matching digital soul. Needed high-fidelity storytelling for a global audience.
+- **Solution**: Sanity CMS powered editorial journal with high-touch consultation flows. High-fidelity motion with cultural reverence.
+- **Result**: 100% data ownership and direct-to-brand consultation booking engine.
 
-### Project: Zentry
-- **Client**: Zentry (Gamified Clone)
-- **Headline**: The Metagame Layer: A digital odyssey into the metaverse of play.
-- **Challenge**: Gaming sites often fail to capture kinetic energy; needed 60fps orchestration of video.
-- **Solution**: Sophisticated motion architecture using GSAP ScrollTrigger and Framer Motion.
-- **Results**: SOTD Reference Standard, 100 Performance Score.
-- **Tech Stack**: React, GSAP, Framer Motion, Tailwind CSS, Vite.
+### D. Zentry (Gamified Experience)
+- **Challenge**: Capture the kinetic energy of gaming in a static web environment.
+- **Solution**: Gamified UI with hover-triggered audio-visuals and GSAP-orchestrated video engine.
+- **Result**: A standard-setting immersive experience with 60fps performance on a non-linear narrative.
 
 ---
 
-## 7. Contact & CTAs
-| English Content | Indonesian Content |
-| :--- | :--- |
-| **Heading**: Ready to build your stage? | **Heading**: Siap punya cerita sendiri? |
-| **Subheading**: Tell us about your project or just say hi. | **Subheading**: Ceritakan proyek Anda, atau sekadar sapa dulu juga boleh. |
-| **CTA Link (Home)**: Start a project | **CTA Link (Home)**: Mulai proyek |
-| **Form - Name**: Your Name | **Form - Name**: Nama Anda |
-| **Form - Contact**: Your contact (WA/Email) | **Form - Contact**: Kontak Anda (WA/Email) |
-| **Location**: Based in Tangerang, Indonesia | **Location**: Berbasis di Tangerang, Indonesia |
+## 8. FAQ
+- **Why a website instead of just a marketplace?** Marketplaces own your data; a custom site ensures platform sovereignty and 100% revenue retention.
+- **Technology Stack?** Next.js for speed, GSAP for cinematic motion, and Tailwind CSS for clean architecture.
+- **Do I own the code?** Yes. Platform sovereignty means you own your domain, assets, and the codebase entirely.

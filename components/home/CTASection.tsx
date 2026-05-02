@@ -1,6 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef } from 'react'
+import { useGSAP } from '@gsap/react'
+import { gsap } from '@/lib/gsap'
 
 const WA_NUMBER = '6285111203930' // replace with real number
 
@@ -50,8 +52,24 @@ const projectTypes = ['Company Profile', 'Landing Page', 'Online Store', 'Portfo
 import { Dictionary } from '@/dictionaries/en'
 
 export default function CTASection({ dict, lang }: { dict: Dictionary['cta'], lang: string }) {
+  const containerRef = useRef<HTMLDivElement>(null)
   const [form, setForm] = useState({ name: '', contact: '', type: '', message: '' })
   const [sent, setSent] = useState(false)
+
+  useGSAP(() => {
+    // Entrance animations
+    gsap.from('.cta-animate', {
+      y: 30,
+      opacity: 0,
+      duration: 1,
+      stagger: 0.1,
+      ease: 'power3.out',
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: 'top 80%',
+      }
+    })
+  }, { scope: containerRef })
 
   const handleWA = () => {
     if (!form.name.trim()) return
@@ -67,11 +85,11 @@ export default function CTASection({ dict, lang }: { dict: Dictionary['cta'], la
   }
 
   return (
-    <section id="cta-section" className="relative bg-warm text-ink border-t border-border overflow-hidden">
+    <section id="cta-section" ref={containerRef} className="relative text-ink border-t border-border overflow-hidden">
       <div className="max-w-[1440px] mx-auto grid md:grid-cols-2 min-h-[80vh]">
 
         {/* ── Left — headline + info ───────────────────────────── */}
-        <div className="flex flex-col justify-between px-8 md:px-16 pt-20 pb-12 border-b md:border-b-0 md:border-r border-border">
+        <div className="cta-animate flex flex-col justify-between px-8 md:px-16 pt-20 pb-12 border-b md:border-b-0 md:border-r border-border">
           <div>
             <div className="flex items-center gap-3 mb-10">
               <span className="font-mono text-[0.5625rem] tracking-[0.22em] uppercase text-stabilo">06 / 06</span>
@@ -79,7 +97,7 @@ export default function CTASection({ dict, lang }: { dict: Dictionary['cta'], la
               <span className="font-mono text-[0.5625rem] tracking-[0.22em] uppercase text-muted-warm">Get in touch</span>
             </div>
 
-            <h2 className="font-aktiv-grotesk text-[clamp(2.625rem,4vw+1rem,3.875rem)] font-bold leading-[1.0] tracking-[-0.025em] mb-8">
+            <h2 className="font-plus-jakarta text-h1 font-bold leading-[1.0] tracking-[-0.025em] mb-8">
               {dict.heading.split(' ').map((word, i, arr) => {
                 const lower = word.toLowerCase();
                 const isKey = lower.includes('visitors') || lower.includes('pengunjung') || lower.includes('pelanggan?');
@@ -91,7 +109,7 @@ export default function CTASection({ dict, lang }: { dict: Dictionary['cta'], la
               })}
             </h2>
 
-            <p className="font-googlea text-sm leading-[1.8] text-muted-warm max-w-sm mb-12">
+            <p className="font-google text-sm leading-[1.8] text-muted-warm max-w-sm mb-12">
               {dict.subheading}
             </p>
 
@@ -103,8 +121,8 @@ export default function CTASection({ dict, lang }: { dict: Dictionary['cta'], la
                 rel="noopener noreferrer"
                 className="group flex items-center gap-3 w-fit"
               >
-                <span className="font-mono text-[0.5625rem] tracking-[0.16em] uppercase text-ink/30">WhatsApp</span>
-                <span className="font-googlea text-[0.8125rem] text-ink group-hover:text-stabilo transition-colors duration-200">
+                <span className="label-meta">WhatsApp</span>
+                <span className="font-google text-[0.8125rem] text-ink group-hover:text-stabilo transition-colors duration-200">
                   +62 851-1120-3930
                 </span>
               </a>
@@ -112,21 +130,21 @@ export default function CTASection({ dict, lang }: { dict: Dictionary['cta'], la
                 href="mailto:halo@thewebstory.id"
                 className="group flex items-center gap-3 w-fit"
               >
-                <span className="font-mono text-[0.5625rem] tracking-[0.16em] uppercase text-ink/30">Email</span>
-                <span className="font-googlea text-[0.8125rem] text-ink group-hover:text-stabilo transition-colors duration-200">
+                <span className="label-meta">Email</span>
+                <span className="font-google text-[0.8125rem] text-ink group-hover:text-stabilo transition-colors duration-200">
                   halo@thewebstory.id
                 </span>
               </a>
               <div className="flex items-center gap-3">
-                <span className="font-mono text-[0.5625rem] tracking-[0.16em] uppercase text-ink/30">Based in</span>
-                <span className="font-googlea text-[0.8125rem] text-ink">{dict.location}</span>
+                <span className="label-meta">Based in</span>
+                <span className="font-google text-[0.8125rem] text-ink">{dict.location}</span>
               </div>
             </div>
           </div>
 
           {/* Social links */}
           <div className="flex flex-col gap-4">
-            <span className="font-mono text-[0.5rem] tracking-[0.22em] uppercase text-ink/30">Follow the work</span>
+            <span className="label-meta">Follow the work</span>
             <div className="flex items-center gap-1">
               {socials.map(({ label, href, icon }) => (
                 <a
@@ -135,20 +153,20 @@ export default function CTASection({ dict, lang }: { dict: Dictionary['cta'], la
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 flex items-center justify-center border border-border text-muted-warm hover:text-ink hover:border-ink/20 transition-all duration-200"
+                  className="w-9 h-9 flex items-center justify-center border border-border text-muted-warm hover:text-ink hover:border-ink/20 transition-colors duration-200"
                 >
                   {icon}
                 </a>
               ))}
             </div>
-            <p className="font-mono text-[0.5rem] tracking-[0.14em] text-ink/20 mt-2">
+            <p className="font-mono text-[0.5rem] tracking-[0.14em] text-ink/50 mt-2">
               © {new Date().getFullYear()} thewebstory.id. All rights reserved.
             </p>
           </div>
         </div>
 
         {/* ── Right — form ────────────────────────────────────── */}
-        <div className="flex flex-col justify-center px-8 md:px-16 py-20">
+        <div className="cta-animate flex flex-col justify-center px-8 md:px-16 py-20">
           {sent ? (
             <div className="flex flex-col gap-5">
               <div className="w-10 h-10 border border-stabilo flex items-center justify-center">
@@ -157,7 +175,7 @@ export default function CTASection({ dict, lang }: { dict: Dictionary['cta'], la
                 </svg>
               </div>
               <h3 className="font-aktiv-grotesk text-[1.75rem] font-semibold">Message sent.</h3>
-              <p className="font-googlea text-[0.8125rem] text-muted-warm leading-[1.8] max-w-xs">
+              <p className="font-google text-[0.8125rem] text-muted-warm leading-[1.8] max-w-xs">
                 We&apos;ve received your brief and will reply within 24 hours. Check WhatsApp for our response.
               </p>
               <button
@@ -170,29 +188,29 @@ export default function CTASection({ dict, lang }: { dict: Dictionary['cta'], la
           ) : (
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-1.5">
-                <label className="font-mono text-[0.5rem] tracking-[0.22em] uppercase text-ink/35">{dict.form.name}</label>
+                <label className="label-fn text-ink/80">{dict.form.name}</label>
                 <input
                   type="text"
                   placeholder="Budi Santoso"
                   value={form.name}
                   onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
-                  className="bg-transparent border border-border px-4 py-3 font-googlea text-[0.8125rem] text-ink placeholder:text-ink/25 focus:outline-none focus:border-ink/30 transition-colors duration-200"
+                  className="bg-transparent border border-border px-4 py-3 font-google text-[0.8125rem] text-ink placeholder:text-ink/25 focus:outline-none focus:border-ink/30 transition-colors duration-200"
                 />
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="font-mono text-[0.5rem] tracking-[0.22em] uppercase text-ink/35">{dict.form.contact}</label>
+                <label className="label-fn text-ink/80">{dict.form.contact}</label>
                 <input
                   type="text"
                   placeholder="+62 812 ..."
                   value={form.contact}
                   onChange={e => setForm(f => ({ ...f, contact: e.target.value }))}
-                  className="bg-transparent border border-border px-4 py-3 font-googlea text-[0.8125rem] text-ink placeholder:text-ink/25 focus:outline-none focus:border-ink/30 transition-colors duration-200"
+                  className="bg-transparent border border-border px-4 py-3 font-google text-[0.8125rem] text-ink placeholder:text-ink/25 focus:outline-none focus:border-ink/30 transition-colors duration-200"
                 />
               </div>
 
               <div className="flex flex-col gap-2">
-                <label className="font-mono text-[0.5rem] tracking-[0.22em] uppercase text-ink/35">{dict.form.type}</label>
+                <label className="label-fn text-ink/80">{dict.form.type}</label>
                 <div className="flex flex-wrap gap-2">
                   {projectTypes.map(type => (
                     <button
@@ -212,13 +230,13 @@ export default function CTASection({ dict, lang }: { dict: Dictionary['cta'], la
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="font-mono text-[0.5rem] tracking-[0.22em] uppercase text-ink/35">{dict.form.message}</label>
+                <label className="label-fn text-ink/80">{dict.form.message}</label>
                 <textarea
                   rows={4}
                   placeholder="Describe your story..."
                   value={form.message}
                   onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
-                  className="bg-transparent border border-border px-4 py-3 font-googlea text-[0.8125rem] text-ink placeholder:text-ink/25 focus:outline-none focus:border-ink/30 transition-colors duration-200 resize-none"
+                  className="bg-transparent border border-border px-4 py-3 font-google text-[0.8125rem] text-ink placeholder:text-ink/25 focus:outline-none focus:border-ink/30 transition-colors duration-200 resize-none"
                 />
               </div>
 
@@ -254,7 +272,7 @@ export default function CTASection({ dict, lang }: { dict: Dictionary['cta'], la
                 </a>
               </div>
 
-              <p className="font-mono text-[0.4375rem] tracking-[0.14em] text-ink/20">
+            <p className="font-mono text-[0.4375rem] tracking-[0.14em] text-ink/50">
                 We reply within 24 hours. No spam, ever.
               </p>
             </div>

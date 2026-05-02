@@ -37,7 +37,7 @@ export function BrandMarquee({ brands }: BrandMarqueeProps) {
         {[...brands, ...brands].map((brand, i) => (
           <div
             key={i}
-            className="flex items-center px-8 py-5 border border-ink/8 shrink-0 hover:border-stabilo/25 hover:bg-ink/5 transition-all duration-300"
+            className="flex items-center px-8 py-5 border border-ink/8 shrink-0 hover:border-stabilo-soft/25 hover:bg-ink/5 transition-all duration-300"
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
