@@ -5,6 +5,7 @@ export const id: Dictionary = {
     work: 'Karya',
     approach: 'Pendekatan',
     services: 'Layanan',
+    about: 'Tentang',
     faq: 'FAQ',
     contact: 'Kontak',
   },

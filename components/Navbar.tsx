@@ -28,7 +28,7 @@ const Navbar = ({ lang = 'en', dict }: NavbarProps) => {
     { label: dict?.nav.work || 'Work', href: `/${lang}/work` },
     { label: dict?.nav.approach || 'Approach', href: `/${lang}/approach` },
     { label: dict?.nav.services || 'Services', href: `/${lang}/services` },
-    { label: lang === 'id' ? 'Tentang' : 'About', href: `/${lang}/about` },
+    { label: dict?.nav.about || 'About', href: `/${lang}/about` },
     { label: dict?.nav.faq || 'FAQ', href: `/${lang}/faq` },
     { label: dict?.nav.contact || 'Contact', href: `/${lang}/contact` },
   ]
@@ -73,7 +73,7 @@ const Navbar = ({ lang = 'en', dict }: NavbarProps) => {
 
         {/* Right: Actions */}
         <div className="flex items-center gap-4 relative z-10">
-          <LanguageToggle lang={lang} />
+          <LanguageToggle currentLang={lang} />
           <MobileMenu navLinks={navLinks} />
         </div>
       </div>
