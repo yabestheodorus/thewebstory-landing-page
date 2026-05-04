@@ -35,7 +35,7 @@ const Navbar = ({ lang = 'en', dict }: NavbarProps) => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 flex justify-center px-6 transition-all duration-500 ease-out ${scrolled ? 'py-4' : 'py-8'}`}>
-      <div className={`w-full max-w-7xl flex items-center justify-between transition-all duration-500 ease-out px-6 py-3 rounded-full border border-transparent ${scrolled ? 'bg-secondary/80 backdrop-blur-xl border-ink/5 shadow-[0_8px_32px_rgba(0,0,0,0.04)]' : ''}`}>
+      <div className={`w-full max-w-7xl flex items-center justify-between transition-all duration-500 ease-out px-6 py-3 rounded-full border border-transparent ${scrolled ? 'bg-secondary/80 backdrop-blur-safe border-ink/5 shadow-[0_8px_32px_rgba(0,0,0,0.04)]' : ''}`}>
         
         {/* Left: Branding */}
         <Link href={`/${lang}`} className="flex items-center gap-3 group relative z-10">

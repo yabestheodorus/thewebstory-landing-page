@@ -48,7 +48,7 @@ export default function MobileMenu({ navLinks }: { navLinks: NavLink[] }) {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 top-20 bg-ink/5 dark:bg-black/30 backdrop-blur-sm md:hidden z-40"
+              className="fixed inset-0 top-20 bg-ink/5 dark:bg-black/30 backdrop-blur-none md:backdrop-blur-sm md:hidden z-40"
               onClick={() => setIsOpen(false)}
             />
 
@@ -58,7 +58,7 @@ export default function MobileMenu({ navLinks }: { navLinks: NavLink[] }) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -6 }}
               transition={{ duration: 0.25, ease: [0.33, 1, 0.68, 1] }}
-              className="fixed top-20 left-0 right-0 bg-secondary/95 dark:bg-zinc-950/95 backdrop-blur-md border-b border-ink/5 md:hidden z-40 px-6 py-4"
+              className="fixed top-20 left-0 right-0 bg-secondary/95 dark:bg-zinc-950/95 backdrop-blur-none md:backdrop-blur-md border-b border-ink/5 md:hidden z-40 px-6 py-4"
             >
               <ul className="flex flex-col list-none m-0 p-0">
                 {navLinks.map((item, i) => (

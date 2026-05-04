@@ -10,36 +10,55 @@ export function AboutHero({ dict }: { dict: Dictionary['about']['hero'] }) {
 
   useGSAP(() => {
     const ease = 'cubic-bezier(0.23, 1, 0.32, 1)'
-    const split = new SplitText('.a-headline', { type: 'lines,words' })
+    const mm = gsap.matchMedia()
 
-    split.lines.forEach(line => {
-      const mask = document.createElement('div')
-      mask.style.overflow = 'hidden'
-      mask.style.paddingBottom = '0.15em'
-      mask.style.marginBottom = '-0.15em'
-      line.parentNode?.insertBefore(mask, line)
-      mask.appendChild(line)
+    mm.add("(min-width: 1024px)", () => {
+      const split = new SplitText('.a-headline', { type: 'lines,words' })
+
+      split.lines.forEach(line => {
+        const mask = document.createElement('div')
+        mask.style.overflow = 'hidden'
+        mask.style.paddingBottom = '0.15em'
+        mask.style.marginBottom = '-0.15em'
+        line.parentNode?.insertBefore(mask, line)
+        mask.appendChild(line)
+      })
+
+      const tl = gsap.timeline({ defaults: { ease } })
+
+      tl.from('.a-overline', { y: 20, opacity: 0, duration: 0.8 })
+        .from(split.words, {
+          y: '100%',
+          opacity: 0,
+          duration: 1.1,
+          stagger: 0.04,
+          ease: 'power4.out'
+        }, '-=0.5')
+        .from('.a-sub', { opacity: 0, y: 15, duration: 0.8 }, '-=0.6')
+        .from('.a-hero-bg', { scale: 1.1, opacity: 0, duration: 1.8 }, 0)
     })
 
-    const tl = gsap.timeline({ defaults: { ease } })
+    mm.add("(max-width: 1023px)", () => {
+      const tl = gsap.timeline({ defaults: { ease } })
 
-    tl.from('.a-overline', { y: 20, opacity: 0, duration: 0.8 })
-      .from(split.words, {
-        y: '100%',
-        opacity: 0,
-        duration: 1.1,
-        stagger: 0.04,
-        ease: 'power4.out'
-      }, '-=0.5')
-      .from('.a-sub', { opacity: 0, y: 15, duration: 0.8 }, '-=0.6')
-      .from('.a-hero-bg', { scale: 1.1, opacity: 0, duration: 1.8 }, 0)
+      tl.from('.a-overline', { y: 15, opacity: 0, duration: 0.8 })
+        .from('.a-headline', {
+          y: 30,
+          opacity: 0,
+          duration: 1.2,
+          ease: 'power3.out'
+        }, '-=0.5')
+        .from('.a-sub', { opacity: 0, y: 15, duration: 0.8 }, '-=0.7')
+        .from('.a-hero-bg', { opacity: 0, duration: 1.5 }, 0)
+    })
 
+    return () => mm.revert()
   }, { scope: containerRef })
 
   return (
     <section ref={containerRef} className="relative min-h-[90vh] flex flex-col justify-center px-8 md:px-16 pt-32 pb-20 overflow-hidden">
       {/* Background Ornament */}
-      <div className="a-hero-bg absolute inset-0 -z-10 bg-secondary dark:bg-zinc-950">
+      <div className="a-hero-bg absolute inset-0 -z-10 bg-secondary dark:bg-zinc-950 will-change-[opacity,transform]">
         <div
           className="absolute inset-x-0 top-0 h-[600px] opacity-10 blur-[150px]"
           style={{ background: 'var(--color-blaze)' }}
@@ -53,7 +72,7 @@ export function AboutHero({ dict }: { dict: Dictionary['about']['hero'] }) {
           <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-muted-warm">{dict.est}</span>
         </div>
 
-        <h1 className="a-headline font-plus-jakarta text-display font-bold leading-[0.95] tracking-[-0.04em] text-ink mb-12">
+        <h1 className="a-headline font-plus-jakarta text-display font-bold leading-[0.95] tracking-[-0.04em] text-ink mb-12 will-change-transform">
           {dict.title_part1} <br />
           <span className="text-ink/60">{dict.title_part2}</span>
         </h1>

@@ -17,13 +17,14 @@ const BackgroundGlow: React.FC<BackgroundGlowProps> = ({
 }) => {
   return (
     <div
-      className={`absolute pointer-events-none -z-10 rounded-full select-none ${className}`}
+      className={`absolute pointer-events-none -z-10 rounded-full select-none will-change-transform ${className}`}
       style={{
         width: size,
         height: size,
         backgroundColor: color,
         filter: `blur(${blur})`,
         opacity: opacity,
+        transform: 'translate3d(0,0,0)', // Force GPU acceleration
       }}
     />
   )

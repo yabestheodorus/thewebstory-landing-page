@@ -178,6 +178,28 @@
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
 }
 
+@utility backdrop-blur-safe {
+  @apply backdrop-blur-none md:backdrop-blur-xl;
+}
+
+@utility backdrop-blur-safe-md {
+  @apply backdrop-blur-none md:backdrop-blur-md;
+}
+
+@utility gpu {
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@utility will-change-transform {
+  will-change: transform;
+}
+
+@utility will-change-opacity {
+  will-change: opacity;
+}
+
 /* ─── 8. Reduced motion ──────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

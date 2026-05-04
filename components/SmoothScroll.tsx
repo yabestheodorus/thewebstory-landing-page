@@ -11,14 +11,15 @@ function LenisSync() {
     ScrollTrigger.update()
   })
 
-  useEffect(() => {
-    gsap.ticker.lagSmoothing(500, 33)
-  }, [])
-
   return null
 }
 
 export default function SmoothScroll({ children }: { children: React.ReactNode }) {
+  useEffect(() => {
+    // Always enable lag smoothing for GSAP
+    gsap.ticker.lagSmoothing(500, 33)
+  }, [])
+
   const { isMobile } = useDevice()
 
   // On mobile, native scroll is hardware-accelerated — Lenis only adds JS overhead

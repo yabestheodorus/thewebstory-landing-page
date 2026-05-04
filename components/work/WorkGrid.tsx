@@ -44,16 +44,32 @@ export default function WorkGrid({ dict, lang }: { dict: Dictionary['work'], lan
     })
 
     // Index row title reveals
-    gsap.utils.toArray<HTMLElement>('.work-index-title').forEach((el) => {
-      const split = new SplitText(el, { type: 'words' })
-      splits.push(split)
-      gsap.from(split.words, {
-        y: '100%', opacity: 0, duration: 0.7, stagger: 0.03, ease,
-        scrollTrigger: { trigger: el, start: 'top 90%', toggleActions: 'play none none reverse' },
+    const mm = gsap.matchMedia();
+    
+    mm.add("(min-width: 1024px)", () => {
+      gsap.utils.toArray<HTMLElement>('.work-index-title').forEach((el) => {
+        const split = new SplitText(el, { type: 'words' })
+        splits.push(split)
+        gsap.from(split.words, {
+          y: '100%', opacity: 0, duration: 0.7, stagger: 0.03, ease,
+          scrollTrigger: { trigger: el, start: 'top 90%', toggleActions: 'play none none reverse' },
+        })
       })
-    })
+    });
 
-    return () => splits.forEach(s => s.revert())
+    mm.add("(max-width: 1023px)", () => {
+      gsap.utils.toArray<HTMLElement>('.work-index-title').forEach((el) => {
+        gsap.from(el, {
+          y: 20, opacity: 0, duration: 0.8, ease,
+          scrollTrigger: { trigger: el, start: 'top 92%', toggleActions: 'play none none reverse' },
+        })
+      })
+    });
+
+    return () => {
+      mm.revert();
+      splits.forEach(s => s.revert());
+    }
   }, { scope: containerRef })
 
   const projects = getProjects(lang)

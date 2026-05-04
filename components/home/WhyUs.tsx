@@ -26,7 +26,7 @@ export function WhyUs({ dict }: { dict: any }) {
     <section ref={containerRef} className="relative py-32 px-8 md:px-16 bg-secondary overflow-hidden">
       {/* Ambient glow */}
       <div 
-        className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blaze/5 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none"
+        className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blaze/5 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none will-change-[filter,transform]"
       />
 
       <div className="relative z-10 max-w-6xl mx-auto">
@@ -47,7 +47,7 @@ export function WhyUs({ dict }: { dict: any }) {
           {dict.comparison?.map((item: any, i: number) => (
             <div 
               key={i} 
-              className="comparison-row grid grid-cols-1 md:grid-cols-[1.2fr_1fr_1fr] border-b border-ink/5 py-12 md:py-16 gap-8 items-start hover:bg-white transition-colors duration-500 px-4 -mx-4 group"
+              className="comparison-row grid grid-cols-1 md:grid-cols-[1.2fr_1fr_1fr] border-b border-ink/5 py-12 md:py-16 gap-8 items-start hover:bg-white transition-colors duration-500 px-4 -mx-4 group will-change-transform"
             >
               <div>
                 <h3 className="font-plus-jakarta text-xl font-bold text-ink mb-2">

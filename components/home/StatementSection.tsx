@@ -14,6 +14,7 @@ import { Dictionary } from '@/dictionaries/en'
 
 export default function StatementSection({ dict }: { dict: Dictionary['statement'] }) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const counterRef = useRef<HTMLElement>(null)
 
   useGSAP(() => {
     // Reveal text
@@ -64,8 +65,12 @@ export default function StatementSection({ dict }: { dict: Dictionary['statement
         toggleActions: 'play none none reverse',
       },
       onUpdate() {
-        const el = document.querySelector<HTMLElement>('.s-counter-val')
-        if (el) el.textContent = `${Math.round(obj.val)}%`
+        if (counterRef.current) {
+          const current = Math.round(obj.val)
+          if (counterRef.current.innerText !== `${current}%`) {
+            counterRef.current.innerText = `${current}%`
+          }
+        }
       },
     })
 
@@ -106,7 +111,7 @@ export default function StatementSection({ dict }: { dict: Dictionary['statement
     <div id="statement-section" ref={containerRef} className="relative text-ink overflow-hidden bg-secondary">
       {/* Ambient glows */}
       <div
-        className="absolute pointer-events-none select-none rounded-full"
+        className="absolute pointer-events-none select-none rounded-full gpu will-change-transform"
         style={{
           width: 900, height: 400, top: 0, left: '50%',
           transform: 'translate(-50%, -40%)',
@@ -126,6 +131,7 @@ export default function StatementSection({ dict }: { dict: Dictionary['statement
 
         <div className="s-counter flex flex-col items-center gap-3 mb-10">
           <span
+            ref={counterRef}
             className="s-counter-val font-aktiv-grotesk font-bold leading-none tracking-[-0.04em] text-blaze"
             style={{ fontSize: 'clamp(7rem, 20vw, 15rem)' }}
           >

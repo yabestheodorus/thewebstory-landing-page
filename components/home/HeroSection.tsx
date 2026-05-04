@@ -20,32 +20,55 @@ export default function HeroSection({ dict, lang }: { dict: Dictionary['hero'], 
       x: -30,
       opacity: 0,
     })
-      .from('.h-headline span', {
+
+    // Optimize for mobile: remove expensive rotateX on smaller screens
+    const mm = gsap.matchMedia();
+    
+    mm.add("(min-width: 1024px)", () => {
+      tl.from('.h-headline > span:not(.h-decoration)', {
         y: 100,
         rotateX: -20,
         opacity: 0,
         stagger: 0.1,
         duration: 1.5,
       }, '-=1')
-      .from('.h-body-block', {
+    });
+
+    mm.add("(max-width: 1023px)", () => {
+      tl.from('.h-headline > span:not(.h-decoration)', {
         y: 40,
         opacity: 0,
-        duration: 1.4
-      }, '-=1.2')
+        stagger: 0.1,
+        duration: 1.2,
+      }, '-=1')
+    });
+
+    tl.from('.h-body-block', {
+      y: 40,
+      opacity: 0,
+      duration: 1.4
+    }, '-=1.2')
       .from('.h-rule', {
         scaleX: 0,
         duration: 1.5,
         ease: 'power4.inOut'
       }, '-=1.4')
 
-    // Ticker scroll
-    gsap.to('.h-ticker-inner', {
-      xPercent: -50,
-      ease: 'none',
-      duration: 20,
-      repeat: -1
-    })
+    // Ticker scroll with responsive speed
+    mm.add({
+      isMobile: "(max-width: 768px)",
+      isDesktop: "(min-width: 769px)"
+    }, (context) => {
+      const { isMobile } = context.conditions as any;
+      gsap.to('.h-ticker-inner', {
+        xPercent: -50,
+        ease: 'none',
+        duration: isMobile ? 15 : 25,
+        repeat: -1
+      })
+    });
 
+    return () => mm.revert();
   }, { scope: containerRef })
 
   return (
@@ -62,7 +85,7 @@ export default function HeroSection({ dict, lang }: { dict: Dictionary['hero'], 
         {/* Main Content Area: Centered & Space-Optimized */}
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center text-center">
           {/* Chapter mark */}
-          <div className="h-chapter flex items-center justify-center gap-4 mb-6 md:mb-10">
+          <div className="h-chapter flex items-center justify-center gap-4 mb-6 md:mb-10 will-change-transform">
             <span className="font-aktiv-grotesk text-2xl md:text-3xl font-bold tabular-nums leading-none text-ink">01</span>
             <span className="w-10 h-px bg-ink/30" />
             <span className="label-eyebrow text-[9px]">The Opening Ritual</span>
@@ -79,18 +102,18 @@ export default function HeroSection({ dict, lang }: { dict: Dictionary['hero'], 
               <span className="font-mono text-[9px] uppercase tracking-[0.4em] text-ink font-bold">Protocol: High-Fidelity Synthesis</span>
             </div>
 
-            <h1 className="h-headline font-aktiv-grotesk font-bold leading-[0.85] tracking-[-0.05em] text-[clamp(4.2rem,12vw,6.5rem)] mb-10 md:mb-12">
-              <span className="block uppercase">
+            <h1 className="h-headline font-aktiv-grotesk font-bold leading-[0.85] tracking-[-0.05em] text-[clamp(4.2rem,12vw,6.5rem)] mb-10 md:mb-12 perspective-1000">
+              <span className="block uppercase gpu will-change-transform">
                 Crafting
               </span>
-              <span className="flex items-center justify-center gap-6 mt-1">
-                <span className="w-12 h-px bg-ink/15 hidden sm:block" />
+              <span className="flex items-center justify-center gap-6 mt-1 gpu will-change-transform">
+                <span className="h-decoration w-12 h-px bg-ink/15 hidden sm:block" />
                 <span className="font-playfair italic font-light tracking-[-0.03em] text-blaze normal-case">
                   High-Fidelity
                 </span>
-                <span className="w-12 h-px bg-ink/15 hidden sm:block" />
+                <span className="h-decoration w-12 h-px bg-ink/15 hidden sm:block" />
               </span>
-              <span className="block mt-1 uppercase">
+              <span className="block mt-1 uppercase gpu will-change-transform">
                 Ecosystems<span className="text-blaze">.</span>
               </span>
             </h1>
@@ -182,7 +205,7 @@ export default function HeroSection({ dict, lang }: { dict: Dictionary['hero'], 
 
       {/* Infinity Ticker */}
       <div className="h-rule relative py-10 border-t border-b border-ink/5 bg-muted">
-        <div className="flex h-ticker-inner whitespace-nowrap">
+        <div className="flex h-ticker-inner whitespace-nowrap will-change-transform gpu">
           {[1, 2, 3].map((_, i) => (
             <div key={i} className="flex items-center">
               <span className="font-aktiv-grotesk text-[clamp(2.5rem,6vw,5.5rem)] font-bold uppercase tracking-tighter opacity-[0.03] px-10">
