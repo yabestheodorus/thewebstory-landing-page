@@ -56,7 +56,7 @@ export default function WorkFooter({ dict, lang }: { dict: Dictionary['work']; l
           <span className="label-eyebrow">{dict.footer_overline}</span>
           <h2 ref={headingRef} className="font-aktiv-grotesk text-[clamp(2.25rem,4vw,3.5rem)] font-bold leading-[1.0] tracking-[-0.03em]">
             {dict.footer_heading_1}{' '}
-            <em className="font-playfair italic font-light text-stabilo">{dict.footer_heading_2}</em>
+            <em className="font-playfair italic font-light text-blaze">{dict.footer_heading_2}</em>
           </h2>
         </div>
 
@@ -64,7 +64,7 @@ export default function WorkFooter({ dict, lang }: { dict: Dictionary['work']; l
         <div className="flex flex-col sm:flex-row md:flex-col gap-5 shrink-0 relative z-10">
           <Link
             href={`/${lang}/contact`}
-            className="group px-10 py-5 bg-gradient-to-r from-stabilo to-[#FF7A00] text-white rounded-2xl font-plus-jakarta text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-[0_8px_24px_rgba(232,93,4,0.15)] hover:shadow-[0_16px_48px_rgba(232,93,4,0.3)] hover:-translate-y-0.5 flex items-center justify-center gap-3"
+            className="group px-10 py-5 bg-gradient-to-r from-blaze to-[#FF7A00] text-white rounded-2xl font-plus-jakarta text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-[0_8px_24px_rgba(232,93,4,0.15)] hover:shadow-[0_16px_48px_rgba(232,93,4,0.3)] hover:-translate-y-0.5 flex items-center justify-center gap-3"
           >
             <SlideUpLabel text={dict.footer_cta} />
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />

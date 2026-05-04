@@ -27,14 +27,14 @@ export function AboutCapabilities({ dict }: { dict: any }) {
     <section ref={containerRef} className="relative py-32 px-8 md:px-16 bg-secondary overflow-hidden">
       {/* Ambient glow */}
       <div 
-        className="absolute top-0 right-0 w-[500px] h-[500px] bg-stabilo/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"
+        className="absolute top-0 right-0 w-[500px] h-[500px] bg-blaze/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 pointer-events-none"
       />
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 gap-8">
           <div>
             <div className="flex items-center gap-3 mb-8">
-              <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-stabilo">{dict.overline}</span>
+              <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-blaze">{dict.overline}</span>
               <span className="w-8 h-px bg-ink/15" />
               <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-ink/50">Core Strengths</span>
             </div>
@@ -54,14 +54,14 @@ export function AboutCapabilities({ dict }: { dict: any }) {
               className="cap-card bg-secondary p-10 md:p-16 flex flex-col gap-10 group hover:bg-white transition-colors duration-500"
             >
               <div className="flex items-center justify-between">
-                <span className="font-mono text-[0.625rem] text-stabilo/40 font-bold tabular-nums">
+                <span className="font-mono text-[0.625rem] text-blaze/40 font-bold tabular-nums">
                   {String(i + 1).padStart(2, '0')}
                 </span>
-                <ArrowUpRight className="w-5 h-5 text-ink/10 group-hover:text-stabilo group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500" />
+                <ArrowUpRight className="w-5 h-5 text-ink/10 group-hover:text-blaze group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-500" />
               </div>
               
               <div className="flex flex-col gap-5">
-                <h3 className="font-plus-jakarta text-3xl font-bold text-ink tracking-tight group-hover:text-stabilo transition-colors duration-500">
+                <h3 className="font-plus-jakarta text-3xl font-bold text-ink tracking-tight group-hover:text-blaze transition-colors duration-500">
                   {item.title}
                 </h3>
                 <p className="font-google text-base leading-relaxed text-muted-warm max-w-sm">

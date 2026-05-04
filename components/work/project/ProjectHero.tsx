@@ -91,14 +91,14 @@ export function ProjectHero({ project, dict, lang }: ProjectHeroProps) {
       <svg className="absolute pointer-events-none select-none"
         style={{ top: -100, right: '2%', opacity: ornamentOpacity[project.color] }}
         width="700" height="700" viewBox="0 0 700 700" fill="none">
-        <circle cx="350" cy="350" r="349" stroke="var(--color-stabilo-soft)" strokeWidth="2" strokeDasharray="6 14" />
+        <circle cx="350" cy="350" r="349" stroke="var(--color-blaze-soft)" strokeWidth="2" strokeDasharray="6 14" />
         <circle cx="350" cy="350" r="232" stroke="var(--color-ink)" strokeWidth="1.2" strokeDasharray="4 18" />
       </svg>
       <svg className="absolute pointer-events-none select-none"
         style={{ top: '14%', left: '2%', opacity: ornamentOpacity[project.color] * 1.6 }}
         width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <line x1="10" y1="0" x2="10" y2="20" stroke="var(--color-stabilo-soft)" strokeWidth="1.2" />
-        <line x1="0" y1="10" x2="20" y2="10" stroke="var(--color-stabilo-soft)" strokeWidth="1.2" />
+        <line x1="10" y1="0" x2="10" y2="20" stroke="var(--color-blaze-soft)" strokeWidth="1.2" />
+        <line x1="0" y1="10" x2="20" y2="10" stroke="var(--color-blaze-soft)" strokeWidth="1.2" />
       </svg>
       <svg className="absolute pointer-events-none select-none"
         style={{ top: '48%', right: '4%', opacity: ornamentOpacity[project.color] * 1.2 }}
@@ -114,7 +114,7 @@ export function ProjectHero({ project, dict, lang }: ProjectHeroProps) {
       </svg>
       <span
         className="absolute pointer-events-none select-none font-aktiv-grotesk font-bold leading-none tracking-[-0.05em] whitespace-nowrap"
-        style={{ bottom: '6%', right: '-1%', fontSize: 'clamp(80px, 14vw, 180px)', color: 'var(--color-stabilo-soft)', opacity: ornamentOpacity[project.color] * 0.55 }}
+        style={{ bottom: '6%', right: '-1%', fontSize: 'clamp(80px, 14vw, 180px)', color: 'var(--color-blaze-soft)', opacity: ornamentOpacity[project.color] * 0.55 }}
         aria-hidden="true"
       >
         {project.title}
@@ -210,7 +210,7 @@ export function ProjectHero({ project, dict, lang }: ProjectHeroProps) {
           </div>
           <div className="mt-16 flex justify-center relative z-30">
             <a href={project.url} target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 font-mono text-[0.625rem] tracking-[0.2em] uppercase py-4 px-8 bg-white text-black hover:bg-stabilo hover:text-black transition-all duration-300 active:scale-95 shadow-xl">
+              className="inline-flex items-center gap-3 font-mono text-[0.625rem] tracking-[0.2em] uppercase py-4 px-8 bg-white text-black hover:bg-blaze hover:text-black transition-all duration-300 active:scale-95 shadow-xl">
               {dict.project_detail.cta.launch}
               <svg width="12" height="12" viewBox="0 0 14 14" fill="none">
                 <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

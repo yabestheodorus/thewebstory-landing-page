@@ -88,12 +88,12 @@ export default function ApproachPrinciples({ title, principles }: ApproachPrinci
       className="relative bg-ink text-off px-6 md:px-16 pt-24 md:pt-32 pb-24 md:pb-32 border-t border-white/5 overflow-hidden"
     >
       {/* Subtle ambient glow — single, restrained */}
-      <div className="absolute top-1/3 -right-40 w-125 h-125 bg-stabilo/8 blur-[140px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/3 -right-40 w-125 h-125 bg-blaze/8 blur-[140px] rounded-full pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto">
         {/* Overline */}
         <div className="flex items-center gap-3 mb-10">
-          <span className="font-mono text-[0.5625rem] tracking-[0.22em] uppercase text-stabilo">
+          <span className="font-mono text-[0.5625rem] tracking-[0.22em] uppercase text-blaze">
             Ethos
           </span>
           <span className="w-6 h-px bg-white/15" />
@@ -130,14 +130,14 @@ export default function ApproachPrinciples({ title, principles }: ApproachPrinci
                   isBottomRow ? 'md:border-b-0' : ''
                 } ${isRightCol ? 'md:border-l md:border-white/10' : ''}`}
               >
-                {/* Hover stabilo edge */}
-                <span className="absolute left-0 top-0 bottom-0 w-px bg-stabilo origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-700 ease-out" />
+                {/* Hover blaze edge */}
+                <span className="absolute left-0 top-0 bottom-0 w-px bg-blaze origin-top scale-y-0 group-hover:scale-y-100 transition-transform duration-700 ease-out" />
 
                 <div className="flex items-center gap-3 mb-6">
-                  <span className="font-mono text-[0.5625rem] tracking-[0.22em] uppercase text-stabilo">
+                  <span className="font-mono text-[0.5625rem] tracking-[0.22em] uppercase text-blaze">
                     / 0{i + 1}
                   </span>
-                  <span className="w-8 h-px bg-white/15 group-hover:bg-stabilo/60 transition-colors duration-500" />
+                  <span className="w-8 h-px bg-white/15 group-hover:bg-blaze/60 transition-colors duration-500" />
                 </div>
 
                 <h3 className="font-plus-jakarta text-h2 font-semibold tracking-[-0.02em] leading-[1.05] mb-5 text-off">

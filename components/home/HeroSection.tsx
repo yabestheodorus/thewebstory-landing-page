@@ -54,7 +54,7 @@ export default function HeroSection({ dict, lang }: { dict: Dictionary['hero'], 
       <div
         className="absolute inset-0 pointer-events-none opacity-30"
         style={{
-          background: 'radial-gradient(circle at 50% 0%, var(--color-stabilo-soft) 0%, transparent 70%)',
+          background: 'radial-gradient(circle at 50% 0%, var(--color-blaze-soft) 0%, transparent 70%)',
         }}
       />
 
@@ -73,7 +73,7 @@ export default function HeroSection({ dict, lang }: { dict: Dictionary['hero'], 
             <div className="flex items-center justify-center gap-4 mb-6 opacity-40 group-hover:opacity-100 transition-opacity duration-700">
               <div className="flex gap-1">
                 {[1, 2, 3].map(i => (
-                  <div key={i} className="w-1 h-1 rounded-full bg-stabilo" />
+                  <div key={i} className="w-1 h-1 rounded-full bg-blaze" />
                 ))}
               </div>
               <span className="font-mono text-[9px] uppercase tracking-[0.4em] text-ink font-bold">Protocol: High-Fidelity Synthesis</span>
@@ -85,13 +85,13 @@ export default function HeroSection({ dict, lang }: { dict: Dictionary['hero'], 
               </span>
               <span className="flex items-center justify-center gap-6 mt-1">
                 <span className="w-12 h-px bg-ink/15 hidden sm:block" />
-                <span className="font-playfair italic font-light tracking-[-0.03em] text-stabilo normal-case">
+                <span className="font-playfair italic font-light tracking-[-0.03em] text-blaze normal-case">
                   High-Fidelity
                 </span>
                 <span className="w-12 h-px bg-ink/15 hidden sm:block" />
               </span>
               <span className="block mt-1 uppercase">
-                Ecosystems<span className="text-stabilo">.</span>
+                Ecosystems<span className="text-blaze">.</span>
               </span>
             </h1>
           </div>
@@ -108,12 +108,12 @@ export default function HeroSection({ dict, lang }: { dict: Dictionary['hero'], 
               <div className="relative w-7 h-7 rounded-full border-2 border-card overflow-hidden">
                 <Image src="/images/screenshots/amannusa_img.png" alt="" fill className="object-cover" sizes="28px" />
               </div>
-              <div className="relative w-7 h-7 rounded-full border-2 border-card bg-stabilo flex items-center justify-center">
+              <div className="relative w-7 h-7 rounded-full border-2 border-card bg-blaze flex items-center justify-center">
                 <span className="font-aktiv-grotesk text-[10px] font-bold text-white">+9</span>
               </div>
             </div>
             <div className="flex flex-col gap-0.5 text-left">
-              <div className="flex items-center gap-1 text-stabilo">
+              <div className="flex items-center gap-1 text-blaze">
                 <Star className="w-3 h-3 fill-current" />
                 <Star className="w-3 h-3 fill-current" />
                 <Star className="w-3 h-3 fill-current" />
@@ -139,7 +139,7 @@ export default function HeroSection({ dict, lang }: { dict: Dictionary['hero'], 
             <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 relative z-30">
               <Link
                 href={`/${lang}/contact`}
-                className="group px-10 py-4 bg-gradient-to-r from-stabilo to-[#FF7A00] text-white rounded-2xl font-plus-jakarta text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-[0_8px_24px_rgba(232,93,4,0.2)] hover:shadow-[0_16px_48px_rgba(232,93,4,0.35)] hover:-translate-y-0.5 flex items-center gap-3 relative z-10"
+                className="group px-10 py-4 bg-gradient-to-r from-blaze to-[#FF7A00] text-white rounded-2xl font-plus-jakarta text-xs font-bold uppercase tracking-widest transition-all duration-300 shadow-[0_8px_24px_rgba(232,93,4,0.2)] hover:shadow-[0_16px_48px_rgba(232,93,4,0.35)] hover:-translate-y-0.5 flex items-center gap-3 relative z-10"
               >
                 <SlideUpLabel text={dict.cta_primary} />
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300 relative z-10" />

@@ -15,7 +15,7 @@ export function FeaturedProjectCard({ project, isHovered, onMouseEnter, onMouseL
   return (
     <Link
       href={`/work/${project.slug}`}
-      className="work-card-featured group relative overflow-hidden aspect-[4/3] block bg-muted border border-ink/10 transition-all duration-500 hover:border-stabilo/30 rounded-2xl"
+      className="work-card-featured group relative overflow-hidden aspect-[4/3] block bg-muted border border-ink/10 transition-all duration-500 hover:border-blaze/30 rounded-2xl"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -37,9 +37,9 @@ export function FeaturedProjectCard({ project, isHovered, onMouseEnter, onMouseL
         }}
       />
 
-      {/* Stabilo accent glow on hover */}
+      {/* Blaze accent glow on hover */}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
-        style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 100%, color-mix(in srgb, var(--color-stabilo), transparent 92%) 0%, transparent 70%)' }}
+        style={{ background: 'radial-gradient(ellipse 80% 60% at 50% 100%, color-mix(in srgb, var(--color-blaze), transparent 92%) 0%, transparent 70%)' }}
       />
 
       {/* Top meta */}
@@ -55,7 +55,7 @@ export function FeaturedProjectCard({ project, isHovered, onMouseEnter, onMouseL
           {project.techStack?.slice(0, 6).map(tech => {
             const Icon = TECH_ICONS[tech]
             return Icon ? (
-              <span key={tech} title={tech} className="text-white/40 hover:text-stabilo transition-colors">
+              <span key={tech} title={tech} className="text-white/40 hover:text-blaze transition-colors">
                 <Icon size={14} />
               </span>
             ) : null
@@ -79,7 +79,7 @@ export function FeaturedProjectCard({ project, isHovered, onMouseEnter, onMouseL
           <h2 className="font-aktiv-grotesk text-[clamp(1.75rem,3vw,2.5rem)] font-bold leading-none text-white tracking-tight">
             <SlideUpLabel text={project.title} />
           </h2>
-          <div className="w-12 h-12 border border-white/20 rounded-full flex items-center justify-center shrink-0 transition-all duration-500 group-hover:border-stabilo group-hover:bg-stabilo group-hover:text-white">
+          <div className="w-12 h-12 border border-white/20 rounded-full flex items-center justify-center shrink-0 transition-all duration-500 group-hover:border-blaze group-hover:bg-blaze group-hover:text-white">
             <svg width="16" height="16" viewBox="0 0 14 14" fill="none">
               <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>

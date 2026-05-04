@@ -41,7 +41,7 @@ function HighlightedText({ text }: { text: string }) {
     parts.push(
       <mark
         key={match.index}
-        className="bg-transparent text-stabilo font-semibold not-italic underline decoration-stabilo/30 underline-offset-4"
+        className="bg-transparent text-blaze font-semibold not-italic underline decoration-blaze/30 underline-offset-4"
       >
         {match[0]}
       </mark>
@@ -92,7 +92,7 @@ export default function FAQAccordion({ items }: { items: FAQItem[] }) {
             key={index}
             className={`faq-item group relative border rounded-[2rem] overflow-hidden transition-all duration-500 ${
               isOpen
-                ? 'border-stabilo/30 bg-white shadow-2xl shadow-stabilo/5'
+                ? 'border-blaze/30 bg-white shadow-2xl shadow-blaze/5'
                 : 'border-ink/5 bg-white/40 hover:border-ink/15 hover:bg-white/60'
             }`}
           >
@@ -101,19 +101,19 @@ export default function FAQAccordion({ items }: { items: FAQItem[] }) {
               className="w-full px-10 py-8 flex items-center justify-between gap-8 text-left"
             >
               <div className="flex gap-8 items-center">
-                <span className="font-mono text-[0.65rem] font-bold tracking-[0.2em] text-stabilo/40 tabular-nums select-none shrink-0">
+                <span className="font-mono text-[0.65rem] font-bold tracking-[0.2em] text-blaze/40 tabular-nums select-none shrink-0">
                   {String(index + 1).padStart(2, '0')}
                 </span>
-                <span className={`font-plus-jakarta text-xl md:text-2xl font-bold tracking-tight transition-colors duration-300 ${isOpen ? 'text-stabilo' : 'text-ink'}`}>
-                  <SlideUpLabel text={item.q} className={isOpen ? 'text-stabilo' : ''} />
+                <span className={`font-plus-jakarta text-xl md:text-2xl font-bold tracking-tight transition-colors duration-300 ${isOpen ? 'text-blaze' : 'text-ink'}`}>
+                  <SlideUpLabel text={item.q} className={isOpen ? 'text-blaze' : ''} />
                 </span>
               </div>
 
               <div
                 className={`shrink-0 flex items-center justify-center w-10 h-10 rounded-full border transition-all duration-500 ${
                   isOpen
-                    ? 'border-stabilo bg-stabilo text-white rotate-180'
-                    : 'border-ink/10 text-ink/40 group-hover:border-stabilo group-hover:text-stabilo'
+                    ? 'border-blaze bg-blaze text-white rotate-180'
+                    : 'border-ink/10 text-ink/40 group-hover:border-blaze group-hover:text-blaze'
                 }`}
               >
                 {isOpen ? <Minus size={18} strokeWidth={2.5} /> : <Plus size={18} strokeWidth={2.5} />}
@@ -130,7 +130,7 @@ export default function FAQAccordion({ items }: { items: FAQItem[] }) {
                   className="overflow-hidden"
                 >
                   <div className="px-10 pb-10 pt-0 pl-[calc(2.5rem+3rem+2.5rem)]">
-                    <div className="h-px bg-stabilo/10 mb-8" />
+                    <div className="h-px bg-blaze/10 mb-8" />
                     <p className="font-google text-lg text-ink/65 leading-relaxed max-w-3xl">
                       <HighlightedText text={item.a} />
                     </p>

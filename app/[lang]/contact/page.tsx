@@ -29,7 +29,7 @@ export default async function ContactPage({ params }: ContactPageProps) {
       <div className="px-8 md:px-16 mb-20">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-8">
-            <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-stabilo">Get in touch</span>
+            <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-blaze">Get in touch</span>
             <span className="w-8 h-px bg-ink/15" />
             <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-muted-warm">Contact</span>
           </div>
@@ -41,7 +41,7 @@ export default async function ContactPage({ params }: ContactPageProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mt-20 pt-20 border-t border-ink/5">
             {/* Address / Global presence */}
             <div>
-              <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-stabilo block mb-6">Location</span>
+              <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-blaze block mb-6">Location</span>
               <p className="font-google text-lg leading-relaxed text-ink/80 max-w-xs">
                 Tangerang, Indonesia <br />
                 <span className="text-muted-warm text-sm">Serving clients globally from the heart of Banten.</span>
@@ -50,24 +50,24 @@ export default async function ContactPage({ params }: ContactPageProps) {
 
             {/* What happens next */}
             <div>
-              <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-stabilo block mb-6">What happens next?</span>
+              <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-blaze block mb-6">What happens next?</span>
               <div className="space-y-8">
                 <div className="flex gap-4">
-                  <span className="font-mono text-[0.625rem] text-stabilo">01</span>
+                  <span className="font-mono text-[0.625rem] text-blaze">01</span>
                   <div>
                     <h4 className="font-aktiv-grotesk font-bold text-sm mb-1">Response within 24h</h4>
                     <p className="font-google text-xs text-muted-warm leading-relaxed">We review your brief and reach out via WhatsApp or Email to schedule a chat.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <span className="font-mono text-[0.625rem] text-stabilo">02</span>
+                  <span className="font-mono text-[0.625rem] text-blaze">02</span>
                   <div>
                     <h4 className="font-aktiv-grotesk font-bold text-sm mb-1">Discovery Call</h4>
                     <p className="font-google text-xs text-muted-warm leading-relaxed">A 15-minute intro call to align on goals, scope, and initial budget ranges.</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
-                  <span className="font-mono text-[0.625rem] text-stabilo">03</span>
+                  <span className="font-mono text-[0.625rem] text-blaze">03</span>
                   <div>
                     <h4 className="font-aktiv-grotesk font-bold text-sm mb-1">Detailed Proposal</h4>
                     <p className="font-google text-xs text-muted-warm leading-relaxed">We send over a tailored plan with fixed pricing and a confirmed timeline.</p>

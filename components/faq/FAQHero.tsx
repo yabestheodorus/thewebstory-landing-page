@@ -78,7 +78,7 @@ export default function FAQHero({ dict }: { dict: any }) {
 
       {/* Radial glow */}
       <div className="pointer-events-none absolute inset-0 flex items-center justify-center" aria-hidden="true">
-        <div className="w-175 h-105 bg-stabilo-soft/5.5 dark:bg-stabilo-soft/9 rounded-full blur-[130px]" />
+        <div className="w-175 h-105 bg-blaze-soft/5.5 dark:bg-blaze-soft/9 rounded-full blur-[130px]" />
       </div>
 
       {/* Top-left dot grid */}
@@ -106,11 +106,11 @@ export default function FAQHero({ dict }: { dict: any }) {
       <div className="relative z-10">
         {/* Overline flanked by decorative lines */}
         <div className="faq-overline group inline-flex items-center gap-3 mb-7">
-          <div className="h-px w-10 bg-stabilo/20" />
-          <span className="font-mono text-[0.7rem] font-bold tracking-[0.3em] uppercase text-stabilo">
+          <div className="h-px w-10 bg-blaze/20" />
+          <span className="font-mono text-[0.7rem] font-bold tracking-[0.3em] uppercase text-blaze">
             <SlideUpLabel text={dict.hero_overline} />
           </span>
-          <div className="h-px w-10 bg-stabilo/20" />
+          <div className="h-px w-10 bg-blaze/20" />
         </div>
 
         <h1 className="faq-title font-aktiv-grotesk text-[clamp(2.5rem,8vw,5.5rem)] font-bold tracking-[-0.04em] leading-[1.1] text-ink mb-10 pb-2">
@@ -122,9 +122,9 @@ export default function FAQHero({ dict }: { dict: any }) {
         </p>
 
         {/* Question count badge */}
-        <div className="faq-badge group inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-ink/8 bg-white/40 backdrop-blur-sm shadow-sm hover:border-stabilo/30 transition-colors cursor-default">
-          <span className="w-1.5 h-1.5 rounded-full bg-stabilo shrink-0 animate-pulse" />
-          <span className="font-mono text-[0.65rem] font-bold tracking-[0.25em] uppercase text-ink/50 group-hover:text-stabilo transition-colors">
+        <div className="faq-badge group inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-ink/8 bg-white/40 backdrop-blur-sm shadow-sm hover:border-blaze/30 transition-colors cursor-default">
+          <span className="w-1.5 h-1.5 rounded-full bg-blaze shrink-0 animate-pulse" />
+          <span className="font-mono text-[0.65rem] font-bold tracking-[0.25em] uppercase text-ink/50 group-hover:text-blaze transition-colors">
             <SlideUpLabel text={`${count} Questions`} />
           </span>
         </div>
@@ -132,7 +132,7 @@ export default function FAQHero({ dict }: { dict: any }) {
 
       {/* Scroll indicator */}
       <div className="faq-scroll-hint absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center" aria-hidden="true">
-        <div className="faq-scroll-line w-px h-8 bg-linear-to-b from-stabilo-soft/40 to-transparent" />
+        <div className="faq-scroll-line w-px h-8 bg-linear-to-b from-blaze-soft/40 to-transparent" />
       </div>
 
     </div>

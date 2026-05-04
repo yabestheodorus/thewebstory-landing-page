@@ -32,7 +32,7 @@ export default function LanguageToggle({ currentLang }: { currentLang: string })
           {currentLang === lang && (
             <motion.div
               layoutId="lang-active"
-              className="absolute inset-0 bg-ink dark:bg-stabilo rounded-full -z-10"
+              className="absolute inset-0 bg-ink dark:bg-blaze rounded-full -z-10"
               transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}
             />
           )}

@@ -27,7 +27,7 @@ export function AboutManifesto({ dict }: { dict: Dictionary['about']['manifesto'
     <section ref={containerRef} className="bg-ink text-off py-32 px-8 md:px-16 overflow-hidden">
       <div className="max-w-4xl mx-auto">
         <div className="manifesto-text flex items-center gap-3 mb-16">
-          <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-stabilo">{dict.overline}</span>
+          <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-blaze">{dict.overline}</span>
           <span className="w-8 h-px bg-off/15" />
           <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-off/50">{dict.subtitle}</span>
         </div>
@@ -47,8 +47,8 @@ export function AboutManifesto({ dict }: { dict: Dictionary['about']['manifesto'
         </div>
 
         <div className="manifesto-text mt-24 flex items-center gap-6">
-          <div className="w-12 h-px bg-stabilo" />
-          <span className="font-mono text-[0.75rem] tracking-[0.2em] uppercase text-stabilo">{dict.footer}</span>
+          <div className="w-12 h-px bg-blaze" />
+          <span className="font-mono text-[0.75rem] tracking-[0.2em] uppercase text-blaze">{dict.footer}</span>
         </div>
       </div>
     </section>

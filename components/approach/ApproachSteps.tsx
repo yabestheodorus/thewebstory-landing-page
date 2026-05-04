@@ -65,7 +65,7 @@ export default function ApproachSteps({ steps }: ApproachStepsProps) {
       <div className="max-w-6xl mx-auto">
         {/* Section overline */}
         <div className="flex items-center gap-3 mb-16 md:mb-24">
-          <span className="font-mono text-[0.5625rem] tracking-[0.22em] uppercase text-stabilo">
+          <span className="font-mono text-[0.5625rem] tracking-[0.22em] uppercase text-blaze">
             The Process
           </span>
           <span className="w-6 h-px bg-ink/10" />
@@ -81,14 +81,14 @@ export default function ApproachSteps({ steps }: ApproachStepsProps) {
               className="as-row group relative grid grid-cols-[auto_1fr] md:grid-cols-[auto_1fr_auto] gap-x-6 md:gap-x-16 gap-y-8 py-14 md:py-20 border-t border-border first:border-t-0"
             >
               {/* Top accent line */}
-              <span className="as-line absolute top-0 left-0 right-0 h-px bg-stabilo-soft/40 origin-left" />
+              <span className="as-line absolute top-0 left-0 right-0 h-px bg-blaze-soft/40 origin-left" />
 
               {/* Big numeric */}
               <div className="as-num row-span-2 md:row-span-2">
                 <span className="font-plus-jakarta font-semibold tracking-[-0.04em] text-display leading-none text-ink/90 tabular-nums">
                   {step.id}
                 </span>
-                <span className="block font-mono text-[0.5rem] tracking-[0.22em] uppercase text-stabilo mt-3">
+                <span className="block font-mono text-[0.5rem] tracking-[0.22em] uppercase text-blaze mt-3">
                   Phase
                 </span>
               </div>
@@ -124,7 +124,7 @@ export default function ApproachSteps({ steps }: ApproachStepsProps) {
                       key={item}
                       className="as-item flex items-start gap-3 font-mono text-[0.625rem] tracking-[0.14em] uppercase text-ink/65"
                     >
-                      <span className="text-stabilo mt-px">+</span>
+                      <span className="text-blaze mt-px">+</span>
                       <span>{item}</span>
                     </li>
                   ))}

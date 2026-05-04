@@ -43,7 +43,7 @@ export function ProjectNavigation({ nextProject, dict, lang }: ProjectNavigation
       <div className="flex flex-col sm:flex-row md:flex-col gap-4 shrink-0">
         <Link
           href={`/${lang}/work/${nextProject.slug}`}
-          className="proj-next-actions group flex items-center gap-4 bg-ink text-off font-mono text-[0.5625rem] tracking-widest uppercase py-4 px-8 transition-colors duration-200 hover:bg-stabilo active:scale-[0.97]"
+          className="proj-next-actions group flex items-center gap-4 bg-ink text-off font-mono text-[0.5625rem] tracking-widest uppercase py-4 px-8 transition-colors duration-200 hover:bg-blaze active:scale-[0.97]"
         >
           {dict.project_detail.cta.next_cta}
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">

@@ -9,7 +9,7 @@ export type Project = {
   tags: string[]
   description: string
   featured?: boolean
-  color: 'sand' | 'warm' | 'ink' | 'stabilo'
+  color: 'sand' | 'warm' | 'ink' | 'blaze'
   // Case study detail fields
   headline?: string
   headlineHighlights?: string[]
@@ -154,7 +154,7 @@ const projects_en: Project[] = [
     url: 'https://zentry.yabestheo.dev',
     year: '2025',
     featured: true,
-    color: 'stabilo',
+    color: 'blaze',
     category: 'Gamified Experience',
     tags: ['Motion UI', 'WebGL', 'Gamification'],
     description: 'An immersive, award-winning gamified landing page clone. Featuring complex GSAP motion systems, scroll-driven video orchestration, and a non-linear "metaverse" narrative.',
@@ -342,14 +342,14 @@ const projects_id: Project[] = [
     url: 'https://zentry.yabestheo.dev',
     year: '2025',
     featured: true,
-    color: 'stabilo',
+    color: 'blaze',
     category: 'Pengalaman Gamifikasi',
     tags: ['Motion UI', 'WebGL', 'Gamifikasi'],
     description: 'Kloning halaman landing tergamifikasi yang imersif dan pemenang penghargaan. Menampilkan sistem motion GSAP yang kompleks, orkestrasi video berbasis scroll, dan narasi "metaverse" non-linear.',
     headline: 'Metagame Layer: Sebuah pengembaraan digital ke dalam metaverse permainan.',
     headlineHighlights: ['pengembaraan digital', 'metaverse permainan'],
     challenge: "Situs game tradisional sering kali statis dan gagal menangkap energi kinetik dari game yang mereka wakili. Tantangannya adalah membangun pengalaman web yang terasa seperti lingkungan yang dapat dimainkan, mempertahankan performa 60fps sambil mengorkestrasi aset video dan motion yang berat.",
-    solution: 'Kami menerapkan arsitektur motion canggih menggunakan GSAP ScrollTrigger dan Framer Motion. Ini termasuk preloader video kustom, bagian hero parallax-scrolling, dan transisi berbasis WebGL yang memandu pengguna melalui alam semesta Zentry dengan alur high-fidelity yang lancar.',
+    solution: 'Kami menerapkan arsitektur motion canggih menggunakan GSAP ScrollTrigger and Framer Motion. Ini termasuk preloader video kustom, bagian hero parallax-scrolling, dan transisi berbasis WebGL yang memandu pengguna melalui alam semesta Zentry dengan alur high-fidelity yang lancar.',
     results: [
       { value: 'SOTD', label: 'Standar Referensi' },
       { value: '60', suffix: 'fps', label: 'Performa Motion' },

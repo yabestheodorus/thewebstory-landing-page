@@ -9,7 +9,7 @@ interface BackgroundGlowProps {
 }
 
 const BackgroundGlow: React.FC<BackgroundGlowProps> = ({
-  color = 'var(--color-stabilo-soft)',
+  color = 'var(--color-blaze-soft)',
   opacity = 0.05,
   blur = '120px',
   size = '600px',

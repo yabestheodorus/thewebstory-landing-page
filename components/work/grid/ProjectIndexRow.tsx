@@ -17,14 +17,14 @@ export function ProjectIndexRow({ project, isHovered, onMouseEnter, onMouseLeave
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      {/* Stabilo accent bar */}
-      <div className="absolute left-0 top-0 bottom-0 w-1 bg-stabilo origin-bottom transition-transform duration-500 scale-y-0 group-hover:scale-y-100" />
+      {/* Blaze accent bar */}
+      <div className="absolute left-0 top-0 bottom-0 w-1 bg-blaze origin-bottom transition-transform duration-500 scale-y-0 group-hover:scale-y-100" />
 
       {/* Subtle bg tint on hover */}
       <div className="absolute inset-0 bg-ink opacity-0 group-hover:opacity-[0.02] transition-opacity duration-500 pointer-events-none" />
 
       {/* Index number */}
-      <span className="label-meta !text-ink/30 relative z-10 group-hover:!text-stabilo transition-colors duration-500">
+      <span className="label-meta !text-ink/30 relative z-10 group-hover:!text-blaze transition-colors duration-500">
         {project.id}
       </span>
 
@@ -51,7 +51,7 @@ export function ProjectIndexRow({ project, isHovered, onMouseEnter, onMouseLeave
 
       {/* Circle arrow */}
       <div className="relative z-10 flex justify-end">
-        <div className="w-10 h-10 rounded-full border border-ink/10 flex items-center justify-center group-hover:border-stabilo group-hover:bg-stabilo group-hover:text-white transition-all duration-500">
+        <div className="w-10 h-10 rounded-full border border-ink/10 flex items-center justify-center group-hover:border-blaze group-hover:bg-blaze group-hover:text-white transition-all duration-500">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path
               d="M2 12L12 2M12 2H5M12 2V9"

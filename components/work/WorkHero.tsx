@@ -70,7 +70,7 @@ export default function WorkHero({ dict }: { dict: Dictionary['work'] }) {
       {/* Headline — simple block layout, no flex-with-dividers that breaks on wrap */}
       <h1 className="wh-heading relative z-10 font-aktiv-grotesk font-bold leading-[0.92] tracking-[-0.04em] text-[clamp(3rem,7vw,7rem)] mb-16 max-w-5xl">
         {dict.hero_headline_1}{' '}
-        <em className="font-playfair italic font-light text-stabilo">{dict.hero_headline_2}</em>{' '}
+        <em className="font-playfair italic font-light text-blaze">{dict.hero_headline_2}</em>{' '}
         {dict.hero_headline_3}
       </h1>
 

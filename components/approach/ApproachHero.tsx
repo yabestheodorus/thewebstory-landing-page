@@ -17,6 +17,12 @@ interface ApproachHeroProps {
     hero_title: string
     hero_desc: string
     steps: Step[]
+    hero_methodology: string
+    hero_phases: string
+    hero_avg_timeline: string
+    hero_avg_timeline_val: string
+    hero_mode: string
+    hero_mode_val: string
   }
 }
 
@@ -66,7 +72,7 @@ export default function ApproachHero({ dict }: ApproachHeroProps) {
     >
       {/* Label row */}
       <div className="ah-label flex items-center gap-3 mb-10 overflow-hidden">
-        <span className="font-mono text-[0.5625rem] tracking-[0.22em] uppercase text-stabilo">
+        <span className="font-mono text-[0.5625rem] tracking-[0.22em] uppercase text-blaze">
           {dict.hero_overline}
         </span>
         <span className="w-6 h-px bg-ink/10 inline-block" />
@@ -129,10 +135,10 @@ export default function ApproachHero({ dict }: ApproachHeroProps) {
             className="ah-step group flex flex-col gap-2 cursor-default"
           >
             <div className="flex items-center gap-2">
-              <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-stabilo">
+              <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-blaze">
                 /{step.id}
               </span>
-              <span className="h-px flex-1 bg-ink/10 group-hover:bg-stabilo/60 transition-colors duration-500" />
+              <span className="h-px flex-1 bg-ink/10 group-hover:bg-blaze/60 transition-colors duration-500" />
             </div>
             <span className="font-plus-jakarta text-[0.9375rem] md:text-base font-semibold tracking-[-0.01em] text-ink leading-snug">
               {step.title}

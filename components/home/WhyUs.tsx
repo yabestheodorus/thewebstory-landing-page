@@ -26,13 +26,13 @@ export function WhyUs({ dict }: { dict: any }) {
     <section ref={containerRef} className="relative py-32 px-8 md:px-16 bg-secondary overflow-hidden">
       {/* Ambient glow */}
       <div 
-        className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-stabilo/5 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none"
+        className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blaze/5 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2 pointer-events-none"
       />
 
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="flex flex-col mb-20">
           <div className="flex items-center gap-3 mb-8">
-            <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-stabilo">{dict.overline}</span>
+            <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-blaze">{dict.overline}</span>
             <span className="w-8 h-px bg-ink/15" />
           </div>
           <h2 className="font-plus-jakarta text-h2 md:text-h1 font-bold leading-tight tracking-[-0.03em] text-ink mb-6">
@@ -56,7 +56,7 @@ export function WhyUs({ dict }: { dict: any }) {
               </div>
               
               <div className="flex flex-col gap-4">
-                <div className="flex items-center gap-2 text-stabilo">
+                <div className="flex items-center gap-2 text-blaze">
                   <Check className="w-4 h-4 stroke-[3]" />
                   <span className="font-mono text-[0.625rem] tracking-widest uppercase font-bold">thewebstory</span>
                 </div>

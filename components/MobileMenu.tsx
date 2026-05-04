@@ -74,7 +74,7 @@ export default function MobileMenu({ navLinks }: { navLinks: NavLink[] }) {
                       onClick={() => setIsOpen(false)}
                       className="flex items-center gap-4 py-4 label-fn text-ink/55 hover:text-ink transition-colors duration-200 no-underline"
                     >
-                      <span className="label-meta tabular-nums text-stabilo/60">
+                      <span className="label-meta tabular-nums text-blaze/60">
                         {String(i + 1).padStart(2, '0')}
                       </span>
                       {item.label}

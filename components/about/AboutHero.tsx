@@ -42,13 +42,13 @@ export function AboutHero({ dict }: { dict: Dictionary['about']['hero'] }) {
       <div className="a-hero-bg absolute inset-0 -z-10 bg-secondary dark:bg-zinc-950">
         <div
           className="absolute inset-x-0 top-0 h-[600px] opacity-10 blur-[150px]"
-          style={{ background: 'var(--color-stabilo)' }}
+          style={{ background: 'var(--color-blaze)' }}
         />
       </div>
 
       <div className="max-w-6xl">
         <div className="a-overline flex items-center gap-3 mb-8">
-          <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-stabilo">{dict.overline}</span>
+          <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-blaze">{dict.overline}</span>
           <span className="w-8 h-px bg-ink/15" />
           <span className="font-mono text-[0.625rem] tracking-[0.22em] uppercase text-muted-warm">{dict.est}</span>
         </div>
@@ -60,7 +60,7 @@ export function AboutHero({ dict }: { dict: Dictionary['about']['hero'] }) {
 
         <div className="a-sub grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-10 md:gap-24 items-end">
           <div className="hidden md:block">
-            <div className="w-16 h-px bg-stabilo mb-6" />
+            <div className="w-16 h-px bg-blaze mb-6" />
             <p className="font-mono text-[0.625rem] tracking-[0.16em] uppercase text-muted-warm leading-relaxed whitespace-pre-line">
               {dict.location}
             </p>
