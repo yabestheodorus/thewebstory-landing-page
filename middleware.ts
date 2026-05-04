@@ -2,14 +2,12 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 const locales = ['en', 'id']
-const defaultLocale = 'en'
+const defaultLocale = 'id'
 
 function getLocale(request: NextRequest) {
-  const acceptLanguage = request.headers.get('accept-language')
-  if (!acceptLanguage) return defaultLocale
-
-  if (acceptLanguage.includes('id')) return 'id'
-  return defaultLocale
+  // We force 'id' as the default experience for the home market.
+  // Users can still switch to 'en' manually via the URL.
+  return 'id'
 }
 
 export function middleware(request: NextRequest) {

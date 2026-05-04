@@ -60,7 +60,7 @@ export default function ApproachSteps({ steps }: ApproachStepsProps) {
   return (
     <section
       ref={sectionRef}
-      className="relative bg-off px-6 md:px-16 pt-24 md:pt-32 pb-16 md:pb-24"
+      className="relative bg-secondary px-6 md:px-16 pt-24 md:pt-32 pb-16 md:pb-24"
     >
       <div className="max-w-6xl mx-auto">
         {/* Section overline */}

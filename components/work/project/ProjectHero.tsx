@@ -47,6 +47,8 @@ export function ProjectHero({ project, dict, lang }: ProjectHeroProps) {
     split.lines.forEach(line => {
       const mask = document.createElement('div')
       mask.style.overflow = 'hidden'
+      mask.style.paddingBottom = '0.15em'
+      mask.style.marginBottom = '-0.15em'
       line.parentNode?.insertBefore(mask, line)
       mask.appendChild(line)
     })
@@ -221,7 +223,7 @@ export function ProjectHero({ project, dict, lang }: ProjectHeroProps) {
           <img src={project.backgroundImage} alt={`${project.title} website screenshot`} className="absolute inset-0 w-full h-full object-cover object-top" />
           <div className="absolute inset-0 bg-ink/30" />
           <div className="absolute inset-0 flex flex-col items-center justify-end pb-12 gap-5 z-10 text-center px-8">
-            <p className="font-mono text-[0.5rem] tracking-[0.32em] uppercase text-off/50">Live project · {project.year}</p>
+            <p className="font-mono text-[0.5rem] tracking-[0.32em] uppercase text-off/50">{dict.project_detail.labels.live_project} · {project.year}</p>
             <a href={project.url} target="_blank" rel="noopener noreferrer" aria-label={`Visit ${project.title} — live website`}
               className="inline-flex items-center gap-3 font-mono text-[0.5625rem] tracking-widest uppercase py-3 px-6 border border-off/25 text-off hover:bg-off/10 transition-all duration-200 active:scale-[0.97]">
               {dict.project_detail.cta.visit} {project.title}

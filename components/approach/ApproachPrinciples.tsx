@@ -25,6 +25,8 @@ export default function ApproachPrinciples({ title, principles }: ApproachPrinci
       split.lines.forEach(line => {
         const wrapper = document.createElement('div')
         wrapper.style.overflow = 'hidden'
+        wrapper.style.paddingBottom = '0.15em'
+        wrapper.style.marginBottom = '-0.15em'
         line.parentNode?.insertBefore(wrapper, line)
         wrapper.appendChild(line)
       })

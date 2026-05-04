@@ -91,7 +91,7 @@ export default function HomeApproach({ lang, dict, homeDict }: HomeApproachProps
                 <span className="font-aktiv-grotesk text-2xl font-bold text-ink tabular-nums">
                   {step.id}
                 </span>
-                <span className="label-meta text-stabilo">Phase</span>
+                <span className="label-meta text-stabilo">{dict.phase_label}</span>
               </div>
 
               <h3 className="font-aktiv-grotesk text-lg md:text-xl font-semibold tracking-[-0.015em] leading-snug text-ink mb-3">

@@ -58,7 +58,7 @@ export default function MobileMenu({ navLinks }: { navLinks: NavLink[] }) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -6 }}
               transition={{ duration: 0.25, ease: [0.33, 1, 0.68, 1] }}
-              className="fixed top-20 left-0 right-0 bg-off/95 dark:bg-zinc-950/95 backdrop-blur-md border-b border-ink/5 md:hidden z-40 px-6 py-4"
+              className="fixed top-20 left-0 right-0 bg-secondary/95 dark:bg-zinc-950/95 backdrop-blur-md border-b border-ink/5 md:hidden z-40 px-6 py-4"
             >
               <ul className="flex flex-col list-none m-0 p-0">
                 {navLinks.map((item, i) => (
@@ -74,7 +74,7 @@ export default function MobileMenu({ navLinks }: { navLinks: NavLink[] }) {
                       onClick={() => setIsOpen(false)}
                       className="flex items-center gap-4 py-4 label-fn text-ink/55 hover:text-ink transition-colors duration-200 no-underline"
                     >
-                      <span className="label-meta tabular-nums" style={{ color: 'rgb(124 92 255 / 0.6)' }}>
+                      <span className="label-meta tabular-nums text-stabilo/60">
                         {String(i + 1).padStart(2, '0')}
                       </span>
                       {item.label}

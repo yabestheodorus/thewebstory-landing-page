@@ -12,9 +12,9 @@ interface WorkPageProps {
 
 export default function WorkPage({ dict, lang }: WorkPageProps) {
   return (
-    <div className="bg-off text-ink min-h-screen">
+    <div className="bg-secondary text-ink min-h-screen">
       <WorkHero dict={dict} />
-      <WorkGrid dict={dict} />
+      <WorkGrid dict={dict} lang={lang} />
       <WorkFooter dict={dict} lang={lang} />
     </div>
   )

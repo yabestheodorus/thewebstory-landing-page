@@ -23,7 +23,7 @@ export default async function ApproachPage({
   const dict = await getDictionary(lang as any);
 
   return (
-    <main className="relative bg-off dark:bg-zinc-950 min-h-screen pt-20">
+    <main className="relative bg-secondary dark:bg-zinc-950 min-h-screen pt-20">
       <ApproachHero dict={dict.approach} />
       <ApproachSteps steps={dict.approach.steps} />
       <ApproachPrinciples 

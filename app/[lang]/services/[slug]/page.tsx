@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, CheckCircle2, HelpCircle, AlertCircle, Info, ChevronRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, HelpCircle, AlertCircle, Info } from "lucide-react";
 import { getDictionary } from "@/lib/get-dictionary";
 import CTASection from "@/components/home/CTASection";
 
@@ -37,7 +37,7 @@ export default async function ServicePage({
   const s = (pkg || addon) as any;
 
   return (
-    <main className="relative bg-off text-ink min-h-screen">
+    <main className="relative bg-secondary text-ink min-h-screen">
       <div className="pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-6">
           {/* Static Top Nav */}

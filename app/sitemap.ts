@@ -3,16 +3,16 @@ import { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://thewebstory.id'
   const langs = ['en', 'id']
-  const routes = ['', '/work', '/about', '/contact']
+  const routes = ['', '/work', '/approach', '/services', '/about', '/faq', '/contact']
   
-  // Example slugs from servicesData
+  // Package slugs
   const serviceSlugs = [
-    'company-profile',
-    'landing-page',
-    'catalogue',
-    'online-store',
-    'portfolio',
-    'payment-integration'
+    'starter',
+    'standard',
+    'professional',
+    'business',
+    'addon-payment',
+    'addon-shipping'
   ]
 
   const sitemapEntries: MetadataRoute.Sitemap = []

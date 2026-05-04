@@ -52,10 +52,10 @@ export const accentText: Record<Project['color'], string> = {
 }
 
 export const ornamentGlow: Record<Project['color'], string> = {
-  sand: 'rgba(124,92,255,0.18)',
-  warm: 'rgba(124,92,255,0.15)',
-  ink:  'rgba(124,92,255,0.13)',
-  stabilo: 'rgba(124,92,255,0.28)',
+  sand: 'rgba(232,93,4,0.12)',
+  warm: 'rgba(232,93,4,0.10)',
+  ink:  'rgba(232,93,4,0.08)',
+  stabilo: 'rgba(232,93,4,0.18)',
 }
 
 export const ornamentOpacity: Record<Project['color'], number> = {

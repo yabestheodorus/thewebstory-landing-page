@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation'
-import { projects } from '@/components/work/projects'
+import { getProjects, projects } from '@/components/work/projects'
 import ProjectPage from '@/components/work/ProjectPage'
 import { getDictionary } from '@/lib/get-dictionary'
 
@@ -7,8 +7,11 @@ export async function generateStaticParams() {
   const locales = ['en', 'id']
   const params = []
 
+  // Use base English list for static params generation (slugs are same)
+  const baseProjects = getProjects('en')
+
   for (const locale of locales) {
-    for (const project of projects) {
+    for (const project of baseProjects) {
       params.push({ lang: locale, slug: project.slug })
     }
   }
@@ -18,7 +21,8 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ lang: string; slug: string }> }) {
   const { slug, lang } = await params
-  const project = projects.find((p) => p.slug === slug)
+  const projectsList = getProjects(lang)
+  const project = projectsList.find((p) => p.slug === slug)
   if (!project) return {}
 
   const dict = await getDictionary(lang as any)
@@ -41,7 +45,8 @@ export default async function Project({
   params: Promise<{ lang: string; slug: string }>;
 }) {
   const { slug, lang } = await params
-  const project = projects.find((p) => p.slug === slug)
+  const projectsList = getProjects(lang)
+  const project = projectsList.find((p) => p.slug === slug)
 
   if (!project) {
     notFound()

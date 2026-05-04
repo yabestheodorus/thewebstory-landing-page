@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { Project } from '../projects'
+import { SlideUpLabel } from '@/components/ui/SlideUpLabel'
 
 interface ProjectIndexRowProps {
   project: Project
@@ -12,42 +13,50 @@ export function ProjectIndexRow({ project, isHovered, onMouseEnter, onMouseLeave
   return (
     <Link
       href={`/work/${project.slug}`}
-      className="work-row group grid grid-cols-[48px_1fr_auto] md:grid-cols-[48px_1fr_140px_100px_40px] items-center py-7 border-b border-border relative overflow-hidden transition-colors duration-300"
-      style={{ backgroundColor: isHovered ? 'rgba(253,251,250,0.03)' : 'transparent' }}
+      className="group grid grid-cols-[48px_1fr_auto] md:grid-cols-[48px_1fr_160px_100px_60px] items-center py-8 border-b border-ink/8 relative overflow-hidden transition-all duration-500"
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
-      <div className="work-row-line hidden" />
-      <div className="work-row-content contents">
-        <div className="absolute left-0 top-0 bottom-0 w-0.5 bg-stabilo-soft origin-bottom transition-transform duration-300 scale-y-0 group-hover:scale-y-100" />
+      {/* Stabilo accent bar */}
+      <div className="absolute left-0 top-0 bottom-0 w-1 bg-stabilo origin-bottom transition-transform duration-500 scale-y-0 group-hover:scale-y-100" />
 
-        <span className="font-mono text-[0.5625rem] tracking-widest text-muted-warm relative z-10">
-          {project.id}
-        </span>
+      {/* Subtle bg tint on hover */}
+      <div className="absolute inset-0 bg-ink opacity-0 group-hover:opacity-[0.02] transition-opacity duration-500 pointer-events-none" />
 
-        <div className="relative z-10 pr-4 overflow-hidden">
-          <h3 className="work-index-title font-aktiv-grotesk text-[clamp(1.25rem,2vw+0.5rem,1.625rem)] font-semibold leading-tight transition-colors duration-300 text-ink group-hover:text-white">
-            {project.title}
-          </h3>
-          <p className="md:hidden font-mono text-[0.5rem] tracking-widest uppercase text-muted-warm mt-0.5">
-            {project.category} · {project.year}
-          </p>
+      {/* Index number */}
+      <span className="label-meta !text-ink/30 relative z-10 group-hover:!text-stabilo transition-colors duration-500">
+        {project.id}
+      </span>
+
+      {/* Title */}
+      <div className="relative z-10 pr-4">
+        <h3 className="work-index-title font-aktiv-grotesk text-[clamp(1.375rem,2.5vw,1.75rem)] font-bold leading-tight transition-all duration-500 text-ink group-hover:translate-x-2">
+          <SlideUpLabel text={project.title} />
+        </h3>
+        <div className="md:hidden mt-2 flex gap-3">
+          <span className="label-meta">{project.category}</span>
+          <span className="label-meta opacity-40">{project.year}</span>
         </div>
+      </div>
 
-        <span className="hidden md:block font-mono text-[0.5rem] tracking-widest uppercase text-muted-warm relative z-10 transition-colors duration-300 group-hover:text-ink/60">
-          {project.category}
-        </span>
+      {/* Category */}
+      <span className="hidden md:block label-meta relative z-10 transition-colors duration-500 group-hover:text-ink">
+        <SlideUpLabel text={project.category} />
+      </span>
 
-        <span className="hidden md:block font-mono text-[0.5rem] tracking-widest text-muted-warm relative z-10">
-          {project.year}
-        </span>
+      {/* Year */}
+      <span className="hidden md:block label-meta relative z-10 opacity-40 group-hover:opacity-100 transition-opacity duration-500">
+        {project.year}
+      </span>
 
-        <div className="relative z-10 flex justify-end transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
-          <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+      {/* Circle arrow */}
+      <div className="relative z-10 flex justify-end">
+        <div className="w-10 h-10 rounded-full border border-ink/10 flex items-center justify-center group-hover:border-stabilo group-hover:bg-stabilo group-hover:text-white transition-all duration-500">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
             <path
               d="M2 12L12 2M12 2H5M12 2V9"
-              stroke={isHovered ? 'var(--color-stabilo-soft)' : 'rgba(107,107,107,0.6)'}
-              strokeWidth="1.2"
+              stroke="currentColor"
+              strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
             />

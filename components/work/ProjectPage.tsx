@@ -1,6 +1,6 @@
 'use client'
 
-import { projects } from './projects'
+import { getProjects } from './projects'
 import type { Project } from './projects'
 import { accentText } from './project/colorMaps'
 import { ProjectHero } from './project/ProjectHero'
@@ -23,12 +23,13 @@ export default function ProjectPage({
   dict: Dictionary
   lang: string
 }) {
-  const currentIndex = projects.findIndex((p) => p.id === project.id)
-  const nextProject = projects[(currentIndex + 1) % projects.length]
+  const projectsList = getProjects(lang)
+  const currentIndex = projectsList.findIndex((p) => p.id === project.id)
+  const nextProject = projectsList[(currentIndex + 1) % projectsList.length]
   const accent = accentText[project.color]
 
   return (
-    <main className="bg-off text-ink min-h-screen relative overflow-x-hidden">
+    <main className="bg-secondary text-ink min-h-screen relative overflow-x-hidden">
       <ProjectHero project={project} dict={dict} lang={lang} />
       <ProjectOverview project={project} dict={dict} />
 

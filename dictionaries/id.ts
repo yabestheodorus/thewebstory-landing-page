@@ -60,6 +60,10 @@ export const id: Dictionary = {
 
     description: 'Traffic kamu udah ada. Masalahnya, mereka ngapain pas udah sampe? Kita bikin website high-converting yang nuntun mereka, ngurangin drama, dan bikin visitor beneran jadi customer.',
 
+    learn_more: 'Selengkapnya',
+    strategy_overline: 'Strategi Kami',
+    step_label: 'Langkah',
+
     badges: {
       acquisition: 'Traffic',
       retention: 'Lebih Banyak Customer',
@@ -91,6 +95,9 @@ export const id: Dictionary = {
       category: 'Kategori',
       service: 'Layanan',
       price_start: 'Mulai dari',
+      whats_included: 'Apa yang Anda dapatkan',
+      delivery_suffix: 'pengerjaan',
+      premium_addons: 'Add-on Premium',
     },
     packages: [
       {
@@ -380,8 +387,12 @@ export const id: Dictionary = {
               detail: "Pelanggan memasukkan ke keranjang, memasukkan alamat mereka, memilih pengiriman, dan membayar — semuanya dalam satu alur mulus di situs Anda."
             },
             {
-              label: "Menerima semua metode pembayaran utama di Indonesia",
-              detail: "GoPay, OVO, QRIS, transfer BCA, Mandiri, dan kartu kredit atau debit. Pelanggan membayar dengan cara yang sudah mereka sukai."
+              label: "Sudah termasuk koneksi pembayaran",
+              detail: "GoPay, OVO, QRIS, transfer BCA, Mandiri, dan kartu kredit atau debit. Semua metode utama siap pakai dari hari pertama."
+            },
+            {
+              label: "Sudah termasuk integrasi pengiriman",
+              detail: "Perhitungan biaya kirim real-time untuk JNE, J&T, SiCepat, dan lainnya. Pengiriman nomor resi otomatis."
             },
             {
               label: "Notifikasi pesanan instan",
@@ -392,8 +403,8 @@ export const id: Dictionary = {
               detail: "Website, kode, data pelanggan — semuanya milik Anda. Tidak ada platform yang bisa menangguhkan toko Anda atau mengubah biaya Anda."
             },
             {
-              label: "3 putaran perubahan",
-              detail: "Kami menyempurnakan desain dan alur hingga pengalaman terasa tepat untuk brand dan pelanggan Anda."
+              label: "5 putaran perubahan",
+              detail: "Paket paling komprehensif kami mencakup lebih banyak putaran revisi untuk memastikan setiap detail toko Anda sempurna."
             }
           ]
         },
@@ -416,14 +427,14 @@ export const id: Dictionary = {
           {
             q: "Apakah saya harus menutup toko Shopee atau Tokopedia saya?",
             a: "Sama sekali tidak. Banyak klien kami menjalankan keduanya. Toko Anda sendiri memberi Anda saluran dengan margin lebih tinggi bersama dengan marketplace."
-        },
+          },
           {
             q: "Bagaimana cara kerja pembayaran sebenarnya?",
             a: "Kami menghubungkan toko Anda ke payment gateway. Saat pelanggan membayar, uangnya langsung masuk ke rekening bank terdaftar Anda — biasanya dalam 1–2 hari kerja."
           },
           {
             q: "Bagaimana dengan pengiriman?",
-            a: "Pelanggan dapat melihat biaya pengiriman real-time berdasarkan alamat mereka. Jika Anda ingin pemesanan kurir otomatis juga, tambahkan add-on Integrasi Pengiriman kami."
+            a: "Semuanya sudah satu paket. Pelanggan bisa melihat biaya kirim real-time, dan nomor resi akan dikirim otomatis."
           },
           {
             q: "Apa yang terjadi setelah peluncuran?",
@@ -435,8 +446,8 @@ export const id: Dictionary = {
           body: "Beri tahu kami tentang bisnis Anda dan kami akan menghubungi Anda kembali dalam waktu 24 jam.",
           button: "Mulai proyek Anda"
         },
-        original_price: "Rp 25.000.000",
-        price: "Rp 16.000.000",
+        original_price: "Rp 30.000.000",
+        price: "Rp 25.000.000",
         delivery: "4–8 minggu",
         mood: "Independent. Scalable. Unstoppable.",
         fun_fact: "Tiap penjualan di toko sendiri itu cuan yang gak dipotong komisi marketplace.",
@@ -476,8 +487,8 @@ export const id: Dictionary = {
           ]
         },
         supported_channels: [
-          "GoPay", "ShopeePay", "OVO", "Dana", "LinkAja", "QRIS", 
-          "BCA Virtual Account", "Mandiri Bill Payment", "BNI", "BRI", 
+          "GoPay", "ShopeePay", "OVO", "Dana", "LinkAja", "QRIS",
+          "BCA Virtual Account", "Mandiri Bill Payment", "BNI", "BRI",
           "Visa", "Mastercard"
         ],
         faq: [
@@ -574,20 +585,68 @@ export const id: Dictionary = {
         a: 'Marketplace oke buat dicari orang, tapi data sama customer-nya punya mereka. Dengan website sendiri, 100% cuan masuk ke kamu, bisa bikin loyalitas langsung, dan tampil jauh lebih premium dibanding ribuan toko biasa.'
       },
       {
+        q: 'Apa itu "Platform Sovereignty"?',
+        a: 'Artinya kamu pegang kendali penuh. Gak kayak builder langganan atau marketplace, kamu punya domain, aset, sampe kodenya secara mandiri. Kami percaya kedaulatan platform penting biar bisnis kamu nggak bergantung sama kebijakan pihak ketiga.'
+      },
+      {
         q: 'Berapa lama jadinya?',
-        a: 'Landing page kenceng biasanya 2-3 minggu. Kalo e-commerce lengkap yang banyak integrasi kustom, biasanya 4-6 minggu tergantung seberapa kompleks maunya.'
+        a: 'Landing page kenceng biasanya 2–3 minggu. Kalo e-commerce lengkap yang banyak integrasi kustom, biasanya 4–6 minggu tergantung seberapa kompleks maunya.'
+      },
+      {
+        q: 'Gimana sistem pembayarannya?',
+        a: 'Kami pake model 50/50: DP 50% buat amanin slot dan mulai fase discovery, lalu pelunasan 50% sisa cuma dibayar pas proyek udah selesai dan kamu udah 100% puas sama hasilnya.'
+      },
+      {
+        q: 'Bisa update konten sendiri?',
+        a: 'Bisa banget. Buat proyek yang butuh update rutin, kita integrasikan Headless CMS (kayak Sanity) yang bikin kamu bisa ganti teks, gambar, atau produk lewat interface profesional yang gampang banget, tanpa perlu sentuh kode.'
       },
       {
         q: 'Pake tech apa aja?',
         a: 'Kita pake Next.js biar ngebut dan SEO-nya mantap. Pake GSAP buat animasi sinematik dan Tailwind CSS biar stylenya kece tapi tetep ringan. Website kamu bakal awet deh!'
       },
       {
-        q: 'Kodenya jadi milik saya?',
-        a: 'Pastinya. Beda sama builder langganan, kamu punya domain, aset, sampe kodenya. Kamu yang pegang kendali penuh platformnya.'
+        q: 'Bantu urus domain sama hosting juga?',
+        a: 'Kita bantu setup semuanya sampe beres. Biasanya kita rekomendasiin hosting premium kayak Vercel atau Cloudflare biar website-nya kenceng. Pembayarannya langsung dari kamu (biar hak milik tetep di kamu), tapi teknisnya kita yang kerjain.'
       },
       {
         q: 'SEO udah termasuk?',
         a: 'Yup, dari awal. Performa kenceng sama SEO teknis udah jadi standar kita. Dari load time sampe metadata, kita setting biar brand kamu gampang nemu di Google.'
+      },
+      {
+        q: 'Website-nya responsive di HP?',
+        a: 'Tentu. Lebih dari 70% traffic web di Indonesia dateng dari mobile. Kami desain dengan mindset mobile-first, mastiin pengalaman sinematik website kamu tetep fluid dan cantik di layar HP sekecil apapun.'
+      },
+      {
+        q: 'Gimana kalau saya butuh fitur yang nggak ada di paket?',
+        a: 'Paket kami itu cuma titik awal. Kami seneng banget ngerjain kebutuhan custom yang kompleks—entah itu sistem booking, visualisasi data, atau storytelling interaktif yang unik. Kami bakal kasih penawaran khusus sesuai kebutuhan spesifik kamu.'
+      },
+      {
+        q: 'Bisa pesan desainnya aja tanpa development?',
+        a: 'Bisa. Kalau kamu udah punya tim dev sendiri tapi butuh design system kelas dunia atau prototype hi-fi, kami bisa sediain handoff lengkap di Figma dengan dokumentasi motion yang detail.'
+      },
+      {
+        q: 'Gimana proses revisinya?',
+        a: 'Kami kasih 2–3 kali revisi besar tergantung paketnya. Tapi proses kami itu kolaboratif banget; kami bakal tunjukin progres secara rutin (lo-fi dulu baru hi-fi) biar hasilnya selalu sejalan sama visi kamu.'
+      },
+      {
+        q: 'Apa yang terjadi setelah website launch?',
+        a: 'Kami kasih dukungan prioritas selama 14 hari setelah launch buat mastiin semuanya lancar. Kami juga ada layanan maintenance bulanan kalau kamu mau kami tetep jagain dan optimasi website kamu terus.'
+      },
+      {
+        q: 'Apakah fitur e-commerce ada di semua paket?',
+        a: 'Fitur e-commerce (manajemen produk, keranjang, checkout) cuma ada di paket Business. Tapi paket Landing Page tetep bisa kita pasang tombol "Order via WhatsApp" yang efektif buat bisnis jasa atau produk yang simpel.'
+      },
+      {
+        q: 'Kenapa pilih thewebstory dibanding agency lain?',
+        a: 'Kami nggak cuma "bikin website." Kami ngebangun artefak digital yang gabungin cinematic motion sama logika konversi yang kuat. Sebagai boutique studio, kami fokus ke kualitas daripada kuantitas, mastiin brand kamu kerasa eksklusif dan beda dari yang lain.'
+      },
+      {
+        q: 'Bisa kerja sama klien di luar Indonesia?',
+        a: 'Bisa banget. Meskipun kami berbasis di Indonesia, alur kerja async-first kami memungkinkan kolaborasi mulus dengan brand dari mana saja. Kami mengelola manajemen proyek dan komunikasi lewat channel profesional buat mastiin semuanya jelas tanpa kepentok perbedaan zona waktu.'
+      },
+      {
+        q: 'Bisa bantu branding sama copywriting juga?',
+        a: 'Fokus utama kami adalah digital design dan engineering. Tapi, kami masukin layanan "Strategic Copywriting" sebagai bagian dari proses conversion engineering kami. Untuk branding lengkap (logo, brand strategy), kami bisa rekomendasiin partner terpercaya atau kerja bareng guide brand yang udah kamu punya.'
       }
     ]
   },
@@ -599,8 +658,11 @@ export const id: Dictionary = {
       contact: 'Kontak (WA/Email)',
       type: 'Tipe Proyek',
       message: 'Ceritain dikit ceritanya...',
+      message_placeholder: 'Ceritain proyekmu...',
       send_wa: 'Kirim via WhatsApp',
       send_email: 'Email aja',
+      reply_note: 'Kami balas dalam 24 jam. Tanpa spam, dijamin.',
+      types: ['Starter', 'Standard', 'Professional', 'Business', 'Lainnya']
     },
     location: 'Stay di Tangerang, Indonesia',
   },
@@ -610,7 +672,9 @@ export const id: Dictionary = {
     hero_headline_1: 'Karya yang',
     hero_headline_2: 'ceritain',
     hero_headline_3: 'dirinya sendiri.',
+    stat_projects_val: '12+',
     stat_projects_label: 'Proyek live',
+    stat_industries_val: '8',
     stat_industries_label: 'Industri',
     stat_launch_label: 'Rata-rata rilis',
     stat_launch_val: '3 minggu',
@@ -640,12 +704,13 @@ export const id: Dictionary = {
       results: 'Dampak & Hasil',
       tech_stack: 'Teknologi',
       testimonial: 'Kata Mereka',
-      next_project: 'Proyek Selanjutnya'
+      next_project: 'Proyek Selanjutnya',
+      live_project: 'Proyek Live',
     },
     sections: {
-      brief: 'The Brief',
-      build: 'The Build',
-      overview: 'Overview',
+      brief: 'Ringkasan',
+      build: 'Proses Bangun',
+      overview: 'Tinjauan',
       deliverables: 'Apa yang Kita Kirim',
       deliverables_desc: 'Tiap komponen yang kita bangun dan alasan di baliknya.',
       results: 'Dampak & Hasil',
@@ -672,7 +737,16 @@ export const id: Dictionary = {
     hero_overline: 'Proses Kami',
     hero_title: 'Cara kami mengubah ide jadi nyata.',
     hero_desc: 'Kami punya alur yang terstruktur tapi tetap fleksibel buat bikin visi kamu jadi platform digital yang kenceng. Dari obrolan pertama sampe rilis, fokus kami cuma satu: hasil nyata.',
-    
+    hero_methodology: 'Metodologi',
+    hero_phases: 'Fase',
+    phase_label: 'Fase',
+    hero_avg_timeline: 'Rata-rata timeline',
+    hero_avg_timeline_val: '4–8 minggu',
+    hero_mode: 'Mode',
+    hero_mode_val: 'Async-first',
+    principles_overline: 'Etos',
+    principles_subtitle: 'Yang kami pegang teguh',
+
     steps: [
       {
         id: '01',
@@ -738,10 +812,56 @@ export const id: Dictionary = {
       text2: 'Kami nggak cuma bikin halaman; kami bangun narasi yang dioptimasi buat konversi. Dengan gabungin motion sinematik dan engineering performa yang gila, kami pastikan brand kamu nggak cuma keliatan premium—tapi juga ngasilin.',
       footer: 'Platform Sovereignty',
     },
-    team: {
-      overline: 'Tim Kami',
-      title: 'Kecil tapi lincah.',
-      description: 'Kami bekerja sebagai kolektif spesialis yang solid. Nggak ada account manager, nggak ada hirarki ribet—cuma kolaborasi langsung antara founder dan ekspert.',
+    capabilities: {
+      overline: 'Capabilities',
+      title: 'Obsesi full-stack.',
+      description: 'Kami menangani segalanya mulai dari piksel pertama hingga deployment akhir. Keahlian kami terletak di titik temu antara desain high-fidelity dan engineering yang ketat.',
+      items: [
+        {
+          title: 'Cinematic Motion UI',
+          desc: 'Interaksi yang bercerita. Kami menggunakan GSAP untuk membuat animasi yang ringan dan bermakna yang memandu pengguna dan meningkatkan kesan premium brand kamu.'
+        },
+        {
+          title: 'Performance Engineering',
+          desc: 'Kecepatan adalah fitur. Kami membangun dengan Next.js untuk memastikan waktu muat yang sangat cepat, Core Web Vitals yang sempurna, dan pengalaman mulus di perangkat apa pun.'
+        },
+        {
+          title: 'Logika Konversi',
+          desc: 'Desain yang bekerja. Kami mengintegrasikan engineering konversi yang ketat ke dalam setiap tata letak, memastikan traffic kamu tidak hanya browsing, tapi mengambil tindakan.'
+        },
+        {
+          title: 'Kedaulatan Platform',
+          desc: 'Kamu memiliki wilayah digitalmu sendiri. Tanpa vendor lock-in, tanpa template generik. Kamu memiliki domain, aset, dan codebase yang bersih serta scalable.'
+        }
+      ]
+    },
+    why_us: {
+      overline: 'Perbedaannya',
+      title: 'Kenapa pilih thewebstory?',
+      subtitle: 'Arsitektur Custom vs. Builder Generik',
+      description: 'Shopify, Wix, atau WordPress oke buat pemula, tapi biasanya penuh biaya tersembunyi, ketergantungan platform, dan desain yang gitu-gitu aja. Kami bangun artefak, bukan cuma web.',
+      comparison: [
+        {
+          label: 'Kedaulatan Platform',
+          us: '100% Milik Kamu. Kamu punya kodenya, asetnya, dan domainnya. Bebas dari platform.',
+          them: 'Tanah Sewaan. Kalo mereka ganti kebijakan atau harga, kamu cuma bisa pasrah.'
+        },
+        {
+          label: 'Performa',
+          us: 'Ringan. 100/100 Core Web Vitals. Dibangun pake Next.js biar ngebut maksimal.',
+          them: 'Berat. Banyak plugin dan script generik yang bikin loading jadi lemot.'
+        },
+        {
+          label: 'Desain & Motion',
+          us: 'Sinematik. Motion high-fidelity yang bener-bener ngebawa jiwa brand kamu.',
+          them: 'Terbatas Template. Layout kaku yang bikin brand kamu keliatan sama kayak yang lain.'
+        },
+        {
+          label: 'Biaya Berjalan',
+          us: 'Nol Biaya Bulanan. Bayar sekali, punya selamanya. Cuma bayar hosting sendiri.',
+          them: 'Jebakan Langganan. Jutaan per bulan plus biaya aplikasi yang nambah terus.'
+        }
+      ]
     }
   }
 }

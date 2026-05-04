@@ -3,6 +3,7 @@
 import { useRef } from 'react'
 import { useGSAP } from '@gsap/react'
 import { gsap, SplitText } from '@/lib/gsap'
+import { SlideUpLabel } from '../ui/SlideUpLabel'
 
 export default function FAQHero({ dict }: { dict: any }) {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -104,27 +105,27 @@ export default function FAQHero({ dict }: { dict: any }) {
 
       <div className="relative z-10">
         {/* Overline flanked by decorative lines */}
-        <div className="faq-overline inline-flex items-center gap-3 mb-7">
-          <div className="h-px w-8 bg-stabilo-soft/50" />
-          <span className="font-mono text-[0.625rem] tracking-[0.3em] uppercase text-stabilo">
-            {dict.hero_overline}
+        <div className="faq-overline group inline-flex items-center gap-3 mb-7">
+          <div className="h-px w-10 bg-stabilo/20" />
+          <span className="font-mono text-[0.7rem] font-bold tracking-[0.3em] uppercase text-stabilo">
+            <SlideUpLabel text={dict.hero_overline} />
           </span>
-          <div className="h-px w-8 bg-stabilo-soft/50" />
+          <div className="h-px w-10 bg-stabilo/20" />
         </div>
 
-        <h1 className="faq-title font-aktiv-grotesk text-[clamp(2.5rem,6vw,5rem)] font-bold tracking-tight text-ink mb-6">
+        <h1 className="faq-title font-aktiv-grotesk text-[clamp(2.5rem,8vw,5.5rem)] font-bold tracking-[-0.04em] leading-[1.1] text-ink mb-10 pb-2">
           {dict.hero_title}
         </h1>
 
-        <p className="faq-desc font-google text-[clamp(1rem,1.5vw,1.125rem)] text-ink/60 max-w-xl mx-auto leading-relaxed mb-10">
+        <p className="faq-desc font-google text-[clamp(1.125rem,1.5vw,1.25rem)] text-ink/60 max-w-2xl mx-auto leading-relaxed mb-16">
           {dict.hero_desc}
         </p>
 
         {/* Question count badge */}
-        <div className="faq-badge inline-flex items-center gap-2 px-4 py-1.75 rounded-full border border-ink/8 dark:border-white/8 bg-white/30 dark:bg-white/3 backdrop-blur-sm">
-          <span className="w-1.25 h-1.25 rounded-full bg-stabilo shrink-0" />
-          <span className="font-mono text-[0.6rem] tracking-[0.22em] uppercase text-ink/50">
-            {count} Questions
+        <div className="faq-badge group inline-flex items-center gap-3 px-6 py-2.5 rounded-full border border-ink/8 bg-white/40 backdrop-blur-sm shadow-sm hover:border-stabilo/30 transition-colors cursor-default">
+          <span className="w-1.5 h-1.5 rounded-full bg-stabilo shrink-0 animate-pulse" />
+          <span className="font-mono text-[0.65rem] font-bold tracking-[0.25em] uppercase text-ink/50 group-hover:text-stabilo transition-colors">
+            <SlideUpLabel text={`${count} Questions`} />
           </span>
         </div>
       </div>

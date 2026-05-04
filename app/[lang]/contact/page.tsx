@@ -25,7 +25,7 @@ export default async function ContactPage({ params }: ContactPageProps) {
   const dict = await getDictionary(lang as any)
 
   return (
-    <main className="bg-off pt-32">
+    <main className="bg-secondary pt-32">
       <div className="px-8 md:px-16 mb-20">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-8">

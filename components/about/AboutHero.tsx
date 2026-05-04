@@ -15,6 +15,8 @@ export function AboutHero({ dict }: { dict: Dictionary['about']['hero'] }) {
     split.lines.forEach(line => {
       const mask = document.createElement('div')
       mask.style.overflow = 'hidden'
+      mask.style.paddingBottom = '0.15em'
+      mask.style.marginBottom = '-0.15em'
       line.parentNode?.insertBefore(mask, line)
       mask.appendChild(line)
     })
@@ -37,7 +39,7 @@ export function AboutHero({ dict }: { dict: Dictionary['about']['hero'] }) {
   return (
     <section ref={containerRef} className="relative min-h-[90vh] flex flex-col justify-center px-8 md:px-16 pt-32 pb-20 overflow-hidden">
       {/* Background Ornament */}
-      <div className="a-hero-bg absolute inset-0 -z-10 bg-off dark:bg-zinc-950">
+      <div className="a-hero-bg absolute inset-0 -z-10 bg-secondary dark:bg-zinc-950">
         <div
           className="absolute inset-x-0 top-0 h-[600px] opacity-10 blur-[150px]"
           style={{ background: 'var(--color-stabilo)' }}

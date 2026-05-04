@@ -33,6 +33,8 @@ export default function ApproachHero({ dict }: ApproachHeroProps) {
       split.lines.forEach(line => {
         const wrapper = document.createElement('div')
         wrapper.style.overflow = 'hidden'
+        wrapper.style.paddingBottom = '0.15em'
+        wrapper.style.marginBottom = '-0.15em'
         line.parentNode?.insertBefore(wrapper, line)
         wrapper.appendChild(line)
       })
@@ -60,7 +62,7 @@ export default function ApproachHero({ dict }: ApproachHeroProps) {
   return (
     <section
       ref={containerRef}
-      className="relative bg-off border-b border-border px-6 md:px-16 pt-32 md:pt-36 pb-16 md:pb-20 overflow-hidden"
+      className="relative bg-secondary border-b border-border px-6 md:px-16 pt-32 md:pt-36 pb-16 md:pb-20 overflow-hidden"
     >
       {/* Label row */}
       <div className="ah-label flex items-center gap-3 mb-10 overflow-hidden">
@@ -73,7 +75,7 @@ export default function ApproachHero({ dict }: ApproachHeroProps) {
         </span>
         <span className="w-6 h-px bg-ink/10 hidden md:inline-block" />
         <span className="hidden md:inline font-mono text-[0.5625rem] tracking-[0.22em] uppercase text-muted-warm">
-          Methodology
+          {dict.hero_methodology}
         </span>
       </div>
 
@@ -91,7 +93,7 @@ export default function ApproachHero({ dict }: ApproachHeroProps) {
         <div className="ah-body flex gap-10">
           <div className="flex flex-col gap-1">
             <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-ink/60">
-              Phases
+              {dict.hero_phases}
             </span>
             <span className="font-plus-jakarta text-[1.75rem] font-semibold leading-none">
               {dict.steps.length.toString().padStart(2, '0')}
@@ -99,18 +101,18 @@ export default function ApproachHero({ dict }: ApproachHeroProps) {
           </div>
           <div className="flex flex-col gap-1">
             <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-ink/60">
-              Avg. timeline
+              {dict.hero_avg_timeline}
             </span>
             <span className="font-plus-jakarta text-[1.75rem] font-semibold leading-none">
-              4–8 wks
+              {dict.hero_avg_timeline_val}
             </span>
           </div>
           <div className="hidden md:flex flex-col gap-1">
             <span className="font-mono text-[0.5rem] tracking-[0.2em] uppercase text-ink/60">
-              Mode
+              {dict.hero_mode}
             </span>
             <span className="font-plus-jakarta text-[1.75rem] font-semibold leading-none">
-              Async-first
+              {dict.hero_mode_val}
             </span>
           </div>
         </div>

@@ -58,6 +58,10 @@ export const en = {
 
     description: 'You are already getting traffic. The opportunity is in what happens when they land. We design high-converting websites that guide, reduce friction, and turn more of your visitors into actual customers.',
 
+    learn_more: 'Learn more',
+    strategy_overline: 'The Strategy',
+    step_label: 'Step',
+
     badges: {
       acquisition: 'Traffic',
       retention: 'More Customers',
@@ -89,6 +93,9 @@ export const en = {
       category: 'Category',
       service: 'Service',
       price_start: 'Start from',
+      whats_included: "What's Included",
+      delivery_suffix: 'delivery',
+      premium_addons: 'Premium Add-ons',
     },
     packages: [
       {
@@ -378,8 +385,12 @@ export const en = {
               detail: "Customers add to cart, enter their address, choose shipping, and pay — all in one smooth flow on your site."
             },
             {
-              label: "Accepts all major Indonesian payment methods",
-              detail: "GoPay, OVO, QRIS, BCA transfer, Mandiri, and credit or debit card. Customers pay the way they're already comfortable with."
+              label: "Payment connection included",
+              detail: "GoPay, OVO, QRIS, BCA transfer, Mandiri, and credit or debit cards. All major methods ready from day one."
+            },
+            {
+              label: "Shipping integration included",
+              detail: "Real-time cost calculation for JNE, J&T, SiCepat, and more. Automatic tracking number delivery."
             },
             {
               label: "Instant order notifications",
@@ -390,8 +401,8 @@ export const en = {
               detail: "The website, the code, the customer data — all yours. No platform can suspend your store or change your fees."
             },
             {
-              label: "3 rounds of changes",
-              detail: "We refine the design and flow until the experience feels right for your brand and your customers."
+              label: "5 rounds of changes",
+              detail: "Our most comprehensive package includes more refinement rounds to ensure every detail of your store is perfect."
             }
           ]
         },
@@ -414,14 +425,14 @@ export const en = {
           {
             q: "Do I have to shut down my Shopee or Tokopedia store?",
             a: "Not at all. Many of our clients run both. Your own store gives you a higher-margin channel alongside the marketplaces."
-        },
+          },
           {
             q: "How does payment actually work?",
             a: "We connect your store to a payment gateway. When a customer pays, the money goes directly to your registered bank account — usually within 1–2 business days."
           },
           {
             q: "What about shipping?",
-            a: "Customers can see real-time shipping costs based on their address. If you want automatic courier booking too, add our Shipping Integration add-on."
+            a: "Everything is bundled. Customers see real-time shipping costs based on their address, and tracking numbers are generated automatically."
           },
           {
             q: "What happens after launch?",
@@ -433,8 +444,8 @@ export const en = {
           body: "Tell us about your business and we'll get back to you within 24 hours.",
           button: "Start your project"
         },
-        original_price: "Rp 25.000.000",
-        price: "Rp 16.000.000",
+        original_price: "Rp 30.000.000",
+        price: "Rp 25.000.000",
         delivery: "4–8 weeks",
         mood: "Independent. Scalable. Unstoppable.",
         fun_fact: "Every sale through your own store is a sale the marketplace didn't take a cut from.",
@@ -474,8 +485,8 @@ export const en = {
           ]
         },
         supported_channels: [
-          "GoPay", "ShopeePay", "OVO", "Dana", "LinkAja", "QRIS", 
-          "BCA Virtual Account", "Mandiri Bill Payment", "BNI", "BRI", 
+          "GoPay", "ShopeePay", "OVO", "Dana", "LinkAja", "QRIS",
+          "BCA Virtual Account", "Mandiri Bill Payment", "BNI", "BRI",
           "Visa", "Mastercard"
         ],
         faq: [
@@ -572,20 +583,68 @@ export const en = {
         a: 'Marketplaces are great for discovery, but they own your customers and your data. A custom website allows you to own 100% of your revenue, build direct loyalty, and provide a premium experience that sets you apart from thousands of generic listings.'
       },
       {
+        q: 'What is "Platform Sovereignty"?',
+        a: 'It means you own everything. Unlike subscription builders or marketplaces, you own the domain, the assets, and the codebase. We believe in providing platform sovereignty so your business isn’t at the mercy of platform policy changes.'
+      },
+      {
         q: 'How long does a typical build take?',
-        a: 'A high-performance landing page usually takes 2-3 weeks. A full e-commerce experience with deep custom integrations typically ranges from 4-6 weeks depending on complexity.'
+        a: 'A high-performance landing page usually takes 2–3 weeks. A full e-commerce experience with deep custom integrations typically ranges from 4–6 weeks depending on complexity.'
+      },
+      {
+        q: 'What is the payment structure?',
+        a: 'We work with a 50/50 model: 50% down payment to secure your slot and start the discovery phase, and the remaining 50% only after the project is completed and you are 100% happy with the result.'
+      },
+      {
+        q: 'Can I update the content myself?',
+        a: 'Absolutely. For projects that require regular updates, we integrate a headless CMS (like Sanity) that allows you to edit text, swap images, and manage products through a simple, professional interface without touching any code.'
       },
       {
         q: 'What technology stack do you use?',
         a: 'We build with Next.js for high-speed performance and SEO. We use GSAP for cinematic motion UI and Tailwind CSS for scalable, clean styling. Your site will be future-proof, fast, and weightless.'
       },
       {
-        q: 'Do I own the code once it\'s finished?',
-        a: 'Absolutely. Unlike subscription-based builders, you own your domain, your assets, and the codebase. We believe in providing platform sovereignty, not platform dependency.'
+        q: 'Do you provide hosting and domains?',
+        a: 'We assist with the entire setup. We typically recommend premium, global hosting like Vercel or Cloudflare for speed. While you pay for the domain/hosting directly (for ownership), we handle all the technical configuration for you.'
       },
       {
         q: 'Is SEO included in the build?',
         a: 'Yes. High performance and technical SEO are part of our foundation. We ensure fast load times, proper semantic structure, and optimized metadata to give your brand the best chance to rank on Google.'
+      },
+      {
+        q: 'Will my website be mobile-responsive?',
+        a: 'Definitely. More than 70% of web traffic in Indonesia comes from mobile. We design with a mobile-first mindset, ensuring your cinematic experience is just as fluid and stunning on a 6-inch screen as it is on a desktop.'
+      },
+      {
+        q: 'What if I need features not listed in your packages?',
+        a: 'Our packages are starting points. We thrive on complex, bespoke requirements—whether it\'s a custom booking system, complex data visualization, or unique interactive storytelling. We\'ll provide a custom quote based on your specific needs.'
+      },
+      {
+        q: 'Do you offer design-only services?',
+        a: 'Yes. If you already have a development team but need a world-class design system or UI/UX high-fidelity prototype, we can provide comprehensive design handoffs in Figma with full motion documentation.'
+      },
+      {
+        q: 'How do revisions work?',
+        a: 'We include 2–3 major revision rounds depending on the package. However, our process is highly collaborative; we show you progress early and often (lo-fi prototypes before hi-fi builds) to ensure we\'re always aligned with your vision.'
+      },
+      {
+        q: 'What happens after the site is launched?',
+        a: 'We provide 14 days of priority support after launch to fix any bugs and ensure a smooth transition. We also offer ongoing maintenance retainers if you want us to keep your site updated and optimized indefinitely.'
+      },
+      {
+        q: 'Is e-commerce available for all packages?',
+        a: 'E-commerce features (product management, cart, checkout) are exclusive to our Business package. However, our Landing Page package can include "Contact on WhatsApp" triggers which work great for simpler service-based businesses.'
+      },
+      {
+        q: 'Why should I choose thewebstory over a generic agency?',
+        a: 'We don\'t just "make websites." We build digital artifacts that combine cinematic motion with rigorous conversion logic. We are a boutique studio that focuses on craft over volume, ensuring your brand feels like a category of one.'
+      },
+      {
+        q: 'Do you work with clients outside of Indonesia?',
+        a: 'Yes. While we are based in Indonesia, our async-first workflow allows us to collaborate seamlessly with brands worldwide. We handle project management and communication through professional channels to ensure clarity regardless of time zones.'
+      },
+      {
+        q: 'Can you help with branding and copywriting?',
+        a: 'We focus primarily on digital design and engineering. However, we offer "Strategic Copywriting" as part of our conversion engineering process. For full branding (logos, brand strategy), we can recommend trusted partners or work with your existing brand guidelines.'
       }
     ]
   },
@@ -597,8 +656,11 @@ export const en = {
       contact: 'What\'s your contact? (WA/Email)',
       type: 'Project Type',
       message: 'Tell us about your story...',
+      message_placeholder: 'Describe your story...',
       send_wa: 'Send via WhatsApp',
       send_email: 'Email instead',
+      reply_note: 'We reply within 24 hours. No spam, ever.',
+      types: ['Starter', 'Standard', 'Professional', 'Business', 'Other']
     },
     location: 'Based in Tangerang, Indonesia',
   },
@@ -608,7 +670,9 @@ export const en = {
     hero_headline_1: 'Work that',
     hero_headline_2: 'speaks for',
     hero_headline_3: 'itself.',
+    stat_projects_val: '12+',
     stat_projects_label: 'Projects live',
+    stat_industries_val: '8',
     stat_industries_label: 'Industries',
     stat_launch_label: 'Avg. launch',
     stat_launch_val: '3 wks',
@@ -638,7 +702,8 @@ export const en = {
       results: 'Impact & Results',
       tech_stack: 'Tech Stack',
       testimonial: 'The Verdict',
-      next_project: 'Next Project'
+      next_project: 'Next Project',
+      live_project: 'Live project',
     },
     sections: {
       brief: 'The Brief',
@@ -670,7 +735,16 @@ export const en = {
     hero_overline: 'Our Process',
     hero_title: 'How we turn ideas into impact.',
     hero_desc: 'We follow a structured yet fluid path to transform your vision into a high-performance digital reality. From the first spark to the final launch, clarity and craft are our guides.',
-    
+    hero_methodology: 'Methodology',
+    hero_phases: 'Phases',
+    phase_label: 'Phase',
+    hero_avg_timeline: 'Avg. timeline',
+    hero_avg_timeline_val: '4–8 wks',
+    hero_mode: 'Mode',
+    hero_mode_val: 'Async-first',
+    principles_overline: 'Ethos',
+    principles_subtitle: 'What we stand for',
+
     steps: [
       {
         id: '01',
@@ -736,10 +810,56 @@ export const en = {
       text2: 'We don\'t just build pages; we build conversion-optimized narratives. By blending cinematic motion with ruthless performance engineering, we ensure your brand doesn\'t just look premium—it delivers results.',
       footer: 'Platform Sovereignty',
     },
-    team: {
-      overline: 'The Team',
-      title: 'Small by design. Fast by nature.',
-      description: 'We operate as a tight-knit collective of specialists. No account managers, no bloated hierarchies—just direct collaboration between founders and experts.',
+    capabilities: {
+      overline: 'Capabilities',
+      title: 'A full-stack obsession.',
+      description: 'We handle everything from the first pixel to the final deployment. Our expertise lies at the intersection of high-fidelity design and rigorous engineering.',
+      items: [
+        {
+          title: 'Cinematic Motion UI',
+          desc: 'Interaction that tells a story. We use GSAP to create weightless, purposeful animations that guide the user and elevate the premium feel of your brand.'
+        },
+        {
+          title: 'Performance Engineering',
+          desc: 'Speed is a feature. We build with Next.js to ensure lightning-fast load times, perfect Core Web Vitals, and a seamless experience on any device.'
+        },
+        {
+          title: 'Conversion Logic',
+          desc: 'Design that performs. We integrate rigorous conversion engineering into every layout, ensuring your traffic doesn\'t just browse, but takes action.'
+        },
+        {
+          title: 'Platform Sovereignty',
+          desc: 'You own your digital territory. No vendor lock-in, no generic templates. You own the domain, the assets, and the clean, scalable codebase.'
+        }
+      ]
+    },
+    why_us: {
+      overline: 'The Difference',
+      title: 'Why choose thewebstory?',
+      subtitle: 'Custom architecture vs. Generic builders',
+      description: 'While Shopify, Wix, or WordPress are great for starting out, they often come with hidden costs, vendor lock-in, and generic designs. We build artifacts, not just sites.',
+      comparison: [
+        {
+          label: 'Platform Sovereignty',
+          us: '100% Ownership. You own the code, the assets, and the domain. No vendor lock-in.',
+          them: 'Rented land. If they change their policies or pricing, you have to follow.'
+        },
+        {
+          label: 'Performance',
+          us: 'Weightless. 100/100 Core Web Vitals. Built with Next.js for lightning speed.',
+          them: 'Bloated. Heavy plugins and generic scripts that slow down your experience.'
+        },
+        {
+          label: 'Design & Motion',
+          us: 'Cinematic. High-fidelity motion that reflects your brand’s unique soul.',
+          them: 'Template-bound. Rigid layouts that make your brand look like everyone else.'
+        },
+        {
+          label: 'Ongoing Costs',
+          us: 'Zero monthly fees. Pay once, own it forever. Pay only for your own hosting.',
+          them: 'Subscription trap. $29–$299/mo plus app fees that add up indefinitely.'
+        }
+      ]
     }
   }
 }
